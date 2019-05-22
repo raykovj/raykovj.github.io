@@ -1,0 +1,1 @@
+define("modules/geometry/dimension",[],function(){function t(n,i){var e=this;e.width=n,e.height=i,e.print=function(){return e.constructor.name+": w="+e.width+", h="+e.height},e.equals=function(n){return!!(n&&n instanceof t)&&(e.width===n.width&&e.height===n.height)}}return t});

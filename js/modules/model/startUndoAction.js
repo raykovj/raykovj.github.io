@@ -1,0 +1,1 @@
+define("modules/model/startUndoAction",["modules/graph/graphConstants","modules/settings/config"],function(n,o){function t(n,o){var t=this;t.floModel=n,t.name=o,t.getName=function(){return o},t.execute=function(){},t.undo=function(){},t.redo=function(){}}return t});

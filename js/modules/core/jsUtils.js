@@ -1,0 +1,1 @@
+define([],function(){return{inherit:function(t,e){t.prototype=Object.create(e.prototype),t.prototype.constructor=t}}});
