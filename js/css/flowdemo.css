@@ -27,6 +27,18 @@ body {
 	width: 100px;
 	height: 26px;
 }
+.diagram-text {
+	margin: 0 0 0 4px;
+	
+	width: 180px;
+}
+#diagramNameId {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 2px 0 0 8px;
+}
 .diagram-name {
 	flex: 1 0 auto;
 	 height: 26px;
@@ -111,11 +123,6 @@ body {
 	
 	width: 176px;
 	
-}
-.diagram-text {
-	margin: 0 0 0 4px;
-	
-	width: 180px;
 }
 .accordion-props {
 	width: 200px;
@@ -402,6 +409,12 @@ body {
 .button-help {
 	background-image: url(../../images/toolbar/help24.png);
 }
+.button-clear {
+	background-image: url(../../images/toolbar/brush24.png);
+}
+.button-zoom {
+	background-image: url(../../images/toolbar/zoom24.png);
+}
 .button-h {
 	background-image: url(../../images/toolbar/arrow_right24.png);
 }
@@ -420,6 +433,8 @@ body {
 .flowVertical {
 	content: url(../../images/toolbar/arrow_down16.png);
 }
+	
+	
 .lineStyle-button {
 	border: none;
 	outline: none;
@@ -574,9 +589,45 @@ table#openSourcesId th {
 	color: white;
 	background-color: #82AAFA;
 }
+table#accHdrDemoTableId td {
+	
+	
+	padding: 4px 15px 4px 15px;
+}
 #sourcesWrapperId {
 	border: 2px solid #82AAFA;
 	border-radius: 4px;
 	width:90%;
 	margin: 0 60px;
+}
+.scaleSlider {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 12px;
+	border-radius: 5px;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s; 
+	transition: opacity .2s;
+}
+.scaleSlider:hover {
+	opacity: 1; 
+}
+.scaleSlider::-webkit-slider-thumb {
+	-webkit-appearance: none; 
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #82AAFA; 
+	cursor: pointer;
+}
+.scaleSlider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #82AAFA;
+	cursor: pointer;
 }
