@@ -23,7 +23,9 @@
                 <span style="margin-left: 10px;"></span>
                 <button id="newId" class="toolbar-button button-new" data-toggle="tooltip" title="Create Flowchart..."></button>
                 <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open Flowchart..."></button>
-                <!--<button id="importId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Import Flowchart..."></button>-->
+                <button id="importId" class="toolbar-button button-no-left button-import"
+                        data-bind="visible: isConnectionOK()"
+                        data-toggle="tooltip" title="Import Flowchart..."></button>
                 <span style="margin-left: 10px;"></span>
                 <button id="undoId" class="toolbar-button button-undo" data-toggle="tooltip" title="Undo"></button>
                 <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
@@ -702,9 +704,9 @@
             <span style="margin-left: 10px;"></span>
             <button id="createFolderId" class="toolbar-button button-newDir" data-toggle="tooltip" title="Create folder..."></button>
             <button id="deleteFSId" class="toolbar-button button-no-left button-deleteFS" data-toggle="tooltip" title="Delete selected"></button>
-            <span style="font-weight: bold; margin: 8px 6px 2px 70px;">Partition:</span>
+            <span style="font-weight: bold; margin: 8px 6px 2px 120px;">Partition:</span>
             <input id="partitionId"  type="text" class="partitionText" readonly spellcheck="false"
-                   data-bind="textInput: selectedPartition" />
+                   data-bind="textInput: selectedPartition, attr: {title: selectedPartition}" />
         </div>
 
         <div style="font-weight: bold; margin: 4px 0 4px; " data-bind="visible: isConnectionOK()">
