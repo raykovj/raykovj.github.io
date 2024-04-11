@@ -48,7 +48,7 @@
                         </ul>
                     </li>
 
-                    <li><button id="databaseBtnId" class="caret textBtn first" onclick="selectText(event)">Database ERD</button>
+                    <li><button id="databaseBtnId" class="caret textBtn first" onclick="selectText(event)">Database ERD's</button>
                         <ul class="nested">
                             <li><button id="dbKeysBtnId" class="textBtn second" onclick="selectText(event)">Primary and Foreign Keys</button></li>
                             <li><button id="dbStartBtnId" class="textBtn second" onclick="selectText(event)">Create a Table Node</button></li>
@@ -57,7 +57,7 @@
                         </ul>
                     </li>
 
-                    <li><button id="logicalBtnId" class="caret textBtn first" onclick="selectText(event)">Logical ERD</button>
+                    <li><button id="logicalBtnId" class="caret textBtn first" onclick="selectText(event)">Logical ERD's</button>
                         <ul class="nested">
                             <li><button id="logNotationBtnId" class="textBtn second" onclick="selectText(event)">Notations and Cardinality</button></li>
                             <li><button id="logCreateBtnId" class="textBtn second" onclick="selectText(event)">Create Logical ERD's</button></li>
@@ -588,12 +588,14 @@
                 <div id="dbCardinalTextId" class="contentText" style="margin-top: -20px;">
                     <p>Within database modelling, <b>cardinality</b> is the numerical relationship between rows of one database
                         table and rows in another. It defines the number of occurrences of a primary entity that are associated
-                        with the number of occurrences of a foreign entity. The cardinality is represented graphically as the so called
-                        <b>crow's foot</b> symbols at the ends of the connection. There are six commonly accepted relationships symbols:</p>
+                        with the number of occurrences of a foreign entity. The cardinality is represented graphically as the
+                        so called <b>crow's foot</b> symbols at the ends of the connection. There are six commonly accepted
+                        relationships symbols:</p>
                     <div >
                         <p><img src="../../images/guide/cardinality.png" width="180" height="169"></p>
                     </div>
-                    <p>In general, there are three cardinality relationships: <b>one-to-one</b>, <b>one-to-many</b> and <b>many-to-many</b>.
+                    <p>In general, there are three types of cardinality relationships: <b>one-to-one</b>, <b>one-to-many</b>
+                        (<b>many-to-one)</b> and <b>many-to-many</b>.
                     </p><br>
                     <p><b>One-to-one cardinality</b></p>
                     <p>One example was the <b>CUSTOMER</b> to <b>CONTACT</b> relation shown before under <b>Primary and Foreign Keys</b>
@@ -661,7 +663,7 @@
                         system and identifies the business objects as the building blocks of the system. More specifically, it
                         defines the entities and their attributes, as well as the relationships between them.<br>
                         <br>The logical models help to understand better the business domain, to clarify the terminology and
-                        relate the business concepts to database structure. At these stages it
+                        relate the business concepts to database structures. At these stages it
                         is important to determine if there are some inconsistencies or omissions in the overall system design.
                         These models are intended to capture the overall system concepts, and for this reason they prove to be
                         useful as basis for the physical design of databases.
@@ -739,7 +741,7 @@
                     <p>It is convenient to change the positions of the ends of the <b>Relationship</b> node when you want to
                         modify the layout of the diagram:</p><br>
                     <div style="display:flex; justify-content: center; margin-right: 100px;">
-                        <p><img src="../../images/gifs/logAdmin2.gif" width="617" height="350"></p>
+                        <p><img src="../../images/gifs/logAdmin2.gif" width="471" height="320"></p>
                     </div><br><br>
                 </div>
              </div>
