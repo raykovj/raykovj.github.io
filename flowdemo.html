@@ -25,6 +25,7 @@
             <button id="newId" class="toolbar-button button-new" data-toggle="tooltip" title="Start Here..."></button>
             <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open Diagram..."></button>
             <button id="importId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Open Template..."></button>
+            <!--<button id="inOutId" class="toolbar-button button-no-left button-inOut" data-toggle="tooltip" title="Import/Export..."></button>-->
             <!--<span style="margin-left: 10px;"></span>-->
             <button id="undoId" class="toolbar-button button-no-left button-undo" data-toggle="tooltip" title="Undo"></button>
             <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
@@ -666,6 +667,7 @@
              data-bind="html: aboutSources()"></span>
         <!--<span class="galleryFont vertical about-copyright" style="padding: 2px 20px 10px; "-->
              <!--data-bind="text: aboutCopyright()"></span>-->
+        <button class="close-button"></button>
     </div>
 
     <!-- WELCOME -->
@@ -1549,7 +1551,7 @@
 
         <div class="settings-entry" style="margin: 6px 0 2px 0;">Text Content:</div>
         <div class="nodeProps-controls">
-            <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="4" cols="36" wrap="hard"
+            <textarea id="editNodeContentId" placeholder="[Enter content...]" autofocus rows="4" cols="30" wrap="hard"
                       spellcheck="false" class="noresizeTextArea"></textarea>
         </div>
 
