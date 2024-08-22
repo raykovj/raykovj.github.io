@@ -53,9 +53,10 @@
                             <li><button id="dbKeysBtnId" class="textBtn second" onclick="selectText(event)">Primary and Foreign Keys</button></li>
                             <li><button id="dbStartBtnId" class="textBtn second" onclick="selectText(event)">Create a Table Node</button></li>
                             <li><button id="dbCardinalBtnId" class="textBtn second" onclick="selectText(event)">Notations and Cardinality</button></li>
-                            <!--<li><button id="dbCompositeBtnId" class="textBtn second" onclick="selectText(event)">Composite Keys</button></li>-->
+                            <li><button id="dbCompositeBtnId" class="textBtn second" onclick="selectText(event)">Composite Keys</button></li>
                             <li><button id="dbConstraintsBtnId" class="textBtn second" onclick="selectText(event)">Constraints</button></li>
                             <li><button id="dbIndexesBtnId" class="textBtn second" onclick="selectText(event)">Indexes</button></li>
+                            <li><button id="dbImportExportBtnId" class="textBtn second" onclick="selectText(event)">Import / Export</button></li>
                         </ul>
                     </li>
 
@@ -210,7 +211,7 @@
                         diagrams, in JSON format, can be saved in the existing folders or in newly created ones. Currently
                         the file browser works under <b>Windows</b>. The server connection uses <b>node.js</b>.</p><br>
 
-                    <p>Here, below, is the browser in open mode:</p><br>
+                    <p>A view of the browser in <b>OPEN</b> mode:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/browser.png" width="453" height="443"></p><br>
                     </div><br>
@@ -221,7 +222,7 @@
                         at the current location</p>
                     <p><img src="../../images/toolbar/delete18x24.png"> &nbsp;- Delete the selected file of folder</p><br>
 
-                    <p>Here, below, is the brouser in save mode:</p><br>
+                    <p>A view of the brouser in <b>SAVE</b> mode:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/browserSave.png" width="451" height="487"></p>
                     </div>
@@ -531,9 +532,9 @@
                     <p>The structures of relational databases are determined by the <b>primary</b> and <b>foreign</b> keys.
                         A <b>primary</b> key is a column or a group of columns (composite primary key) that ensure unique
                         row identification in a database table.
-                        A <b>foreign</b> key is a column or a group of columns (composite foreign key) that together with
-                        a primary key allow to create a reference between two database tables.
-                        The foreign key in one table is a reference to a primary key in another table. There could be multiple
+                        A <b>foreign</b> key is a column or a group of columns that together with
+                        a primary key represent a reference between two database tables.
+                        The foreign key in one table has a reference to a primary key in another table. There could be multiple
                         foreign keys from different tables referencing the same primary key.
 
                         <br><br>As mentioned earlier, the rows in the diagram table node correspond to the database table
@@ -563,7 +564,7 @@
                         are illustrated later.
                     </p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbKeys.gif" width="590" height="335"></p>
+                        <p><img src="../../images/gifs/dbKeys.gif" width="590" height="250"></p>
                     </div><br><br>
                 </div>
 
@@ -624,7 +625,7 @@
                     </div><br>
                     <p> And here is an example how to rearrange some rows in a database table node:</p><br>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbRearrange.gif" width="800" height="582"></p>
+                        <p><img src="../../images/gifs/dbRearrange.gif" width="800" height="580"></p>
                     </div><br><br>
                 </div>
 
@@ -657,44 +658,38 @@
                         <p><img src="../../images/guide/author2book.png" width="491" height="152"></p>
                     </div><br>
                     <p><b>Many-to-many cardinality</b></p>
-                    <p>In a different scenario, in  a library, we need to establish the relations between the plurality of authors
-                    and the plurality of books. In this case we should preferably use an additional <b>join</b> table, also known as
-                    <b>junction</b> or <b>associative</b> table, with two one-to-many relations as follows:</p><br>
+                    <p>In a different scenario, in  a library, we need to establish the relations between the plurality
+                        of authors and the plurality of books. In this case we can preferably use an additional
+                        <b>join</b> table with two one-to-many relations as follows:</p><br>
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/guide/authors2books.png" width="573" height="146"></p>
                     </div><br>
                     <p>The <b>AUTHORS_BOOKS</b> table contains two foreign keys pointing respectively to the <b>AUTHORS</b> and
-                        <b>BOOKS</b> tables.
-                    These two foreign keys together act as a primary key for the <b>AUTHORS_BOOKS</b> table.</p>
+                        <b>BOOKS</b> tables. These two foreign keys together act as a composite primary key for the
+                        <b>AUTHORS_BOOKS</b> table. See more details about composite keys in the next topic.</p>
                     <br><br>
                 </div>
 
-                <!--<div id="dbCompositeTextId" class="contentText" style="margin-top: -20px;">-->
-                    <!--<p>As we saw in the <b>Reference Cardinality</b> title, some foreign keys may be grouped together and act as a-->
-                    <!--<b>composite</b> key. Same applies for primary keys too.-->
-                        <!--<br>To create a composite primary key, you need to open the DB table node editor pointing to an already existing-->
-                        <!--primary key in order to make the association. Use the button-->
-                        <!--<img src="../../images/toolbar/addPK24.png" width="24" height="24">-->
-                    <!--to create the new row, then add the necessary data in the remaining fields.</p><br><br>-->
-                        <!--<div style="display:flex; justify-content: center; ">-->
-                            <!--<p><img src="../../images/gifs/accountsNew.gif" width="691" height="461"></p>-->
-                        <!--</div>-->
-                        <!--<br>Adding rows for primary keys using the button-->
-                        <!--<img src="../../images/toolbar/addPK24.png" width="24" height="24">-->
-                        <!--is useful when there are multiple database tables with foreign keys-->
-                        <!--referencing the same primary key. In this case there is no need to fill in the-->
-                        <!--fields in the additional primary key rows.-->
-                        <!--<br><br>-->
-                        <!--The following example illustrates the relations between a composite primary key and a composite-->
-                        <!--foreign key. The composite foreign key of the <b>SUB_ACCOUNTS</b> table, <b>ref_id</b> and <b>ref_type</b>,-->
-                        <!--references the composite primary key, <b>accnt_id</b> and <b>accnt_type</b>, in the <b>ACCOUNTS</b> table.<br>-->
-                        <!--The referential constraint must have a one-to-one relationship between referencing and referenced columns.-->
-                        <!--In other words, if the primary key is a set of columns, then the foreign key also must be-->
-                        <!--a set of columns that correspond to the primary composite key.</p><br>-->
-                    <!--<div style="display:flex; justify-content: center; ">-->
-                        <!--<p><img src="../../images/guide/accountrefs.png" width="486" height="165"></p>-->
-                    <!--</div><br><br>-->
-                <!--</div>-->
+                <div id="dbCompositeTextId" class="contentText" style="margin-top: -20px;">
+                    <p>As it was pointed out in the <b>Notations and Cardinality</b> topic, some foreign keys may be grouped
+                        together and act as a <b>composite</b> primary key. In the scenario of the handling the plurality
+                        of authors and the plurality of books in a library, simply relating an author to a book
+                        turns out to be not sufficient. Most of the authors have more than one book, and some book titles
+                        are repeatedly used by different authors. In this case the pair <b>author-book</b> is an entity
+                        by itself. In order to identify it uniquely we need to introduce the <b>AUTHORS_BOOKS</b> table.
+                        This table has two foreign keys: <b>author_name</b> and <b>book_title</b>. They will represent
+                        a <b>composite primary key</b>, meaning that together they identify uniquely any <b>author-book</b>
+                        entity.</p><br>
+                    <p>Here is an example how to assign a composite primary key. You need to double-click the table node
+                        title bar to open the <b>DB table node editor</b>, then to click the <b>Composite primary Key</b> button.
+                        The preselected type is <b>PRIMARY KEY</b>. The dropdowns of the fields <b>Column1</b>,
+                        <b>Column2</b>, <b>Column3</b> contain the list of all foreign keys present in this table node. You
+                        have to select two or more different foreign keys. Optionally you can specify a name for this
+                        composite key.</p><br>
+                    <div style="display:flex; justify-content: center; ">
+                        <p><img src="../../images/gifs/authors2books.gif" width="844" height="353"></p>
+                    </div><br>
+                </div>
 
                 <div id="dbConstraintsTextId" class="contentText" style="margin-top: -20px;">
                     <p><b>Database constraints</b> are used to specify rules for data in a table.  They can be column-level or
@@ -704,14 +699,16 @@
                         is aborted. </p><p></p><br>
                     <p>Here are some examples of database constraints:</p>
                     <ul>
-                        <li><b>PRIMARY KEY</b> constraint: Uniquely identifies each row in a table, requiring that the values in this
-                            column be a combination of a NOT NULL and UNIQUE</li>
-                        <li><b>FOREIGN KEY</b> constraint: Connects data across multiple tables, based on a common column or columns.
-                            It is a field (or collection of fields) in one table, refering to the PRIMARY KEY in another table</li>
-                        <li><b>UNIQUE</b> constraint: Prevents duplicate values from being entered into a column, but allows null values</li>
+                        <li><b>PRIMARY KEY</b> constraint: Uniquely identifies each row in a table, requiring that the
+                            values in this column be a combination of a NOT NULL and UNIQUE</li>
+                        <li><b>FOREIGN KEY</b> constraint: Connects data across multiple tables, based on a common column
+                            or columns. It is a field (or collection of fields) in one table, refering to the PRIMARY KEY
+                            in another table</li>
+                        <li><b>UNIQUE</b> constraint: Prevents duplicate values from being entered into a column, but
+                            allows null values</li>
                         <li><b>NOT NULL</b> constraint: Ensures that a column will never contain an invalid value</li>
-                        <li><b>CHECK</b> constraint: Specifies a requirement that must be met by each row in a table, and can refer to a
-                            single or multiple columns</li>
+                        <li><b>CHECK</b> constraint: Specifies a requirement that must be met by each row in a table,
+                            and can refer to a single or multiple columns</li>
                         <li><b>DEFAULT</b> constraint: Allows to define a value to be placed into a column when a new row
                             is inserted</li>
                     </ul>
@@ -758,7 +755,13 @@
                     </div><br><br>
                 </div>
 
-            <!-- LOG -->
+                <div id="dbImportExportTextId" class="contentText" style="margin-top: -20px;">
+
+
+                </div>
+
+
+                <!-- LOG -->
 
                 <div id="logicalTextId" class="contentText" style="margin-top: -20px;">
                     <p><b>Logical ERDs</b> (entity-relationship diagrams) are the conceptual or logical models of business
@@ -909,12 +912,14 @@
             document.getElementById("dbStartTextId").style.display = "block";
         } else if (id === "dbCardinalBtnId") {
             document.getElementById("dbCardinalTextId").style.display = "block";
-//        } else if (id === "dbCompositeBtnId") {
-//            document.getElementById("dbCompositeTextId").style.display = "block";
+        } else if (id === "dbCompositeBtnId") {
+            document.getElementById("dbCompositeTextId").style.display = "block";
         } else if (id === "dbConstraintsBtnId") {
             document.getElementById("dbConstraintsTextId").style.display = "block";
         } else if (id === "dbIndexesBtnId") {
             document.getElementById("dbIndexesTextId").style.display = "block";
+        } else if (id === "dbImportExportBtnId") {
+            document.getElementById("dbImportExportTextId").style.display = "block";
 
 
         } else if (id === "logicalBtnId") {
@@ -955,9 +960,10 @@
         document.getElementById("dbKeysBtnId").classList.remove("boldText");
         document.getElementById("dbStartBtnId").classList.remove("boldText");
         document.getElementById("dbCardinalBtnId").classList.remove("boldText");
-//        document.getElementById("dbCompositeBtnId").classList.remove("boldText");
+        document.getElementById("dbCompositeBtnId").classList.remove("boldText");
         document.getElementById("dbConstraintsBtnId").classList.remove("boldText");
         document.getElementById("dbIndexesBtnId").classList.remove("boldText");
+        document.getElementById("dbImportExportBtnId").classList.remove("boldText");
 
         document.getElementById("logicalBtnId").classList.remove("boldText");
         document.getElementById("logNotationBtnId").classList.remove("boldText");
@@ -999,9 +1005,10 @@
         document.getElementById("dbKeysTextId").style.display = "none";
         document.getElementById("dbStartTextId").style.display = "none";
         document.getElementById("dbCardinalTextId").style.display = "none";
-//        document.getElementById("dbCompositeTextId").style.display = "none";
+        document.getElementById("dbCompositeTextId").style.display = "none";
         document.getElementById("dbConstraintsTextId").style.display = "none";
         document.getElementById("dbIndexesTextId").style.display = "none";
+        document.getElementById("dbImportExportTextId").style.display = "none";
 
         document.getElementById("logicalTextId").style.display = "none";
         document.getElementById("logNotationTextId").style.display = "none";
