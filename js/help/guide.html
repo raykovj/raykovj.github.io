@@ -56,10 +56,22 @@
                             <li><button id="dbCompositeBtnId" class="textBtn second" onclick="selectText(event)">Composite Keys</button></li>
                             <li><button id="dbConstraintsBtnId" class="textBtn second" onclick="selectText(event)">Constraints</button></li>
                             <li><button id="dbIndexesBtnId" class="textBtn second" onclick="selectText(event)">Keys and Indexes</button></li>
-                            <li><button id="dbImpExpSQLiteBtnId" class="textBtn second"
-                                        onclick="selectText(event)">Import / Export SQLite Scripts</button></li>
-                            <li><button id="dbImpExpMySQLBtnId" class="textBtn second"
-                                        onclick="selectText(event)">Import / Export MySQL Scripts</button></li>
+                            <li><button id="dbImpExpBtnId"  class="caret textBtn third"
+                                        onclick="selectText(event)">Import / Export DB Scripts</button>
+                                <ul class="nested">
+                                    <li><button id="dbImpExpSQLiteBtnId" class="textBtn second"
+                                                onclick="selectText(event)">SQLite</button></li>
+                                    <li><button id="dbImpExpMySQLBtnId" class="textBtn second"
+                                                onclick="selectText(event)">MySQL</button></li>
+                                    <li><button id="dbImpExpPostgresBtnId" class="textBtn second"
+                                                onclick="selectText(event)">PostgreSQL</button></li>
+                                    <li><button id="dbImpExpOracleBtnId" class="textBtn second"
+                                                onclick="selectText(event)">Oracle</button></li>
+                                    <li><button id="dbImpExpDB2BtnId" class="textBtn second"
+                                                onclick="selectText(event)">DB2</button></li>
+
+                                </ul>
+                            </li>
                         </ul>
                     </li>
 
@@ -97,7 +109,7 @@
                     </p><br>
                     <p><img src="../../images/splash/whereToStart.png" width="185" height="119"></p>
                     <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/startNewBuilder.gif" width="524" height="335"></p><br>
+                        <p><img src="../../images/gifs/beginBuilder.gif" width="524" height="335"></p><br>
                     </div>
                     <br><br>
                 </div>
@@ -785,6 +797,15 @@
                     <br><br>
                 </div>
 
+                <div id="dbImpExpTextId" class="contentText" style="margin-top: -20px;">
+                    <h3>Import</h3>
+                    <p></p>
+                    <h3>Export</h3>
+                    <p></p>
+
+
+                </div>
+
                 <div id="dbImpExpSQLiteTextId" class="contentText" style="margin-top: -20px;">
                     <p>
                     <h3>Import from SQLite Scripts</h3>
@@ -827,9 +848,9 @@
                     <b>MySQL</b> offers two options for exporting database schemas:
                     <li>to a dump folder, where each table is exported as a separate file with <b>.sql</b> extension</li>
                     <li>to a self-contained file with <b>.sql</b> extension</li>
-                    Both these options are accepted. In the first case JDElite reads all <b>.sql</b> files from the
-                    selected folder, merges the separate scripts and process them altogether. In the second case the selected
-                    <b>.sql</b> file is processed.
+                    Both these options are accepted. Depending on the selection, in the first case JDElite reads all
+                    <b>.sql</b> files from the selected folder, merges the separate scripts and process them altogether.
+                    In the second case the selected <b>.sql</b> file is processed.
                     <br>Here are the common steps to follow for each case:
                     <li>From the editor start page, select <b>Database ERD</b>, then <b>Import DB script</b> to open the
                         <b>Import/Export</b> dialog</li>
@@ -868,10 +889,32 @@
                     <div style="display:flex; justify-content: center; ">
                         <p><img src="../../images/gifs/dbExportMySQL2.gif" width="918" height="548"></p>
                     </div><br><br>
-
                     </p>
-
                     <br><br>
+                </div>
+
+                <div id="dbImpExpPostgresTextId" class="contentText" style="margin-top: -20px;">
+                    <h3>Import PostgreSQL</h3>
+                    <p></p>
+                    <h3>Export PostgreSQL</h3>
+                    <p></p>
+
+                </div>
+
+                <div id="dbImpExpOracleTextId" class="contentText" style="margin-top: -20px;">
+                    <h3>Import Oracle</h3>
+                    <p></p>
+                    <h3>Export Oracle</h3>
+                    <p></p>
+
+                </div>
+
+                <div id="dbImpExpDB2TextId" class="contentText" style="margin-top: -20px;">
+                    <h3>Import DB2</h3>
+                    <p></p>
+                    <h3>Export DB2</h3>
+                    <p></p>
+
                 </div>
 
                 <!-- LOG -->
@@ -1019,6 +1062,8 @@
 
         } else if (id === "databaseBtnId") {
             document.getElementById("databaseTextId").style.display = "block";
+        } else if (id === "dbImpExpBtnId") {
+            document.getElementById("dbImpExpTextId").style.display = "block";
         } else if (id === "dbKeysBtnId") {
             document.getElementById("dbKeysTextId").style.display = "block";
         } else if (id === "dbCreateBtnId") {
@@ -1035,6 +1080,12 @@
             document.getElementById("dbImpExpSQLiteTextId").style.display = "block";
         } else if (id === "dbImpExpMySQLBtnId") {
             document.getElementById("dbImpExpMySQLTextId").style.display = "block";
+        } else if (id === "dbImpExpPostgresBtnId") {
+            document.getElementById("dbImpExpPostgresTextId").style.display = "block";
+        } else if (id === "dbImpExpOracleBtnId") {
+            document.getElementById("dbImpExpOracleTextId").style.display = "block";
+        } else if (id === "dbImpExpDB2BtnId") {
+            document.getElementById("dbImpExpDB2TextId").style.display = "block";
 
 
         } else if (id === "logicalBtnId") {
@@ -1072,6 +1123,7 @@
 //        document.getElementById("containersBtnId").classList.remove("boldText");
 
         document.getElementById("databaseBtnId").classList.remove("boldText");
+        document.getElementById("dbImpExpBtnId").classList.remove("boldText");
         document.getElementById("dbKeysBtnId").classList.remove("boldText");
         document.getElementById("dbCreateBtnId").classList.remove("boldText");
         document.getElementById("dbCardinalBtnId").classList.remove("boldText");
@@ -1080,6 +1132,9 @@
         document.getElementById("dbIndexesBtnId").classList.remove("boldText");
         document.getElementById("dbImpExpSQLiteBtnId").classList.remove("boldText");
         document.getElementById("dbImpExpMySQLBtnId").classList.remove("boldText");
+        document.getElementById("dbImpExpPostgresBtnId").classList.remove("boldText");
+        document.getElementById("dbImpExpOracleBtnId").classList.remove("boldText");
+        document.getElementById("dbImpExpDB2BtnId").classList.remove("boldText");
 
         document.getElementById("logicalBtnId").classList.remove("boldText");
         document.getElementById("logNotationBtnId").classList.remove("boldText");
@@ -1118,6 +1173,7 @@
         document.getElementById("decisionTextId").style.display = "none";
 
         document.getElementById("databaseTextId").style.display = "none";
+        document.getElementById("dbImpExpTextId").style.display = "none";
         document.getElementById("dbKeysTextId").style.display = "none";
         document.getElementById("dbCreateTextId").style.display = "none";
         document.getElementById("dbCardinalTextId").style.display = "none";
@@ -1126,6 +1182,9 @@
         document.getElementById("dbIndexesTextId").style.display = "none";
         document.getElementById("dbImpExpSQLiteTextId").style.display = "none";
         document.getElementById("dbImpExpMySQLTextId").style.display = "none";
+        document.getElementById("dbImpExpPostgresTextId").style.display = "none";
+        document.getElementById("dbImpExpOracleTextId").style.display = "none";
+        document.getElementById("dbImpExpDB2TextId").style.display = "none";
 
         document.getElementById("logicalTextId").style.display = "none";
         document.getElementById("logNotationTextId").style.display = "none";
