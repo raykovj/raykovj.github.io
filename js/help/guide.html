@@ -14,7 +14,7 @@
         <div class="topBar">
             <!--<img class="logo">-->
             <div class="contentTitle">
-                <span>JDElite Flowchart Builder User Guide</span>
+                <span>JDElite Database Modeler User Guide</span>
             </div>
         </div>
         <div id="splitterId" class="splitter">
@@ -34,7 +34,20 @@
                         </ul>
                     </li>
 
-                    <li><button id="flowchartBtnId" class="caret textBtn first" onclick="selectText(event)">Flowcharts</button>
+                     <li><button id="databaseBtnId" class="caret textBtn first" onclick="selectText(event)">Database ERDs</button>
+                        <ul class="nested">
+                            <li><button id="dbKeysBtnId" class="textBtn second" onclick="selectText(event)">Primary and Foreign Keys</button></li>
+                            <li><button id="dbCreateBtnId" class="textBtn second" onclick="selectText(event)">Create a Table Node</button></li>
+                            <li><button id="dbCardinalBtnId" class="textBtn second" onclick="selectText(event)">Notations and Cardinality</button></li>
+                            <li><button id="dbCompositeBtnId" class="textBtn second" onclick="selectText(event)">Composite Keys</button></li>
+                            <li><button id="dbConstraintsBtnId" class="textBtn second" onclick="selectText(event)">Constraints</button></li>
+                            <li><button id="dbIndexesBtnId" class="textBtn second" onclick="selectText(event)">Indexes and Keys</button></li>
+                            <li><button id="dbImpExpBtnId"  class="textBtn second"
+                                        onclick="selectText(event)">Import / Export DB Scripts</button></li>
+                        </ul>
+                    </li>
+
+                   <li><button id="flowchartBtnId" class="caret textBtn first" onclick="selectText(event)">Flowcharts</button>
                         <ul class="nested">
                             <li><button id="createNodesBtnId" class="textBtn second" onclick="selectText(event)">Creating Nodes</button></li>
                             <li><button id="flowStartBtnId" class="textBtn second" onclick="selectText(event)">Start a Flowchart</button></li>
@@ -45,19 +58,6 @@
                             <li><button id="chartEditBtnId" class="textBtn second" onclick="selectText(event)">Editing the Flowchart</button></li>
                             <li><button id="decisionBtnId" class="textBtn second" onclick="selectText(event)">Decision Editing</button></li>
                             <!--<li><button id="containersBtnId" class="textBtn second" onclick="selectText(event)">Using Containers</button></li>-->
-                        </ul>
-                    </li>
-
-                    <li><button id="databaseBtnId" class="caret textBtn first" onclick="selectText(event)">Database ERDs</button>
-                        <ul class="nested">
-                            <li><button id="dbKeysBtnId" class="textBtn second" onclick="selectText(event)">Primary and Foreign Keys</button></li>
-                            <li><button id="dbCreateBtnId" class="textBtn second" onclick="selectText(event)">Create a Table Node</button></li>
-                            <li><button id="dbCardinalBtnId" class="textBtn second" onclick="selectText(event)">Notations and Cardinality</button></li>
-                            <li><button id="dbCompositeBtnId" class="textBtn second" onclick="selectText(event)">Composite Keys</button></li>
-                            <li><button id="dbConstraintsBtnId" class="textBtn second" onclick="selectText(event)">Constraints</button></li>
-                            <li><button id="dbIndexesBtnId" class="textBtn second" onclick="selectText(event)">Indexes and Keys</button></li>
-                            <li><button id="dbImpExpBtnId"  class="textBtn second"
-                                        onclick="selectText(event)">Import / Export DB Scripts</button></li>
                         </ul>
                     </li>
 
@@ -77,8 +77,8 @@
             <div id="rightId">
                 <div style="margin-top: 40px; "></div>
                 <div id="prefaceTextId" class="contentText">
-                    <p><b>JDElite Flowchart Builder</b> offers design and modeling solutions for a wide variety of use cases.
-                        The sections in this guide demonstrate the features of JDElite Flowchart Builder through
+                    <p><b>JDElite Database Modeler</b> offers design and modeling solutions for a wide variety of use cases.
+                        The sections in this guide demonstrate the features of JDElite Database Modeler through
                         screenshots and  short video clips. The <b>EXPLORE mode</b> has all of the built-in features.
                         The only difference from the <b>Full Functionality mode</b> is that there is no access to the
                         proprietary built-in <b>file browser</b> and respectively to the file system. You can
@@ -213,7 +213,7 @@
                         diagrams, in JSON format, can be saved in the existing folders or in newly created ones. Currently
                         the file browser works under <b>Windows</b>. The server connection uses <b>node.js</b>.</p>
                     <p><b>NOTE</b>: Due to some current limitations of <b>node.js</b> libraries, the file browser can
-                        access only the file structure or the disk partition where the JDElite Flowchart Builder is installed
+                        access only the file structure or the disk partition where the JDElite Database Modeler is installed
                         and launched from. Files and folders with names containing spaces are excluded. </p>
                     <br>
                     <p>A view of the browser in <b>OPEN</b> mode:</p><br>
@@ -498,7 +498,7 @@
                 <!-- DB -->
 
                 <div id="databaseTextId" class="contentText" style="margin-top: -20px;">
-                    <p><b>IMPORTANT</b>: <b>JDElite Flowchart Builder</b> is self-contained and does not require any database server.
+                    <p><b>IMPORTANT</b>: <b>JDElite Database Modeler</b> is self-contained and does not require any database server.
                         It processes data from files and stores the results in files.</p><br>
                     <p>The <b>Database ERDs</b> (entity-relationship diagrams) represent the databases physical structure.
                         In essence, an ER diagram contains two object types: <b>entities</b> and <b>relationships</b>.
@@ -507,14 +507,14 @@
                         entities are modeled as links between the nodes.</p><br>
                     <p>The current relational databases on the market use as a common language the <b>SQL</b>, however they
                         all have certain implementation differences. In order to reconcile them for a unified
-                        ERD design, <b>JDElite Flowchart Builder</b> provides a <b>common UI</b> and handles the differences
+                        ERD design, <b>JDElite Database Modeler</b> provides a <b>common UI</b> and handles the differences
                         internally. Here we introduce the basic concepts of relational databases. For the full understanding
                         of all details, you should consult the corresponding database documentation. Otherwise
-                        <b>JDElite Flowchart Builder</b> covers all intricacies of <b>SQL Server</b>, <b>Oracle</b>, <b>MySQL</b>, <b>PostgreSQL</b>,
+                        <b>JDElite Database Modeler</b> covers all intricacies of <b>SQL Server</b>, <b>Oracle</b>, <b>MySQL</b>, <b>PostgreSQL</b>,
                         <b>DB2</b>, and <b>SQLite</b>  databases.</p><br>
-                    <p>An ERD created in <b>JDElite Flowchart Builder</b> is saved as a file in <b>JSON</b> format. The diagram
+                    <p>An ERD created in <b>JDElite Database Modeler</b> is saved as a file in <b>JSON</b> format. The diagram
                         can be exported to a specific <b>SQL</b> script ready to be used to create the corresponding database schema.
-                        Vice versa, a database <b>SQL</b> schema script can be imported to <b>JDElite Flowchart Builder</b>,
+                        Vice versa, a database <b>SQL</b> schema script can be imported to <b>JDElite Database Modeler</b>,
                         translated to a <b>JSON</b> diagram file, visualized and modified as needed.</p><br>
                     <p>Database tables contain <b>records</b> (table <b>rows</b>) and <b>columns</b>. A table record is an instance of the
                         represented entity. All records in a table have identical structure. For example, the records in
@@ -529,7 +529,7 @@
                         data type, data length, etc. In the above example,
                         the record fields in the <b>CUSTOMER</b> table are <b>customer_id</b>, <b>first_name</b>,  <b>middle_name</b>
                         and <b>last_name</b>. These are the database table column names.</p><br>
-                    <p>Each ERD node in <b>JDElite Flowchart Builder</b> represents the structure of a database table in its
+                    <p>Each ERD node in <b>JDElite Database Modeler</b> represents the structure of a database table in its
                         own table form. The rows in the diagram node table correspond to the database table columns,
                         and the columns in the diagram node table correspond to the database column properties.</p><br>
 
@@ -790,7 +790,7 @@
 
                 <div id="dbImpExpTextId" class="contentText" style="margin-top: -20px;">
                     <p>
-                        JDElite Flowchart Builder supports the import of database schema scripts in <b>SQL</b> format
+                        JDElite Database Modeler supports the import of database schema scripts in <b>SQL</b> format
                         of several databases: <b>SQL Server</b>, <b>Oracle</b>, <b>MySQL</b>, <b>PostgreSQL</b>, <b>DB2</b>, <b>SQLite</b>.
                         The <b>ERDs</b> of these databases can be exported to schema scripts in <b>SQL</b> format as well.<br>
                         There are built-in ERD test templates for these databases. You can make changes to a template,

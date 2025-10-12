@@ -11,7 +11,7 @@
     <script data-main="js/flowdemo" src="libs/require/require.js"></script>
     <link rel="stylesheet" href="libs/spectrum/spectrum.css"  type="text/css"/>
 
-    <title>JDElite Flowchart Builder</title>
+    <title>JDElite Database Modeler</title>
 
 </head>
  
@@ -39,9 +39,10 @@
         <div id="toolbarHId">
             <button id="menuId" class="toolbar-button button-menu" data-toggle="tooltip" title="Main Menu..."></button>
             <button id="newId" class="toolbar-button button-no-left button-new" data-toggle="tooltip" title="Start Here..."></button>
+            <button id="templateId" class="toolbar-button button-no-left button-template" data-toggle="tooltip" title="Open Template..."></button>
             <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open File Browser..."></button>
-            <button id="templateId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Open Template..."></button>
-            <button id="inOutId" class="toolbar-button button-no-left button-export" data-toggle="tooltip" title="Export DB..."></button>
+            <button id="importId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Import DB..."></button>
+            <button id="exportId" class="toolbar-button button-no-left button-export" data-toggle="tooltip" title="Export DB..."></button>
             <button id="undoId" class="toolbar-button button-no-left button-undo" data-toggle="tooltip" title="Undo"></button>
             <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
             <button id="deleteId" class="toolbar-button button-no-left button-delete" data-toggle="tooltip" title="Remove Selections"></button>
@@ -661,12 +662,19 @@
     </div>
 
     <!-- ///////////////// -->
+    <!-- TITLE PAGE -->
+    <!-- ///////////////// -->
+    <div id=titlePageId" >
+
+    </div>
+
+    <!-- ///////////////// -->
     <!-- START PAGE -->
     <!-- ///////////////// -->
     <div id="startPageId" class="startPage">
-        <button id="startLogoBtnId" class="startLogoBtn"></button>
+        <!--<button id="startLogoBtnId" class="startLogoBtn"></button>-->
         <div id="startPageTopId" class="startPageHeader">
-            <!--<button id="startLogoBtnId" class="startLogoBtn"></button>-->
+            <button id="startLogoBtnId" class="startLogoBtn"></button>
             <div class="startJDEtitle" data-bind="text: startTitle()"></div>
         </div>
 
@@ -682,14 +690,6 @@
                     <span class="startDiagramTitle"
                         data-bind="html: startFlowTitle()"></span>
                 </div>
-                <!--<div id="tabERDId" class="startDiagramTab">-->
-                    <!--<span class="startDiagramTitle"-->
-                          <!--data-bind="html: startERDTitle()"></span>-->
-                <!--</div>-->
-                <!--<div id="tabLOGId" class="startDiagramTab">-->
-                    <!--<span class="startDiagramTitle"-->
-                          <!--data-bind="html: startLOGTitle()"></span>-->
-                <!--</div>-->
             </div>
 
             <!-- ERD-->
@@ -728,45 +728,6 @@
                             title="Select">Open a flowchart</button>
                 </div>
             </div>
-
-            <!--&lt;!&ndash; ERD&ndash;&gt;-->
-            <!--<div id="contentERDId" class="startDiagramContent" data-bind="visible: erdTabVisible">-->
-                <!--&lt;!&ndash;<div><img class="startDBImg" /></div>&ndash;&gt;-->
-                <!--<div>-->
-                    <!--<button id="btnCreateERDId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Start a new database ERD</button>-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<button id="btnTemplateERDId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Go to template</button>-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<button id="btnOpenERDId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Open a database ERD</button>-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<button id="btnInOutERDId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Import DB script</button>-->
-                <!--</div>-->
-            <!--</div>-->
-
-            <!-- LOG-->
-            <!--<div id="contentLOGId" class="startDiagramContent" data-bind="visible: logTabVisible">-->
-                <!--<div><img class="startLOGImg" /></div>-->
-                <!--<div style="margin-top: 6px;"></div>-->
-                <!--<div>-->
-                    <!--<button id="btnCreateLOGId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Start a new logical ERD</button>-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<button id="btnTemplateLOGId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Go to template</button>-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<button id="btnOpenLOGId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Open a logical ERD</button>-->
-                <!--</div>-->
-            <!--</div>-->
 
         </div>
 
@@ -875,16 +836,6 @@
             <div id="dbTemplatesId" data-bind="visible: erdTabVisible">
                 <select id="dbMenuId"
                         data-bind=" options: dbTemplates, optionsText: 'label', optionsValue: 'value'">
-                </select>
-            </div>
-            <div id="logTemplatesId" data-bind="visible: logTabVisible">
-                <select id="logMenuId"
-                        data-bind=" options: logTemplates, optionsText: 'label', optionsValue: 'value'">
-                </select>
-            </div>
-            <div id="procTemplatesId" data-bind="visible: procTabVisible">
-                <select id="procMenuId"
-                        data-bind=" options: procTemplates, optionsText: 'label', optionsValue: 'value'">
                 </select>
             </div>
         </div>

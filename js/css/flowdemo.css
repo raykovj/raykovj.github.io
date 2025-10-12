@@ -1187,6 +1187,17 @@ label {
 	
 	foreground-color: #195aee;
 }
+.titlePage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	
+	visibility: hidden;
+	display: grid;
+	grid-template-columns: 8px auto 80px;
+	grid-template-rows: 2px 42px 74px 140px 238px 30px;
+}
 .startPage {
 	position: absolute;
 	top: 0;
@@ -1197,7 +1208,7 @@ label {
 	color: #08105d;
 	display: grid;
 	grid-template-columns: 8px auto 80px;
-	grid-template-rows: 2px 42px 74px 140px 238px 30px;
+	grid-template-rows: 2px 64px 44px 140px 238px 30px;
 	
 	
 }
@@ -1285,7 +1296,7 @@ label {
 	border-radius: 2px;
 	background-color: #efffff;
 	width: 470px;
-	height: 168px;
+	height: 186px;
 	padding: 10px 4px 20px 30px;
 }
 .startDiagramText {
@@ -1673,8 +1684,11 @@ label {
 .button-open {
 	background-image: url(../../images/toolbar/open24.png);
 }
-.button-import {
+.button-template {
 	background-image: url(../../images/toolbar/template24.png);
+}
+.button-import {
+	background-image: url(../../images/toolbar/import24.png);
 }
 .button-export {
 	background-image: url(../../images/toolbar/export24.png);
