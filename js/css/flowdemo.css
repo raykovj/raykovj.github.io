@@ -607,6 +607,15 @@ label {
 	visibility: hidden;
 	z-index: 20;
 }
+.dbTipContainer {
+	position: absolute;
+	outline: none;
+	width: 320px;
+	height: 320px;
+	border: 1px solid green;
+	visibility: hidden;
+	z-index: 20;
+}
 .inlineAreaContainer {
 	position: absolute;
 	outline: none;
@@ -1261,7 +1270,7 @@ label {
 }
 .titleModeBox {
 	display: flex;
-	margin: 20px 0 10px 0;
+	margin: 20px 0 20px 0;
 	
 }
 .titleModeButton {
@@ -1287,7 +1296,6 @@ label {
 	cursor: pointer;
 }
 .titleDiagramText {
-	
 	font-family: Arial;
 	font-size: 16px;
 	font-weight: bold;
@@ -1302,7 +1310,6 @@ label {
 	margin: 10px 0 10px 0;
 }
 .titleMsgSelect {
-	
 	height: 70px;
 }
 .titleSelectText {
@@ -1310,16 +1317,13 @@ label {
 }
 .titleDBSelect {
 	display: none;
-	
 	height: 68px;
 }
 .erdActions {
-	
 	display: none;
 	height: 120px;
 }
 .flowActions {
-	
 	display: none;
 	height: 120px;
 }

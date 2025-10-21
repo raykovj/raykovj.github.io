@@ -705,10 +705,10 @@
                 </div>
             </div>
 
-            <div id="titleMsgSelectId" class="titleActions titleMsgSelect"
-                data-bind="visible: !erdTabVisible() && !flowTabVisible()">
-                <div class="titleSelectText" data-bind="html: titleSelectText()"></div>
-            </div>
+            <!--<div id="titleMsgSelectId" class="titleActions titleMsgSelect"-->
+                <!--data-bind="visible: !erdTabVisible() && !flowTabVisible()">-->
+                <!--<div class="titleSelectText" data-bind="html: titleSelectText()"></div>-->
+            <!--</div>-->
 
             <div id="titleDBSelectId" class="titleActions titleDBSelect">
                 <div class="settings-entry titleDiagramText" style="margin: 10px 0 2px 12px; ">Select Database:</div>
@@ -747,80 +747,6 @@
 
             </div>
         </div>
-
-
-    </div>
-
-    <!-- ///////////////// -->
-    <!-- START PAGE -->
-    <!-- ///////////////// -->
-    <div id="startPageId" class="startPage">
-        <!--<button id="startLogoBtnId" class="startLogoBtn"></button>-->
-        <div id="startPageTopId" class="startPageHeader">
-            <button id="startLogoBtnId" class="startLogoBtn"></button>
-            <div class="startJDEtitle" data-bind="text: startTitle()"></div>
-        </div>
-
-        <div id="selectDiagramTypeId" class="startDiagramTypes">
-
-            <!-- TABS-->
-            <div style="margin: 20px 20px;">
-                <div id="tabERDId" class="startDiagramTab">
-                    <span class="startDiagramTitle"
-                          data-bind="html: startERDTitle()"></span>
-                </div>
-                <div id="tabFlowId" class="startDiagramTab">
-                    <span class="startDiagramTitle"
-                        data-bind="html: startFlowTitle()"></span>
-                </div>
-            </div>
-
-            <!-- ERD-->
-            <div id="contentERDId" class="startDiagramContent" data-bind="visible: erdTabVisible">
-                <div>
-                    <!--<button id="btnCreateERDId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Start a new database ERD</button>-->
-                </div>
-                <div>
-                    <!--<button id="btnTemplateERDId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Go to template</button>-->
-                </div>
-                <div>
-                    <!--<button id="btnOpenERDId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Open a database ERD</button>-->
-                </div>
-                <div>
-                    <!--<button id="btnInOutERDId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Import DB script</button>-->
-                </div>
-            </div>
-
-            <!-- FLOWCHART-->
-            <div id="contentFlowId" class="startDiagramContent" data-bind="visible: flowTabVisible">
-                <div style="margin-top: 6px;"></div>
-                <div>
-                    <!--<button id="btnCreateFlowId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Start a new flowchart</button>-->
-                </div>
-                <div>
-                    <!--<button id="btnTemplateFlowId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Go to template</button>-->
-                </div>
-                <div>
-                    <!--<button id="btnOpenFlowId" class="flowTextBtn button-goRight startGoButton"-->
-                            <!--title="Select">Open a flowchart</button>-->
-                </div>
-            </div>
-
-        </div>
-
-        <div id="startDiagramBlockId" class="startDiagramTextBlock" data-bind="visible: !hideTextBlock()">
-            <div data-bind="html: diagramAllText()"></div>
-        </div>
-        <button id="btnHideBlockId" class="hideTextBtn"
-                data-bind="visible: !hideTextBlock()"
-                title="Do not show"></button>
-
     </div>
 
     <div id="infoDialogId" class="settingsFont" style="display: none; ">
@@ -1150,6 +1076,11 @@
             </div>
 
         </div>
+    </div>
+
+    <!-- DB NODE TIP -->
+    <div id="dbTipContainerId" class="dbTipContainer">
+
     </div>
 
     <div id="inlineInputContainerId" class="inlineInputContainer">
