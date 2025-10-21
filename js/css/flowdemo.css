@@ -1192,11 +1192,172 @@ label {
 	top: 0;
 	left: 0;
 	width: 100%;
-	
 	visibility: hidden;
+	color: #08105d;
 	display: grid;
-	grid-template-columns: 8px auto 80px;
-	grid-template-rows: 2px 42px 74px 140px 238px 30px;
+	grid-template-columns: 8px 200px auto 80px;
+	
+}
+.titlePageHeader {
+	margin: 0 20px 0 38px;
+	padding: 0 20px 0 0;
+	display: flex;
+	grid-column: 1/span 3;
+	
+	width: 96%;
+	height: 84px;
+	background-color: #fff9d8;
+	justify-self: left;
+	border: 1px solid #153bcc;
+}
+.titleLogoBtn {
+	grid-column:  1;
+	grid-row: 2;
+	border: none;
+	outline: none;
+	height: 75px;
+	width: 100px;
+	background-image: url(../../images/splash/logo100.png);
+	background-repeat: no-repeat;
+	background-color: #fff9d8; // #ffe9a4;
+	margin-left: 22px;
+}
+.titleERD-img {
+	height: 32px;
+	width: 32px;
+	background-image: url(../../images/dataflow/database32.png);
+	background-repeat: no-repeat;
+}
+.titleFlow-img {
+	height: 32px;
+	width: 32px;
+	background-image: url(../../images/dataflow/flowchart32.png);
+	background-repeat: no-repeat;
+}
+.titleJDE {
+	text-align: center;
+	font-family: Arial;
+	font-size: 24px;
+	font-weight: bold;
+	color: #1a1acc;
+	margin: 0 0 0 10px;
+}
+.titleTopText {
+	grid-column: 1/span 3;
+	margin: 0 0 0 20px;
+	
+	justify-self: left;
+	width: 100%;
+	height: 74px;
+	padding: 10px 4px 20px 30px;
+}
+.titlePageHLine {
+	margin: 10px 0 10px 0;
+	grid-column: 2/span 3;
+	
+	width: 96%;
+	height: 1px;
+	border-top: 1px solid #1a1acc;
+}
+.titleModeBox {
+	display: flex;
+	margin: 20px 0 10px 0;
+	
+}
+.titleModeButton {
+	border: 1px solid #1a1acc;
+	
+	border-radius: 2px;
+	background-color: #fff;
+	width: 250px;
+	height: 70px;
+	padding: 10px 0 4px 10px;
+}
+.titleModeButton:hover {
+	
+	cursor: pointer;
+}
+.titleModeButton:disabled {
+	background-color: #ffffff;
+	cursor: default;
+	opacity: 0.5;
+}
+.titleModeButton:active {
+	
+	cursor: pointer;
+}
+.titleDiagramText {
+	
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1.5;
+	color: #0460ab;
+}
+#dbsToSelectId {
+	width: 140px;
+	height: 28px;
+}
+.titleActions {
+	margin: 10px 0 10px 0;
+}
+.titleMsgSelect {
+	
+	height: 70px;
+}
+.titleSelectText {
+	padding: 6px 0 0 40px;
+}
+.titleDBSelect {
+	display: none;
+	
+	height: 68px;
+}
+.erdActions {
+	
+	display: none;
+	height: 120px;
+}
+.flowActions {
+	
+	display: none;
+	height: 120px;
+}
+.titleActionBtn {
+	border: none;
+	outline: none;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	height: 24px;
+	width: 250px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: left;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+	padding-left: 26px;
+	margin: 4px 10px 0 10px;
+	color: #574fa0;
+}
+.titleActionBtn:hover {
+	background-color: #a2cAFF;
+}
+.titleActionBtn:active {
+	background-color: #82AAFA;
+}
+.titleActionBtn:disabled {
+	background-color: #ffffff;
+	cursor: default;
+	opacity: 0.5;
+}
+.titleBottomText {
+	
+	justify-self: left;
+	width: 96%;
+	
+	padding: 0 4px 20px 10px;
 }
 .startPage {
 	position: absolute;
@@ -1252,12 +1413,11 @@ label {
 	color: #574fa0;
 }
 .startJDEtitle {
-	
 	text-align: center;
 	font-family: Arial;
 	font-size: 24px;
 	font-weight: bold;
-	color: #08105d;
+	color: #1a1acc;
 	margin: 20px 0 0 30px;
 }
 .startDiagramTab {
@@ -1300,10 +1460,10 @@ label {
 	padding: 10px 4px 20px 30px;
 }
 .startDiagramText {
-	margin: 2px 16px 0 0;
+	margin: 6px 16px 0 4px;
 	font-family: Arial;
 	font-size: 16px;
-	
+	font-weight: bold;
 	line-height: 1.5;
 	
 	color: #0400a0;
@@ -1661,6 +1821,12 @@ label {
 }
 .componentItem:hover {
 	background-color: #82AAFA;
+}
+.btn-titleERD {
+	background-image: url(../../images/dataflow/database32.png);
+}
+.btn-titleFlow {
+	background-image: url(../../images/dataflow/flowchart32.png);
 }
 .button-menu {
 	background-image: url(../../images/toolbar/menu24.png);

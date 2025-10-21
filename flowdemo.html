@@ -41,7 +41,7 @@
             <button id="newId" class="toolbar-button button-no-left button-new" data-toggle="tooltip" title="Start Here..."></button>
             <button id="templateId" class="toolbar-button button-no-left button-template" data-toggle="tooltip" title="Open Template..."></button>
             <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open File Browser..."></button>
-            <button id="importId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Import DB..."></button>
+            <!--<button id="importId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Import DB..."></button>-->
             <button id="exportId" class="toolbar-button button-no-left button-export" data-toggle="tooltip" title="Export DB..."></button>
             <button id="undoId" class="toolbar-button button-no-left button-undo" data-toggle="tooltip" title="Undo"></button>
             <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
@@ -281,8 +281,8 @@
                 <!--<li><a href="#settingsTabId-2">Node Size</a></li>-->
                 <li><a href="#settingsTabId-3">Colors</a></li>
                 <li><a href="#settingsTabId-4">Node Icons</a></li>
-                <li><a href="#settingsTabId-5">Schemes</a></li>
-                <!--<li><a href="#settingsTabId-6">Integration</a></li>-->
+                <!--<li><a href="#settingsTabId-5">Database</a></li>-->
+                <li><a href="#settingsTabId-6">Themes</a></li>
             </ul>
 
             <div id="settingsTabId-1">
@@ -610,16 +610,21 @@
                 <div class="settings-footer-4"></div>
             </div>
 
-            <div id="settingsTabId-5" >
-                <div class="settings-entry" style="margin: 12px 0 4px 0;">Select Scheme:</div>
+            <!--<div id="settingsTabId-5">-->
+                <!--<div class="settings-entry" style="margin: 12px 0 4px 0;">Database:</div>-->
+
+            <!--</div>-->
+
+            <div id="settingsTabId-6" >
+                <div class="settings-entry" style="margin: 12px 0 4px 0;">Select Theme:</div>
                 <div class="nodeProps-controls">
                     <select id="settingSchemesId" class="settingsSchemeMenu"
                             data-bind="options: settingsSchemes, optionsValue: 'value' ">
                     </select>
-                    <button id="btnDeleteSchemeId" class="prefs-button btnSettingsScheme">Delete Scheme</button>
+                    <button id="btnDeleteSchemeId" class="prefs-button btnSettingsScheme">Delete Theme</button>
                     <!--<button id="btnConfirmSchemeId" class="prefs-button btnSettingsScheme2">Confirm Selection</button>-->
                 </div>
-                <div class="settings-entry" style="margin: 18px 0 4px 0;">Enter New Scheme Name:</div>
+                <div class="settings-entry" style="margin: 18px 0 4px 0;">Enter New Theme Name:</div>
                 <div class="nodeProps-controls" style="display: flex;">
                     <div>
                         <input id="newSchemeId" type="text" class="schemeName" autofocus
@@ -633,7 +638,7 @@
                                   data-bind="visible: isSchemeNameInvalid(), text: validateSchemeMessage()"></span>
                         </div>
                     </div>
-                    <button id="btnSaveSchemeId" class="prefs-button btnSettingsSchemeSave">Save Scheme</button>
+                    <button id="btnSaveSchemeId" class="prefs-button btnSettingsSchemeSave">Save Theme</button>
                 </div>
                 <div class="settings-footer-5"></div>
             </div>
@@ -664,7 +669,85 @@
     <!-- ///////////////// -->
     <!-- TITLE PAGE -->
     <!-- ///////////////// -->
-    <div id=titlePageId" >
+    <div id="titlePageId" class="titlePage">
+        <div id="titlePageTopId" class="titlePageHeader">
+            <button class="titleLogoBtn"></button>
+            <div class="titleJDE" style="padding-top: 6px;" data-bind="text: startTitle()"></div>
+        </div>
+
+        <div id="titleTopTextId" class="titleTopText">
+            <div data-bind="html: titleTopText()"></div>
+            <!--<div class="titlePageHLine"></div>-->
+            <div id="titleModeId" class="titleModeBox">
+                <div style="display: block;">
+
+                    <div id="titleERDId" class="titleModeButton">
+                        <div style="display: flex;">
+                            <div class="titleERD-img"> </div>
+                            <span class="titleJDE" data-bind="html: startERDTitle()"></span>
+                        </div>
+                        <div class="titleDiagramText">
+                            <span data-bind="html: getERDText()"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: block;">
+                    <div id="titleFlowId" class="titleModeButton" style="margin-left: 8px;">
+                        <div style="display: flex;">
+                            <div class="titleFlow-img"> </div>
+                            <span class="titleJDE" data-bind="html: startFlowTitle()"></span>
+                        </div>
+                        <div class="titleDiagramText">
+                            <span  data-bind="html: getFlowText()"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="titleMsgSelectId" class="titleActions titleMsgSelect"
+                data-bind="visible: !erdTabVisible() && !flowTabVisible()">
+                <div class="titleSelectText" data-bind="html: titleSelectText()"></div>
+            </div>
+
+            <div id="titleDBSelectId" class="titleActions titleDBSelect">
+                <div class="settings-entry titleDiagramText" style="margin: 10px 0 2px 12px; ">Select Database:</div>
+                <div style="margin: 0 0 0 12px; ">
+                    <select id="dbsToSelectId" class="titleDiagramText"
+                            data-bind="options: dbsToImport,
+                                optionsText: 'label',
+                                optionsValue: 'id'">
+                    </select>
+                </div>
+
+            </div>
+
+            <div id="erdActionsId" class="titleActions erdActions">
+                <div><button id="btnCreateERDId"
+                        class="button-newDir titleActionBtn">New schema ERD</button></div>
+                <div><button id="btnTemplateERDId"
+                        class="button-template titleActionBtn">Use ERD Template</button></div>
+                <div><button id="btnOpenERDId"
+                        class="button-open titleActionBtn">Open Existing ERD</button></div>
+                <div><button id="btnInOutERDId"
+                        class="button-import titleActionBtn">Import SQL Schema</button></div>
+            </div>
+
+            <div id="flowActionsId" class="titleActions flowActions">
+                <div><button id="btnCreateFlowId"
+                        class="button-newDir titleActionBtn">New Diagram</button></div>
+                <div><button id="btnTemplateFlowId"
+                        class="button-template titleActionBtn">Use Template</button></div>
+                <div><button id="btnOpenFlowId"
+                        class="button-open titleActionBtn">Open Existing Diagram</button></div>
+            </div>
+
+            <div class="titlePageHLine"></div>
+            <div class="titleBottomText" data-bind="html: titleBottomText()">
+
+            </div>
+        </div>
+
 
     </div>
 
@@ -695,20 +778,20 @@
             <!-- ERD-->
             <div id="contentERDId" class="startDiagramContent" data-bind="visible: erdTabVisible">
                 <div>
-                    <button id="btnCreateERDId" class="flowTextBtn button-goRight startGoButton"
-                            title="Select">Start a new database ERD</button>
+                    <!--<button id="btnCreateERDId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Start a new database ERD</button>-->
                 </div>
                 <div>
-                    <button id="btnTemplateERDId" class="flowTextBtn button-goRight startGoButton"
-                            title="Select">Go to template</button>
+                    <!--<button id="btnTemplateERDId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Go to template</button>-->
                 </div>
                 <div>
-                    <button id="btnOpenERDId" class="flowTextBtn button-goRight startGoButton"
-                            title="Select">Open a database ERD</button>
+                    <!--<button id="btnOpenERDId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Open a database ERD</button>-->
                 </div>
                 <div>
-                    <button id="btnInOutERDId" class="flowTextBtn button-goRight startGoButton"
-                            title="Select">Import DB script</button>
+                    <!--<button id="btnInOutERDId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Import DB script</button>-->
                 </div>
             </div>
 
@@ -716,16 +799,16 @@
             <div id="contentFlowId" class="startDiagramContent" data-bind="visible: flowTabVisible">
                 <div style="margin-top: 6px;"></div>
                 <div>
-                    <button id="btnCreateFlowId" class="flowTextBtn button-goRight startGoButton"
-                            title="Select">Start a new flowchart</button>
+                    <!--<button id="btnCreateFlowId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Start a new flowchart</button>-->
                 </div>
                 <div>
-                    <button id="btnTemplateFlowId" class="flowTextBtn button-goRight startGoButton"
-                            title="Select">Go to template</button>
+                    <!--<button id="btnTemplateFlowId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Go to template</button>-->
                 </div>
                 <div>
-                    <button id="btnOpenFlowId" class="flowTextBtn button-goRight startGoButton"
-                            title="Select">Open a flowchart</button>
+                    <!--<button id="btnOpenFlowId" class="flowTextBtn button-goRight startGoButton"-->
+                            <!--title="Select">Open a flowchart</button>-->
                 </div>
             </div>
 
