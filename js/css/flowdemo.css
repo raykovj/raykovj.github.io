@@ -217,13 +217,9 @@ body.waiting * {
 	align-self: start;
 	justify-self: center;
 	height: 500px;
-	
-	
 	margin: 0 0 12px 0;
 	display: none;
 }
-	
-	
 .palette-hr {
 	width: 136px;
 	height: 1px;
@@ -338,7 +334,7 @@ body.waiting * {
 	width: 214px;
 	
 	
-	height: 428px;
+	
 }
 #paletteAccordionId .ui-accordion-content {
 	margin: 0 10px 0 10px;
@@ -359,7 +355,16 @@ body.waiting * {
 	border: 1px solid #3a72c1;
 	background-color: #72AAFA;
 	width: 188px;
-}
+}.paletteMsg {
+	position: relative;
+	 border: 1px solid #5F69C5;
+	 
+	 width: 184px;
+	 height: 60px;
+	 margin: 10px 10px 0 10px;
+	 padding: 4px 0 0 8px;
+	 
+ }
 .showDBSelect {
 	border: 1px solid  #3a72c1;
 	border-radius: 2px;
@@ -607,15 +612,6 @@ label {
 	visibility: hidden;
 	z-index: 20;
 }
-.dbTipContainer {
-	position: absolute;
-	outline: none;
-	width: 320px;
-	height: 320px;
-	border: 1px solid green;
-	visibility: hidden;
-	z-index: 20;
-}
 .inlineAreaContainer {
 	position: absolute;
 	outline: none;
@@ -623,6 +619,49 @@ label {
 	height: 64px;
 	visibility: hidden;
 	z-index: 20;
+}
+.dbTipContainer {
+	position: absolute;
+	outline: none;
+	width: 320px;
+	height: 294px;
+	
+	border: none;
+	visibility: hidden;
+	z-index: 20;
+}
+table#dbTipsTableId {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+table#dbTipsTableId th {
+	border: 2px solid darkgray;
+	background-color: #c8edfa;
+	padding: 2px;
+	text-align: center;
+}
+table#dbTipsTableId td {
+	border: 2px solid darkgray;
+	background-color: #fff;
+	padding: 4px;
+}
+.table#dbTipsButtonsId {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+table#dbTipsButtonsId td {
+	border: 2px solid darkgray;
+	background-color: #fff;
+	padding: 2px;
+}
+.dbTipCaption {
+	border-left:  2px solid darkgray;
+	border-right:  2px solid darkgray;
+	background-color: #c8edfa;
+	font-weight: bold;
+	padding: 4px;
 }
 .taskEditor {
 	position: absolute;

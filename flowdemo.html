@@ -87,7 +87,6 @@
                     <div class="typeSelection">
                         <button id="btnERDId" class="typeButton" data-bind="text: diagramTypeERD"></button>
                         <button id="btnFlowId" class="typeButton" data-bind="text: diagramTypeFlow"></button>
-                        <!--<button id="btnLOGId" class="typeButton" data-bind="text: diagramTypeLOG"></button>-->
                     </div>
                 </div>
                 <div style="display: inline-block;">
@@ -209,41 +208,12 @@
                         </tbody>
                     </table>
                 </div>
-                <!--&lt;!&ndash;/////////////  ERD DB  /////////////&ndash;&gt;-->
-                <!--<h3 id="accHdrERDId"  data-bind="text: accHdrERDTitle"></h3>-->
-                <!--<div id="accTableERDId">-->
-                    <!--<table id="accERDTableId" class="accordion-items galleryFont" >-->
-                        <!--<tbody data-bind="foreach: galleryERDNodes">-->
-                        <!--<tr>-->
-                            <!--<td data-bind="attr: {id}"-->
-                                <!--ondragstart="onPaletteDragStart(event)"-->
-                                <!--ondragend="onPaletteDragEnd(event)">-->
-                                <!--<img role="presentation" draggable="true" class="componentItem"-->
-                                     <!--data-bind="attr: {id: id, src: url, title: title}" />-->
-                                <!--<span style="user-select: none;" data-bind="text: label"></span>-->
-                            <!--</td>-->
-                        <!--</tr>-->
-                        <!--</tbody>-->
-                    <!--</table>-->
-                <!--</div>-->
-                <!--/////////////  ERD LOG  /////////////-->
-                <!--<h3 id="accHdrLOGId"  data-bind="text: accHdrLOGTitle"></h3>-->
-                <!--<div id="accTableLOGId">-->
-                    <!--<table id="accLOGTableId" class="accordion-items galleryFont" >-->
-                        <!--<tbody data-bind="foreach: galleryLOGNodes">-->
-                        <!--<tr>-->
-                            <!--<td data-bind="attr: {id}"-->
-                                <!--ondragstart="onPaletteDragStart(event)"-->
-                                <!--ondragend="onPaletteDragEnd(event)">-->
-                                <!--<img role="presentation" draggable="true" class="componentItem"-->
-                                     <!--data-bind="attr: {id: id, src: url, title: title}" />-->
-                                <!--<span style="user-select: none;" data-bind="text: label"></span>-->
-                            <!--</td>-->
-                        <!--</tr>-->
-                        <!--</tbody>-->
-                    <!--</table>-->
-                <!--</div>-->
             </div>
+
+            <div id="paletteMsgId" class="paletteMsg" data-bind="visible: dbPaletteVisible()">
+                <span data-bind="html: dbTipText()"></span>
+            </div>
+
         </div>
     </div>
 
@@ -318,8 +288,6 @@
 
                     <input type="checkbox" id="chkLeftRight" name="df" style="margin: 4px 4px 0 0;">
                     <label for="chkLeftRight" style="padding-top: 4px ;" >Add Side swim lanes</label>
-                    <!--<input type="checkbox" id="chkShowNodeTasks" name="portCrd" style="margin: 4px 4px 0 0;">-->
-                    <!--<label for="chkShowNodeTasks" style="padding-top: 4px ; " >Enable node tasks assignment</label>-->
                     <input type="checkbox" id="chkShowIconsId" name="showIcons" style="margin: 4px 4px 0 0;">
                     <label for="chkShowIconsId" style="padding-top: 4px ;" >Show node icons</label>
 
@@ -705,11 +673,6 @@
                 </div>
             </div>
 
-            <!--<div id="titleMsgSelectId" class="titleActions titleMsgSelect"-->
-                <!--data-bind="visible: !erdTabVisible() && !flowTabVisible()">-->
-                <!--<div class="titleSelectText" data-bind="html: titleSelectText()"></div>-->
-            <!--</div>-->
-
             <div id="titleDBSelectId" class="titleActions titleDBSelect">
                 <div class="settings-entry titleDiagramText" style="margin: 10px 0 2px 12px; ">Select Database:</div>
                 <div style="margin: 0 0 0 12px; ">
@@ -1080,7 +1043,31 @@
 
     <!-- DB NODE TIP -->
     <div id="dbTipContainerId" class="dbTipContainer">
-
+        <table id="dbTipsTableId">
+            <thead>
+                <tr>
+                    <th style="width: 50%;" >Action</th>
+                    <th style="width: 58%;" >Description</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: dbTableTips">
+                <tr>
+                    <td style="width: 50%; font-weight: bold;" data-bind="text: action"></td>
+                    <td style="width: 50%;" data-bind="text: descr"></td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="dbTipsButtonsId">
+            <caption class="dbTipCaption">Table node editor buttons:</caption>
+            <tbody data-bind="foreach: dbTableButtons">
+                <tr>
+                    <td style="width: 50%; text-align: center;">
+                        <img role="presentation" data-bind="attr: {src: url}" />
+                    </td>
+                    <td style="width: 50%;" data-bind="text: descr"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <div id="inlineInputContainerId" class="inlineInputContainer">
@@ -1433,164 +1420,6 @@
             <div style="margin-top: 16px;">
                 <button id="btnDBCardCancelId" class="prefs-button dbTableContentButtons">Close</button>
                 <button id="btnDBCardConfirmId" class="prefs-button dbTableContentButtons">Confirm</button>
-            </div>
-
-        </div>
-    </div>
-
-    <div id="tasksEditorId" class="taskEditor">
-        <div id="taskEditPanelId">
-
-            <div style="display: flex;">
-                <div>
-                    <input class="taskNodeTitle" autofocus type="text" readonly
-                           data-bind="visible: !showTaskEditorOnLeft(),
-                           textInput: '<  '+propsNodeName(),
-                           attr: {title: propsNodeName()+' / '+propsPortName()}"/>
-                    <input class="taskNodeTitle" autofocus type="text" readonly
-                           style="text-align: right;"
-                           data-bind="visible: showTaskEditorOnLeft(),
-                           textInput: propsNodeName()+' > ',
-                           attr: {title: propsNodeName()+' / '+propsPortName()}"/>
-                </div>
-            </div>
-
-            <div id="taskActionShowId" class="taskItem" style="" data-bind="visible: showTaskAction()">
-                <div class="settings-entry">
-                    <input id="btnActionId" type="radio" name="tasksMode" style="margin: 4px 2px 4px 2px;">
-                    <label for="btnActionId" style="vertical-align: 20%; margin: 4px 2px 4px 2px;">Actions</label>
-                </div>
-                <div id="taskActionListId" class="taskListSelection" data-bind="visible: taskActionSelected()">
-                    <select id="nodeActionId" class="taskListMenu"
-                            data-bind="options: nodeActionList,
-                                optionsText: 'label',
-                                optionsValue: 'value'">
-                    </select>
-                    <div class="taskEditGrid">
-                        <span class="settings-entry" style="margin: 4px 0 4px 0; grid-column: 1;">Edit Actions:</span>
-                        <button id="btnAddActionsId" class=" taskSelectBtn button-add" style="grid-column: 2;"
-                                data-toggle="tooltip" title="Add Seleced Action"></button>
-                        <button id="btnClearActionsId" class=" taskSelectBtn button-delete" style="grid-column: 3;"
-                                data-toggle="tooltip" title="Clear All Actions"></button>
-                    </div>
-                    <textarea id="taskActionInputId" placeholder="[Enter content...]" autofocus rows="3" cols="28"
-                              wrap="hard" spellcheck="false" class="noresizeTextArea"></textarea>
-                </div>
-            </div>
-
-            <div id="taskServiceShowId" class="taskItem" style="margin-top: 2px;" data-bind="visible: showTaskService()">
-                <div class="settings-entry">
-                    <input id="btnServiceId" type="radio" name="tasksMode" style="margin: 4px 2px 4px 2px;">
-                    <label for="btnServiceId" style="vertical-align: 20%; margin: 4px 2px 4px 2px;">Services</label>
-                </div>
-                <div id="taskServiceListId" class="taskListSelection" data-bind="visible: taskServiceSelected()">
-                    <select id="nodeServiceId" class="taskListMenu"
-                            data-bind="options: nodeServiceList,
-                                optionsText: 'label',
-                                optionsValue: 'value'">
-                    </select>
-                    <div class="taskEditGrid">
-                        <spanv class="settings-entry" style="margin: 4px 0 4px 0; grid-column: 1;">Edit Services:</spanv>
-                        <button id="btnAddServicesId" class=" taskSelectBtn button-add" style="grid-column: 2;"
-                                data-toggle="tooltip" title="Add Selected Service"></button>
-                        <button id="btnClearServicesId" class=" taskSelectBtn button-delete" style="grid-column: 3;"
-                                data-toggle="tooltip" title="Clear All Services"></button>
-                    </div>
-                    <textarea id="taskServiceInputId" placeholder="[Enter content...]" autofocus rows="3" cols="28"
-                              wrap="hard" spellcheck="false" class="noresizeTextArea"></textarea>
-                </div>
-            </div>
-
-            <div id="taskSubscribeShowId" class="taskItem" style="margin-top: 2px;" data-bind="visible: showTaskSubscribe()">
-                <div class="settings-entry">
-                    <input id="btnSubscribeId" type="radio" name="tasksMode" style="margin: 4px 2px 4px 2px;">
-                    <label for="btnSubscribeId" style="vertical-align: 20%; margin: 4px 2px 4px 2px;">Subscribe</label>
-                </div>
-                <div id="taskSubscribeListId" class="taskListSelection" data-bind="visible: taskSubscribeSelected()">
-                    <select id="nodeSubscribeId" class="taskListMenu"
-                            data-bind="options: nodeSubscribeList,
-                                optionsText: 'label',
-                                optionsValue: 'value'">
-                    </select>
-                    <div class="taskEditGrid">
-                        <span class="settings-entry" style="margin: 4px 0 4px 0; grid-column: 1;">Edit Subscribe:</span>
-                        <button id="btnAddSubscribeId" class=" taskSelectBtn  button-add" style="grid-column: 2;"
-                                data-toggle="tooltip" title="Add Selected Subscribe"></button>
-                        <button id="btnClearSubscribeId" class=" taskSelectBtn  button-delete" style="grid-column: 3;"
-                                data-toggle="tooltip" title="Clear All Subscribe"></button>
-                    </div>
-                    <textarea id="taskSubscribeInputId" placeholder="[Enter content...]" autofocus rows="3" cols="28"
-                              wrap="hard" spellcheck="false" class="noresizeTextArea"></textarea>
-                </div>
-            </div>
-
-            <div id="taskPublishShowId" class="taskItem" style="margin-top: 2px;" data-bind="visible: showTaskPublish()">
-                <div class="settings-entry">
-                    <input id="btnPublishId" type="radio" name="tasksMode" style="margin: 4px 2px 4px 2px;">
-                    <label for="btnPublishId" style="vertical-align: 20%; margin: 4px 2px 4px 2px;">Publish</label>
-                </div>
-                <div id="taskPublishListId" class="taskListSelection" data-bind="visible: taskPublishSelected()">
-                    <select id="nodePublishId" class="taskListMenu"
-                            data-bind="options: nodePublishList,
-                                optionsText: 'label',
-                                optionsValue: 'value'">
-                    </select>
-                    <div class="taskEditGrid">
-                        <span class="settings-entry" style="margin: 4px 0 4px 0; grid-column: 1;">Edit Publish:</span>
-                        <button id="btnAddPublishId" class=" taskSelectBtn button-add" style="grid-column: 2;"
-                                data-toggle="tooltip" title="Add Selected Publish"></button>
-                        <button id="btnClearPublishId" class=" taskSelectBtn button-delete" style="grid-column: 3;"
-                                data-toggle="tooltip" title="Clear All Publish"></button>
-                    </div>
-                    <textarea id="taskPublishInputId" placeholder="[Enter content...]" autofocus rows="3" cols="28"
-                              wrap="hard" spellcheck="false" class="noresizeTextArea"></textarea>
-                </div>
-            </div>
-
-            <div id="taskOperationShowId" class="taskItem" style="margin-top: 2px;" data-bind="visible: showTaskOperation()">
-                <div class="settings-entry">
-                    <input id="btnOperationId" type="radio" name="tasksMode" style="margin: 4px 2px 4px 2px;">
-                    <label for="btnOperationId" style="vertical-align: 20%; margin: 4px 2px 4px 2px;">Operations</label>
-                </div>
-                <div id="taskOperationListId" class="taskListSelection" data-bind="visible: taskOperationSelected()">
-                    <select id="nodeOperationId" class="taskListMenu"
-                            data-bind="options: nodeOperationList,
-                                optionsText: 'label',
-                                optionsValue: 'value'">
-                    </select>
-                    <div class="taskEditGrid">
-                        <span class="settings-entry" style="margin: 4px 0 4px 0; grid-column: 1;">Edit Operations:</span>
-                        <button id="btnAddOperationsId" class=" taskSelectBtn button-add" style="grid-column: 2;"
-                                data-toggle="tooltip" title="Add Selected  Operation"></button>
-                        <button id="btnClearOperationsId" class=" taskSelectBtn button-delete" style="grid-column: 3;"
-                                data-toggle="tooltip" title="Clear All Operations"></button>
-                    </div>
-                    <textarea id="taskOperationInputId" placeholder="[Enter content...]" autofocus rows="3" cols="28"
-                              wrap="hard" spellcheck="false" class="noresizeTextArea"></textarea>
-                </div>
-            </div>
-
-            <div id="taskExpressionShowId" class="taskItem" style="margin_top: 2px;" data-bind="visible: showTaskExpression()">
-                <div class="settings-entry">
-                    <input id="btnExpressionId" type="radio" name="tasksMode" style="margin: 4px 2px 4px 2px;">
-                    <label for="btnExpressionId" style="vertical-align: 20%; margin: 4px 2px 4px 2px;">Expressions</label>
-                </div>
-                <div id="taskExpressionListId" class="taskListSelection" data-bind="visible: taskExpressionSelected()">
-                    <div class="taskEditGrid">
-                        <span class="settings-entry" style="margin: 4px 0 4px 0; grid-column: 1;">Enter / Edit Expressions:</span>
-                        <!--<button id="btnAddExpressionsId" class=" taskSelectBtn button-add" style="grid-column: 2;"-->
-                                <!--data-toggle="tooltip" title="Clear All Expressions"></button>-->
-                        <button id="btnClearExpressionsId" class=" taskSelectBtn button-delete" style="grid-column: 3;"
-                                data-toggle="tooltip" title="Clear All Expressions"></button>
-                    </div>
-                    <textarea id="taskExpressionInputId" placeholder="[Enter content...]" autofocus rows="3" cols="28"
-                              wrap="hard" spellcheck="false" class="noresizeTextArea"></textarea>
-                </div>
-            </div>
-
-            <div style="margin-top: 6px;">
-                <button id="btnTaskCancelId" class="prefs-button dbTableContentButtons">Close</button>
-                <button id="btnTaskConfirmId" class="prefs-button dbTableContentButtons">Confirm</button>
             </div>
 
         </div>
