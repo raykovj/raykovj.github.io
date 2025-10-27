@@ -1047,7 +1047,7 @@
             <thead>
                 <tr>
                     <th style="width: 50%;" >Action</th>
-                    <th style="width: 58%;" >Description</th>
+                    <th style="width: 50%;" >Description</th>
                 </tr>
             </thead>
             <tbody data-bind="foreach: dbTableTips">
@@ -1061,10 +1061,10 @@
             <caption class="dbTipCaption">Table node editor buttons:</caption>
             <tbody data-bind="foreach: dbTableButtons">
                 <tr>
-                    <td style="width: 50%; text-align: center;">
+                    <td style="text-align: center;" class="dbTipWidth">
                         <img role="presentation" data-bind="attr: {src: url}" />
                     </td>
-                    <td style="width: 50%;" data-bind="text: descr"></td>
+                    <td class="dbTipWidth" data-bind="text: descr"></td>
                 </tr>
             </tbody>
         </table>
