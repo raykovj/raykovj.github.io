@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns:title="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@
         </div>
         <button id="shutdownId" class="toolbar-button shutdown-button" data-toggle="tooltip"
                 title="Shutdown Server and Exit"></button>
-        <div class="diagram-title" style="margin: 0 0 0 0px;">
+        <div class="diagram-title" style="margin: 0 0 0 0;">
             <span class="selectionFont">Diagram:</span>
         </div>
         <div >
@@ -35,38 +35,126 @@
                   data-bind="text: diagramDisplayName()"></span>
         </div>
     </div>
-    <div id="navbarId">
-        <div id="toolbarHId">
-            <button id="menuId" class="toolbar-button button-menu" data-toggle="tooltip" title="Main Menu..."></button>
-            <button id="newId" class="toolbar-button button-no-left button-new" data-toggle="tooltip" title="Start Here..."></button>
-            <button id="templateId" class="toolbar-button button-no-left button-template" data-toggle="tooltip" title="Open Template..."></button>
-            <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open File Browser..."></button>
-            <!--<button id="importId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Import DB..."></button>-->
-            <button id="exportId" class="toolbar-button button-no-left button-export" data-toggle="tooltip" title="Export DB..."></button>
-            <button id="undoId" class="toolbar-button button-no-left button-undo" data-toggle="tooltip" title="Undo"></button>
-            <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
-            <button id="deleteId" class="toolbar-button button-no-left button-delete" data-toggle="tooltip" title="Remove Selections"></button>
-            <button id="copyId" class="toolbar-button button-no-left button-copy" data-toggle="tooltip" title="Copy Selections"></button>
-            <button id="pasteId" class="toolbar-button button-no-left button-paste" data-toggle="tooltip" title="Paste Selections"></button>
-            <button id="saveId" class="toolbar-button button-no-left button-save" data-toggle="tooltip" title="Save"></button>
-            <button id="saveAsId" class="toolbar-button button-no-left button-saveAs" data-toggle="tooltip" title="Save As..."></button>
-            <button id="refreshId" class="toolbar-button button-no-left button-refresh" data-toggle="tooltip" title="Refresh Diagram & Reset Scaling"></button>
-            <button id="findId" class="toolbar-button button-no-left button-find" data-toggle="tooltip"
-                    title="Search Node... &nbsp;&nbsp;Ctrl+Shift+F"></button>
-            <button id="clearId" class="toolbar-button button-no-left button-clear" data-toggle="tooltip" title="Clear Diagram"></button>
-            <button id="leftId" class="toolbar-button button-no-left button-left" data-toggle="tooltip" title="Previous Diagram"></button>
-            <button id="rightId" class="toolbar-button button-no-left button-right" data-toggle="tooltip" title="Next Diagram"></button>
-            <button id="configId" class="toolbar-button button-no-left button-config" data-toggle="tooltip" title="Settings..."></button>
-            <button id="helpId" class="toolbar-button button-no-left button-help" data-toggle="tooltip" title="Help..."></button>
-        </div>
-    </div>
 
     <div id="topContainerId">
         <div id="leftColumnId" >
             <button id="tbVButtonId"></button>
-            <div id="toolbarVId"></div>
+            <div id="toolbarVId">
+                <button id="menuId" class="toolbar-button button-menu" data-toggle="tooltip" title="Main Menu..."></button>
+                <button id="newId" class="toolbar-button button-no-left button-new" data-toggle="tooltip" title="Start Here..."></button>
+                <button id="templateId" class="toolbar-button button-no-left button-template" data-toggle="tooltip" title="Open Template..."></button>
+                <button id="openId" class="toolbar-button button-no-left button-open" data-toggle="tooltip" title="Open File Browser..."></button>
+                <!--<button id="importId" class="toolbar-button button-no-left button-import" data-toggle="tooltip" title="Import DB..."></button>-->
+                <button id="exportId" class="toolbar-button button-no-left button-export" data-toggle="tooltip" title="Export DB..."></button>
+                <button id="undoId" class="toolbar-button button-no-left button-undo" data-toggle="tooltip" title="Undo"></button>
+                <button id="redoId" class="toolbar-button button-no-left button-redo" data-toggle="tooltip" title="Redo"></button>
+                <button id="deleteId" class="toolbar-button button-no-left button-delete" data-toggle="tooltip" title="Remove Selections"></button>
+                <button id="copyId" class="toolbar-button button-no-left button-copy" data-toggle="tooltip" title="Copy Selections"></button>
+                <button id="pasteId" class="toolbar-button button-no-left button-paste" data-toggle="tooltip" title="Paste Selections"></button>
+                <button id="saveId" class="toolbar-button button-no-left button-save" data-toggle="tooltip" title="Save"></button>
+                <button id="saveAsId" class="toolbar-button button-no-left button-saveAs" data-toggle="tooltip" title="Save As..."></button>
+                <button id="refreshId" class="toolbar-button button-no-left button-refresh" data-toggle="tooltip" title="Refresh Diagram & Reset Scaling"></button>
+                <button id="findId" class="toolbar-button button-no-left button-find" data-toggle="tooltip"
+                        title="Search Node... &nbsp;&nbsp;Ctrl+Shift+F"></button>
+                <button id="clearId" class="toolbar-button button-no-left button-clear" data-toggle="tooltip" title="Clear Diagram"></button>
+                <button id="leftId" class="toolbar-button button-no-left button-left" data-toggle="tooltip" title="Previous Diagram"></button>
+                <button id="rightId" class="toolbar-button button-no-left button-right" data-toggle="tooltip" title="Next Diagram"></button>
+                <button id="configId" class="toolbar-button button-no-left button-config" data-toggle="tooltip" title="Settings..."></button>
+                <button id="helpId" class="toolbar-button button-no-left button-help" data-toggle="tooltip" title="Help..."></button>
+
+            </div>
         </div>
         <div id="containerId" onscroll="repaintDiagram()">
+            <!-- TITLE PAGE -->
+            <div id="titlePageId" class="titlePage">
+                <div id="titlePageTopId" class="titlePageHeader">
+                    <button class="titleLogoBtn"></button>
+                    <div class="titleJDE">
+                        <span class="titleJDEtext" data-bind="text: startTitle()"></span>
+                    </div>
+                </div>
+
+                <div id="titleTopTextId" class="titleTopText">
+                    <div data-bind="html: titleTopText()"></div>
+                    <div id="titleModeId" class="titleModeBox">
+
+                        <div style="display: block;">
+                            <div id="titleERDId" class="titleModeButton">
+                                <div style="display: flex;">
+                                    <div class="titleERD-img"> </div>
+                                    <div class="titleJDEbutton">
+                                        <span data-bind="html: startERDTitle()"></span>
+                                    </div>
+                                </div>
+                                <div class="titleDiagramText">
+                                    <span data-bind="html: getERDText()"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display: block;">
+                            <div id="titleFlowId" class="titleModeButton" style="margin-left: 8px;">
+                                <div style="display: flex;">
+                                    <div class="titleFlow-img"> </div>
+                                    <div class="titleJDEbutton">
+                                        <span data-bind="html: startFlowTitle()"></span>
+                                    </div>
+                                </div>
+                                <div class="titleDiagramText">
+                                    <span  data-bind="html: getFlowText()"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="titleDBSelectId" class="titleActions titleDBSelect">
+                        <div class="settings-entry titleDiagramTip" style="margin: 10px 0 2px 12px; ">Select Database:</div>
+                        <div style="margin: 0 0 0 12px; ">
+                            <select id="dbsToSelectId" class="titleDiagramTip"
+                                    data-bind="options: dbsToImport,
+                                optionsText: 'label',
+                                optionsValue: 'id'">
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div id="erdActionsId" class="titleActions erdActions">
+                        <div><button id="btnCreateERDId"
+                                     class="button-newDir titleActionBtn">New schema ERD</button></div>
+                        <div><button id="btnTemplateERDId"
+                                     class="button-template titleActionBtn">Use ERD Template</button></div>
+                        <div><button id="btnOpenERDId"
+                                     class="button-open titleActionBtn">Open Existing ERD</button></div>
+                        <div><button id="btnInOutERDId"
+                                     class="button-import titleActionBtn">Import SQL Schema</button></div>
+                    </div>
+
+                    <div id="flowActionsId" class="titleActions flowActions">
+                        <div><button id="btnCreateFlowId"
+                                     class="button-newDir titleActionBtn">New Diagram</button></div>
+                        <div><button id="btnTemplateFlowId"
+                                     class="button-template titleActionBtn">Use Template</button></div>
+                        <div><button id="btnOpenFlowId"
+                                     class="button-open titleActionBtn">Open Existing Diagram</button></div>
+                    </div>
+
+                    <div class="titlePageHLine"></div>
+                    <div class="titleBottomText" data-bind="html: titleBottomText()"></div>
+                    <div class="titlePageHLine"></div>
+
+                    <div class="titleDBSelected"
+                         data-bind="html: titleDBSelected(), visible: erdTabVisible()"></div>
+                    <div class="titlePageHLine" data-bind="visible: erdTabVisible()"></div>
+
+                    <div class="titleDBSelected"
+                         data-bind="html: titleFlowSelected(), visible: flowTabVisible()"></div>
+                    <div class="titlePageHLine" data-bind="visible: flowTabVisible()"></div>
+
+                </div>
+            </div>
+            <div class="titlePageBottom"></div>
+            <!-- CANVAS -->
             <canvas id="canvasId" class="main-canvas" tabindex="0" draggable="true"
                 data-bind="visible: isCanvasVisible()">
             </canvas>
@@ -85,8 +173,8 @@
                 <div style="margin-top: 2px;"></div>
                 <div class="accordSelect" style="display: block;">
                     <div class="typeSelection">
-                        <button id="btnERDId" class="typeButton" data-bind="text: diagramTypeERD"></button>
-                        <button id="btnFlowId" class="typeButton" data-bind="text: diagramTypeFlow"></button>
+                        <button id="btnERDId" class="dgmTypeButton" data-bind="text: diagramTypeERD"></button>
+                        <button id="btnFlowId" class="dgmTypeButton" data-bind="text: diagramTypeFlow"></button>
                     </div>
                 </div>
                 <div style="display: inline-block;">
@@ -210,8 +298,9 @@
                 </div>
             </div>
 
-            <div id="paletteMsgId" class="paletteMsg" data-bind="visible: dbPaletteVisible()">
+            <div id="paletteMsgId" class="paletteTipMsg" data-bind="visible: dbPaletteVisible()">
                 <span data-bind="html: dbTipText()"></span>
+                <button id="dbTipButtonId" class="dbTipBtn">context help</button>
             </div>
 
         </div>
@@ -279,27 +368,55 @@
                     <label for="btnHorizontal" style="vertical-align:baseline;  margin: 0 0 0 4px;">Horizontal</label>
                 </div>
 
-                <div class="settings-entry" style="margin: 4px 0 0 4px;">Features:</div>
+                <div class="settings-entry" style="margin: 4px 0 0 4px;">Common Features:</div>
                 <div class="settings-controls settingsFeaturesGrid">
                     <input type="checkbox" id="chkStartEnd" style="margin: 4px 4px 0 0;">
                     <label for="chkStartEnd" style="padding-top: 4px ; " >Add Start/End layers</label>
-                    <input type="checkbox" id="chkShowRefs" name="edRefs" style="margin: 4px 4px 0 0;">
-                    <label for="chkShowRefs" style="padding-top: 4px ; " >Show association links</label>
+                    <!--<input type="checkbox" id="chkShowRefs" name="edRefs" style="margin: 4px 4px 0 0;">-->
+                    <!--<label for="chkShowRefs" style="padding-top: 4px ; " >Show association links</label>-->
 
                     <input type="checkbox" id="chkLeftRight" name="df" style="margin: 4px 4px 0 0;">
                     <label for="chkLeftRight" style="padding-top: 4px ;" >Add Side swim lanes</label>
-                    <input type="checkbox" id="chkShowIconsId" name="showIcons" style="margin: 4px 4px 0 0;">
-                    <label for="chkShowIconsId" style="padding-top: 4px ;" >Show node icons</label>
+                    <!--<input type="checkbox" id="chkShowIconsId" name="showIcons" style="margin: 4px 4px 0 0;">-->
+                    <!--<label for="chkShowIconsId" style="padding-top: 4px ;" >Show node icons</label>-->
 
                     <input type="checkbox" id="chkHideNamesId" name="hideNames" style="margin: 4px 4px 0 0;">
                     <label for="chkHideNamesId" style="padding-top: 4px ; " >Hide node names</label>
-                    <input type="checkbox" id="chkShowBorders" name="borders" style="margin: 4px 4px 0 0;">
-                    <label for="chkShowBorders" style="padding-top: 4px ; " >Show node borders</label>
+                    <!--<input type="checkbox" id="chkShowBorders" name="borders" style="margin: 4px 4px 0 0;">-->
+                    <!--<label for="chkShowBorders" style="padding-top: 4px ; " >Show node borders</label>-->
 
                     <input type="checkbox" id="chkShowBottomMsgs" name="borders" style="margin: 4px 4px 0 0;">
                     <label for="chkShowBottomMsgs" style="padding-top: 4px ; " >Show info messages at the bottom</label>
-                    <input type="checkbox" id="chkCompressContentView" name="borders" style="margin: 4px 4px 0 0;">
+                    <!--<input type="checkbox" id="chkCompressContentView" name="borders" style="margin: 4px 4px 0 0;">-->
+                    <!--<label for="chkCompressContentView" style="padding-top: 4px ; " >Compress Content Views</label>-->
+                </div>
+
+                <div class="settings-entry" style="margin: 4px 0 0 4px;">Database ERDs Features:</div>
+                <div class="settings-controls settingsFeaturesGrid">
+                    <input type="checkbox" id="chkCollapseTables" style="margin: 4px 4px 0 0;">
+                    <label for="chkCollapseTables" style="padding-top: 8px ; " >Collapse DB tables to max rows</label>
+
+                    <input type="number" id="spinnerCollapseId" min="8" max="20" value="10" step="1" class="spinnerStyle">
+                    <label for="spinnerCollapseId" class="spinner-collapse" >Max DB tables rows to display</b></label>
+                </div>
+
+                <div class="settings-entry" style="margin: 4px 0 0 4px;">Flowchart Features:</div>
+                <div class="settings-controls settingsFeaturesGrid">
+                    <input type="checkbox" id="chkShowRefs" style="margin: 4px 4px 0 0;">
+                    <label for="chkShowRefs" style="padding-top: 4px ; " >Show association links</label>
+                    <input type="checkbox" id="chkCompressContentView" style="margin: 4px 4px 0 0;">
                     <label for="chkCompressContentView" style="padding-top: 4px ; " >Compress Content Views</label>
+
+                    <input type="checkbox" id="chkShowIconsId" name="showIcons" style="margin: 4px 4px 0 0;">
+                    <label for="chkShowIconsId" style="padding-top: 4px ;" >Show node icons</label>
+                    <input type="checkbox" id="chkShowBorders" name="borders" style="margin: 4px 4px 0 0;">
+                    <label for="chkShowBorders" style="padding-top: 4px ; " >Show node borders</label>
+                </div>
+                <div class="settings-entry" style="margin: 4px 0 0 4px;">Link ports presentation:</div>
+                <div class="settings-controls">
+                    <select id="selectPortIconsId" class="settingsPortIconMenu"
+                            data-bind="options: portIcons, optionsValue: 'value' ">
+                    </select>
                 </div>
 
                 <div class="settingsMainGrid">
@@ -313,21 +430,13 @@
                     <input type="number" id="spinnerLanesId" min="1" max="20" value="5" step="1" class="spinnerStyle">
                     <label for="spinnerLanesId" class="spinner-label" style="padding-top: 6px;">Lanes <b>*</b></label>
 
-                    <!--<input type="text" id="spinnerSpaceId" class="spinnerStyle" readonly>-->
                     <input type="number" id="spinnerSpaceId" min="6" max="30" value="10" step="1" class="spinnerStyle">
                     <label for="spinnerSpaceId" class="spinner-label" style="padding-top: 6px;" >pixels</label>
                 </div>
 
-                <div class="settings-entry" style="margin: 4px 0 0 4px;">Link ports presentation:</div>
-                <div class="settings-controls">
-                    <select id="selectPortIconsId" class="settingsPortIconMenu"
-                            data-bind="options: portIcons, optionsValue: 'value' ">
-                    </select>
-                </div>
-
                 <div class="settings-footer-1"></div>
                 <div>
-                    <span class="vertical" style="padding: 0 0 0 4px; ">
+                    <span style="padding: 0 0 0 4px; ">
                         <b>*</b> &nbsp;Choose the initial grid only, the grid can be modified later from the canvas context menus</span>
                 </div>
             </div>
@@ -416,7 +525,7 @@
                     <div id="procFgnDisplayId" class="typeColorShape"></div>
 
                     <input type="radio" id="btnDBTitleId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
-                    <label for="btnDBTitleId" style="vertical-align:baseline; margin:4px 4px 4px 6px;" >Table Title</label>
+                    <label for="btnDBTitleId" style="vertical-align:baseline; margin:4px 4px 4px 6px;" >DB Title</label>
                     <div id="titleBgnDisplayId" class="typeColorShape"></div>
                     <div id="titleFgnDisplayId" class="typeColorShape"></div>
 
@@ -436,21 +545,21 @@
                     <!--<div id="entBgnDisplayId" class="typeColorShape"></div>-->
                     <!--<div id="entFgnDisplayId" class="typeColorShape"></div>-->
 
+                    <!--////-->
+                    <!--<input type="radio" id="btnSideTypeId" name="typeColors" style="margin: 4px 0 0 4px; width: 18px; height: 18px;">-->
+                    <!--<label for="btnSideTypeId" style="vertical-align:baseline; margin: 4px 4px 0 4px;" >Side Lane</label>-->
+                    <!--<div id="sideBgnDisplayId" class="typeColorShape"></div>-->
+                    <!--<div id="sideFgnDisplayId" class="typeColorShape"></div>-->
+
+                    <input type="radio" id="btnSQTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
+                    <label for="btnSQTypeId" style="vertical-align:baseline; margin: 4px 6px 0 6px;" >Seq Title</label>
+                    <div id="seqBgnDisplayId" class="typeColorShape"></div>
+                    <div id="seqFgnDisplayId" class="typeColorShape"></div>
+
                     <input type="radio" id="btnDocsTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
                     <label for="btnDocsTypeId" style="vertical-align:baseline; margin: 4px 6px 0 6px;" >Documents</label>
                     <div id="docsBgnDisplayId" class="typeColorShape"></div>
                     <div id="docsFgnDisplayId" class="typeColorShape"></div>
-
-                    <!--////-->
-                    <input type="radio" id="btnSideTypeId" name="typeColors" style="margin: 4px 0 0 4px; width: 18px; height: 18px;">
-                    <label for="btnSideTypeId" style="vertical-align:baseline; margin: 4px 4px 0 4px;" >Side Lane</label>
-                    <div id="sideBgnDisplayId" class="typeColorShape"></div>
-                    <div id="sideFgnDisplayId" class="typeColorShape"></div>
-
-                    <!--<input type="radio" id="btnRelTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">-->
-                    <!--<label for="btnRelTypeId" style="vertical-align:baseline; margin: 4px 6px 0 6px;" >Relation</label>-->
-                    <!--<div id="relBgnDisplayId" class="typeColorShape"></div>-->
-                    <!--<div id="relFgnDisplayId" class="typeColorShape"></div>-->
 
                     <input type="radio" id="btnTermTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">
                     <label for="btnTermTypeId" style="vertical-align:baseline; margin:4px 4px 4px 6px;" >Endpoint</label>
@@ -462,6 +571,11 @@
                     <label for="btnDecTypeId" style="vertical-align:baseline; margin: 4px 4px 0 4px;" >Decision</label>
                     <div id="decBgnDisplayId" class="typeColorShape"></div>
                     <div id="decFgnDisplayId" class="typeColorShape"></div>
+
+                    <input type="radio" id="btnSideTypeId" name="typeColors" style="margin: 4px 0 0 4px; width: 18px; height: 18px;">
+                    <label for="btnSideTypeId" style="vertical-align:baseline; margin: 4px 4px 0 4px;" >Side Lane</label>
+                    <div id="sideBgnDisplayId" class="typeColorShape"></div>
+                    <div id="sideFgnDisplayId" class="typeColorShape"></div>
 
                     <!--<input type="radio" id="btnAttrTypeId" name="typeColors" style="margin: 4px 0 0 6px; width: 18px; height: 18px;">-->
                     <!--<label for="btnAttrTypeId" style="vertical-align:baseline; margin:4px 4px 4px 6px;" >Attribute</label>-->
@@ -521,9 +635,7 @@
 
                 <div >
                     <button id="resetAllColorsId" class="prefs-button resetColorsToDef"
-                            title="Reset to default colors">Reset All Colors</button>
-                    <!--<button id="rollbackColorsId" class="prefs-button setAllColorsToDef"-->
-                            <!--title="Reset to old colors">Rollback All</button>-->
+                            title="Reset to default colors">Use All Defaults</button>
                 </div>
 
                 <div class="settings-footer-3"></div>
@@ -634,87 +746,9 @@
         <button class="close-button"></button>
     </div>
 
-    <!-- ///////////////// -->
-    <!-- TITLE PAGE -->
-    <!-- ///////////////// -->
-    <div id="titlePageId" class="titlePage">
-        <div id="titlePageTopId" class="titlePageHeader">
-            <button class="titleLogoBtn"></button>
-            <div class="titleJDE" style="padding-top: 6px;" data-bind="text: startTitle()"></div>
-        </div>
-
-        <div id="titleTopTextId" class="titleTopText">
-            <div data-bind="html: titleTopText()"></div>
-            <!--<div class="titlePageHLine"></div>-->
-            <div id="titleModeId" class="titleModeBox">
-                <div style="display: block;">
-
-                    <div id="titleERDId" class="titleModeButton">
-                        <div style="display: flex;">
-                            <div class="titleERD-img"> </div>
-                            <span class="titleJDE" data-bind="html: startERDTitle()"></span>
-                        </div>
-                        <div class="titleDiagramText">
-                            <span data-bind="html: getERDText()"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="display: block;">
-                    <div id="titleFlowId" class="titleModeButton" style="margin-left: 8px;">
-                        <div style="display: flex;">
-                            <div class="titleFlow-img"> </div>
-                            <span class="titleJDE" data-bind="html: startFlowTitle()"></span>
-                        </div>
-                        <div class="titleDiagramText">
-                            <span  data-bind="html: getFlowText()"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="titleDBSelectId" class="titleActions titleDBSelect">
-                <div class="settings-entry titleDiagramText" style="margin: 10px 0 2px 12px; ">Select Database:</div>
-                <div style="margin: 0 0 0 12px; ">
-                    <select id="dbsToSelectId" class="titleDiagramText"
-                            data-bind="options: dbsToImport,
-                                optionsText: 'label',
-                                optionsValue: 'id'">
-                    </select>
-                </div>
-
-            </div>
-
-            <div id="erdActionsId" class="titleActions erdActions">
-                <div><button id="btnCreateERDId"
-                        class="button-newDir titleActionBtn">New schema ERD</button></div>
-                <div><button id="btnTemplateERDId"
-                        class="button-template titleActionBtn">Use ERD Template</button></div>
-                <div><button id="btnOpenERDId"
-                        class="button-open titleActionBtn">Open Existing ERD</button></div>
-                <div><button id="btnInOutERDId"
-                        class="button-import titleActionBtn">Import SQL Schema</button></div>
-            </div>
-
-            <div id="flowActionsId" class="titleActions flowActions">
-                <div><button id="btnCreateFlowId"
-                        class="button-newDir titleActionBtn">New Diagram</button></div>
-                <div><button id="btnTemplateFlowId"
-                        class="button-template titleActionBtn">Use Template</button></div>
-                <div><button id="btnOpenFlowId"
-                        class="button-open titleActionBtn">Open Existing Diagram</button></div>
-            </div>
-
-            <div class="titlePageHLine"></div>
-            <div class="titleBottomText" data-bind="html: titleBottomText()">
-
-            </div>
-        </div>
-    </div>
-
     <div id="infoDialogId" class="settingsFont" style="display: none; ">
         <div style="font-weight: bold; margin: 4px; ">
-            <textarea id="infoTextId" rows="4" cols="30" wrap="hard" class="selectionFont noresizeTextArea"
+            <textarea id="infoTextId" rows="16" cols="30" wrap="hard" class="selectionFont noresizeTextArea"
                        spellcheck="false" readonly
                        data-bind="visible: infoMessageVisible, text: infoMessage"></textarea>
         </div>
@@ -974,7 +1008,6 @@
         <div class="findText">
             <input id="findNameId" autofocus type="text" class="findNameText"
                    autocomplete="off" spellcheck="false"
-                   onpaste = "onPasteSearchText()"
                    data-bind="textInput: editNameValue, css: {invalidInput: isEditNameInvalid() }"/>
             <button id="select2findId" class="findButton button-findArrow"></button>
         </div>
@@ -1083,6 +1116,12 @@
         </div>
     </div>
 
+    <div id="inlineExprContainerId" class="inlineExprContainer">
+        <input id="inlineExprId" autofocus type="text" class="inlineExprText"
+               autocomplete="off" spellcheck="false"
+               data-bind="textInput: editNameValue"/>
+    </div>
+
     <div id="inlineAreaContainerId" class="inlineAreaContainer">
         <textarea id="inlineTextAreaId"
                autofocus rows="4" cols="36" wrap="hard"
@@ -1101,6 +1140,69 @@
         <input id="dbTooltipId" class="dbTableTooltipContent" autofocus type="text" readonly/>
     </div>
 
+    <!-- OPTIONS / COLUMNS -->
+    <div id="dbChecksContainerId" class="dbOptionsContainer">
+        <div class="dbOptionsTop">
+            <input class="dbOptionsTitle"  autofocus type="text" readonly style="grid-column: 1;"
+                   data-bind="textInput: dbOptionsTitle()"/>
+            <button id="btnOptionsConfirmId" class="dgm-button button-check"
+                    style="margin: 2px 2px 2px 4px; grid-column: 2;" title="Confirm Selections And Close"></button>
+            <button id="btnOptionsCloseId" class="dgm-button button-close-tiny"
+                    style="margin: 2px 2px 2px 4px; grid-column: 3;" title="Close Without Confirmation"></button>
+        </div>
+        <div class="dbOptionsWrapper">
+            <table id="dbOptionsTableId" >
+                <tbody data-bind="foreach: { data: dbTableOptions, as: 'item' }">
+                    <tr>
+                        <td style="width: 90%">
+                            <input type="text" class="cursor-pointer dbOptionName" readonly
+                                   data-bind="textInput: item.option">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="dbOptionCheck"
+                                   data-bind="checked: item.selected">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- DB PROPERTIES -->
+    <div id="dbPropsContainerId" class="dbPropsContainer">
+        <div id="dbPropsTopId" class="dbPropsTop">
+            <input class="dbPropsTitle"  autofocus type="text" readonly style="grid-column: 1;"
+                   data-bind="textInput: dbPropsTitleText()"/>
+            <button id="btnPropsAddId" class="dgm-button button-add-tiny"
+                    style="margin: 2px 2px 2px 4px; grid-column: 2;" title="Add New Property"></button>
+            <button id="btnPropsRemoveId" class="dgm-button button-delete-tiny"
+                    style="margin: 2px 2px 2px 4px; grid-column: 3;" title="Remove Selected Property"></button>
+            <button id="btnPropsConfirmId" class="dgm-button button-check"
+                    style="margin: 2px 2px 2px 4px; grid-column: 5;" title="Confirm Selections And Close"></button>
+            <button id="btnPropsCloseId" class="dgm-button button-close-tiny"
+                    style="margin: 2px 2px 2px 4px; grid-column: 6;" title="Close Without Confirmation"></button>
+        </div>
+        <div class="dbPropsWrapper">
+            <table id="dbPropsTableId" >
+                <tbody data-bind="foreach: { data: dbTableProps, as: 'item' }">
+                    <tr>
+                        <td style="width: 30%">
+                            <select id="dbPropsNameId" class="dbPropsName cursor-pointer"
+                                    data-bind="options: item.name,
+                                        optionsText: 'label',
+                                        optionsValue: 'id'">
+                            </select>
+                        </td>
+                        <td style="width: 68%">
+                            <input type="text" class="cursor-pointer dbPropsValue"
+                                   data-bind="textInput: item.value">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <div id="dbTableContainerId"  class="dbTableContainer" >
         <div style="display: flex">
             <div data-bind="visible: !showDBTableEditorOnLeft()">
@@ -1108,17 +1210,15 @@
                        data-bind="textInput: '&nbsp;<  '+dbEditorPath(), attr: {title: dbEditorPath()}"/>
             </div>
             <div style="display: flex; margin: 6px 6px 0 6px;">
-                <button id="btnAddNewRowId" class="toolbar-button button-add" data-toggle="tooltip"
+                <button id="btnAddNewRowId" class="toolbar-button button-add-tiny" data-toggle="tooltip"
                         title="Add New Row"></button>
                 <button id="btnAddPKRowId" class="toolbar-button button-addPK" data-toggle="tooltip"
                         title="Add Secondary Primary Key"></button>
-                <!--<button id="btnAddFKRowId" class="toolbar-button button-addFK" data-toggle="tooltip"-->
-                        <!--title="Expand Composite Foreign Key"></button>-->
-                <button id="btnRemoveCurrRowId" class="toolbar-button button-delete button-no-left"
+                <button id="btnRemoveCurrRowId" class="toolbar-button button-delete-tiny button-no-left"
                         data-toggle="tooltip" title="Remove Selected Row"></button>
-                <button id="btnMoveCurrRowUpId" class="toolbar-button button-up button-no-left"
+                <button id="btnMoveCurrRowUpId" class="toolbar-button button-up-tiny button-no-left"
                         data-toggle="tooltip" title="Move Row Up"></button>
-                <button id="btnMoveCurrRowDownId" class="toolbar-button button-down button-no-left"
+                <button id="btnMoveCurrRowDownId" class="toolbar-button button-down-tiny button-no-left"
                         data-toggle="tooltip" title="Move Row Down"></button>
             </div>
             <div data-bind="visible: showDBTableEditorOnLeft()">
@@ -1133,19 +1233,15 @@
                     <th style="width: 48%;" title="Field Name">&nbsp;Column Name</th>
                     <th style="width: 30%;" title="Data Type">&nbsp;Data Type</th>
                     <th style="width: 12%;" title="Length">&nbsp;Lengt</th>
-                    <!--<th style="width: 17%;" title="Autoincrement">AutoInc</th>-->
-                    <!--<th style="width: 16%;" title="Not Nullable">NotNull</th>-->
                 </tr></thead>
                 <caption class="dbTableCaption">Active Columns / Row Content:</caption>
                 <tbody>
-                    <tr>
-                        <td align="center"><input type="checkbox" id="chkKeyId" checked="true"></td>
-                        <td align="center"><input type="checkbox" id="chkFieldId" checked="true"></td>
-                        <td align="center"><input type="checkbox" id="chkTypeId" ></td>
-                        <td align="center"><input type="checkbox" id="chkLengthId" ></td>
-                        <!--<td align="center"><input type="checkbox" id="chkAutoIncrId" ></td>-->
-                        <!--<td align="center"><input type="checkbox" id="chkNotNullId" ></td>-->
-                    </tr>
+                    <!--<tr>-->
+                        <!--<td align="center"><input type="checkbox" id="chkKeyId" checked="true"></td>-->
+                        <!--<td align="center"><input type="checkbox" id="chkFieldId" checked="true"></td>-->
+                        <!--<td align="center"><input type="checkbox" id="chkTypeId" ></td>-->
+                        <!--<td align="center"><input type="checkbox" id="chkLengthId" ></td>-->
+                    <!--</tr>-->
                     <tr data-bind="visible: showDBTable()">
                         <td >
                             <select id="inputKeyId" class="dbTableListMenu"
@@ -1154,7 +1250,7 @@
                                 optionsValue: 'id'">
                                 </select>
                         </td>
-                        <td >
+                        <td style="padding: 0;">
                             <input id="inputFieldId" type="text" class="inputFieldDB"
                                    autocomplete="off" spellcheck="false"
                                    onkeyup="validateFieldName(event)"
@@ -1167,7 +1263,8 @@
                                 optionsValue: 'id'">
                                 </select>
                         </td>
-                        <td ><input id="inputLengthId" class="inputLengthDB"
+                        <td  style="padding: 0;">
+                            <input id="inputLengthId" class="inputLengthDB"
                                     data-bind="textInput: dbTableLength">
                         </td>
                     </tr>
@@ -1176,26 +1273,27 @@
         </div>
 
         <div style="margin-top: 6px;"></div>
-        <!-- CONSTRAINTS -->
-        <div class="dbEditorTop">
-            <div style="margin: 2px 0 0px 0; grid-column: 1;">
+        <!-- COLUMN CONSTRAINTS -->
+        <div class="dbEditorTop" data-bind="visible: columnConstraintsVisible()">
+            <div style="margin: 2px 0 0 0; grid-column: 1;">
                 <button id="btnShowCnstrId" class="dgm-button btn-down-16 dgm-btn-outline"
-                        data-bind="visible: !showDBConstraints()" title="Show Constraints"></button>
+                        data-bind="visible: !showDBConstraints()" title="Show Column Constraints / Properties"></button>
                 <button id="btnHideCnstrId" class="dgm-button btn-up-16 dgm-btn-outline"
-                        data-bind="visible: showDBConstraints()" title="Hide Constraints"></button>
+                        data-bind="visible: showDBConstraints()" title="Hide Column Constraints / Properties"></button>
             </div>
             <span class="dbTableCaption" style="margin: 2px 0 0px 0; padding-top: 4px; grid-column: 2;">
                 Column Constraints / Properties</span>
-            <button id="btnAddConstraintId" class="toolbar-button button-add" data-toggle="tooltip"
-                    title="Add New Constraint" style="margin: 2px 0 4px 0; grid-column: 3;"
+            <button id="btnAddConstraintId" class="toolbar-button button-add-tiny" data-toggle="tooltip"
+                    title="Add New Constraint" style="margin: 2px 0 4px 0; grid-column: 4;"
                     data-bind="visible: showDBConstraints()"></button>
-            <button id="btnRemoveConstraintId" class="toolbar-button button-delete button-no-left"
-                    data-toggle="tooltip" title="Remove Selected Constraint" style="margin: 2px 0 4px 0; grid-column: 4;"
+            <button id="btnRemoveConstraintId" class="toolbar-button button-delete-tiny button-no-left"
+                    data-toggle="tooltip" title="Remove Selected Constraint" style="margin: 2px 0 4px 0; grid-column: 5;"
                     data-bind="visible: showDBConstraints()"></button>
         </div>
-        <div id="dbTblConstraintsId" style="display: block; " data-bind="visible: showDBConstraints()">
+        <div id="dbTblConstraintsId" style="display: block; "
+                data-bind="visible: columnConstraintsVisible() && showDBConstraints()">
             <table id="dbTblConstrHeadersId" style="width: 100%; table-layout: fixed; ">
-                <thead><tr style="height: 24px;"></tr></thead>
+                <thead><tr style="height: 24px; "></tr></thead>
             </table>
             <table id="dbTblConstrColumnsId" style="width: 100%; table-layout: fixed; ">
                 <tbody data-bind="foreach: { data: dbTableConstraints, as: 'dbConstr' }">
@@ -1239,7 +1337,7 @@
         </div>
 
         <!-- KEYS / CPKS -->
-        <div class="dbEditorTop">
+        <div class="dbEditorTop" data-bind="visible: tableConstraintsVisible()">
             <div style="margin: 0 0 0px 0; grid-column: 1;">
                 <button id="btnShowCPKsId" class="dgm-button btn-down-16 dgm-btn-outline"
                         data-bind="visible: !showDBCompositePK()" title="Show Keys / Indexes"></button>
@@ -1250,61 +1348,116 @@
                   data-bind="visible: isSelectedMySQL()">Table Constraints / Keys</span>
             <span class="dbTableCaption" style="margin: 0 0 0 0; padding-top: 4px; grid-column: 2;"
                   data-bind="visible: !isSelectedMySQL()">Table Constraints / Keys</span>
-            <button id="btnAddKeyId" class="toolbar-button button-add"
-                    data-toggle="tooltip"  style="margin: 0 0 2px 0; grid-column: 3;"
+            <button id="btnAddKeyId" class="toolbar-button button-add-tiny"
+                    data-toggle="tooltip"  style="margin: 0 0 2px 0; grid-column: 4;"
                     title="Add New Key" data-bind="visible: showDBCompositePK()"></button>
-            <button id="btnRemoveKeyId" class="toolbar-button button-delete button-no-left"
-                    style="margin: 0 0 2px 0; grid-column: 4;"
+            <button id="btnRemoveKeyId" class="toolbar-button button-delete-tiny button-no-left"
+                    style="margin: 0 0 2px 0; grid-column: 5;"
                     data-toggle="tooltip" title="Remove Selected Key" data-bind="visible: showDBCompositePK()"></button>
         </div>
-        <div id="dbTblCPKsId" style="display: block; margin: -4px 0 0 0;" data-bind="visible: showDBCompositePK()">
+        <div id="dbTblCPKsId" style="display: block; margin: -4px 0 0 0;"
+                data-bind="visible: tableConstraintsVisible() && showDBCompositePK()">
             <table id="dbTblCPKsHeadersId" style="width: 100%; table-layout: fixed; ">
                 <thead><tr style="height: 24px;"></tr></thead>
             </table>
             <table id="dbTblCPKsColumnsId" style="width: 100%; table-layout: fixed; ">
                 <tbody  data-bind="foreach: { data: dbCompositePKs, as: 'cPKs' }">
                     <tr>
-                        <td style="width: 18%;">
-                            <select id="dbCPKTypeId" class="cpkDBColumn cnstrDBall cursor-pointer"
+                        <td style="width: 20%;">
+                            <select id="dbCPKTypeId" class="cpkTblType cpkDBall cursor-pointer"
                                     data-bind="options: cPKs.type,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
                         </td>
 
-                        <td style="width: 17%;">
-                            <select id="dbCPKDefId" class="cpkDBColumn cnstrDBall cursor-pointer"
+                        <td style="width: 20%;">
+                            <select id="dbCPKDefId" class="cpkTblDef cpkDBall cursor-pointer"
                                     data-bind="options: cPKs.def,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
                         </td>
 
-                        <td style="width: 17%;">
-                            <input id="dbCPKNameId" type="text" class="cpkDBColumn cnstrDBall cursor-pointer"
-                                   data-bind="textInput: cPKs.name,
-                                    attr: {title: cPKs.name}"/>
-                        </td>
-                        <td style="width: 16%;">
-                            <select id="dbCPKCol1" class="cpkDBColumn cnstrDBall cursor-pointer"
-                                    data-bind="options: cPKs.column1,
+                        <td style="width: 20%;">
+                            <select id="dbCPKNameId" class="cpkTblName cpkDBall cursor-pointer"
+                                    data-bind="options: cPKs.name,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
                         </td>
-                        <td style="width: 16%;">
-                            <select id="dbCPKCol2" class="cpkDBColumn cnstrDBall cursor-pointer"
-                                    data-bind="options: cPKs.column2,
+                        <td style="width: 20%;">
+                            <select id="dbCPKCols" class="cpkTblCols cpkDBall cursor-pointer"
+                                    data-bind="options: cPKs.columns,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
                         </td>
-                        <td style="width: 16%;">
-                            <select id="dbCPKCol3" class="cpkDBColumn cnstrDBall cursor-pointer"
-                                    data-bind="options: cPKs.column3,
+                        <td style="width: 20%;">
+                            <select id="dbCPKnfr" class="cpkTblNfr cpkDBall cursor-pointer"
+                                    data-bind="options: cPKs.nfr,
                                         optionsText: 'label',
                                         optionsValue: 'id'">
                             </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- LOBs -->
+        <div class="dbEditorTop" data-bind="visible: true">
+            <div style="margin: 2px 0 0 0; grid-column: 1;">
+                <button id="btnShowLOBsId" class="dgm-button btn-down-16 dgm-btn-outline"
+                        data-bind="visible: !showLOBStorage()" title="Show LOB Options"></button>
+                <button id="btnHideLOBsId" class="dgm-button btn-up-16 dgm-btn-outline"
+                        data-bind="visible: showLOBStorage()" title="Hide LOB Options"></button>
+            </div>
+            <span class="dbTableCaption" style="margin: 2px 0 0 0; padding-top: 4px; grid-column: 2;"
+                        data-bind="text: dbLOBtitle()"></span>
+            <button id="btnAddLOBId" class="toolbar-button button-add-tiny" data-toggle="tooltip"
+                    style="margin: 2px 0 4px 0; grid-column: 4;" data-bind="visible: showLOBStorage()"
+                    title="Add New LOB Storage"></button>
+            <button id="btnRemoveLOBId" class="toolbar-button button-delete-tiny button-no-left"
+                    data-toggle="tooltip" data-bind="visible: showLOBStorage()"
+                    style="margin: 2px 0 4px 0; grid-column: 5;"
+                    title="Remove Selected LOB Storage"></button>
+        </div>
+        <div id="dbTblLOBsId" style="display: block; margin: -6px 2px 0 0;"
+                data-bind="visible: showLOBStorage()">
+            <table id="dbTblLOBColumnsId" style="width: 100%; table-layout: fixed; ">
+                <thead><tr style="height: 24px;">
+                    <th style="width: 92px;">&nbsp;LOB Type</th>
+                    <th style="width: 100px;">&nbsp;File Type</th>
+                    <th style="width: 78px;">&nbsp;Name</th>
+                    <th style="width: 98px;">&nbsp;Column</th>
+                    <th style="width:  54px;">&nbsp;Options</th>
+                </tr></thead>
+                <tbody data-bind="foreach: { data: dbLOBStorage, as: 'dbLOB' }">
+                    <tr >
+                        <td >
+                            <select class="dbLOBall cursor-pointer"
+                                    data-bind="options: dbLOB.type,
+                                        optionsText: 'label',
+                                        optionsValue: 'id'">
+                            </select>
+                        </td>
+                        <td >
+                            <select class="dbLOBall cursor-pointer"
+                                    data-bind="options: dbLOB.fileType,
+                                        optionsText: 'label',
+                                        optionsValue: 'id'">
+                            </select>
+                        </td>
+                        <td >
+                            <select class="dbLOBall cursor-pointer"
+                                    data-bind="options: dbLOB.column,
+                                        optionsText: 'label',
+                                        optionsValue: 'id'">
+                            </select>
+                        </td>
+                        <td style="width: 60px;">
+                            <button class="idxColButton btn-down-16"></button>
                         </td>
                     </tr>
                 </tbody>
@@ -1320,37 +1473,56 @@
                 <button id="btnHideIdxsId" class="dgm-button btn-up-16 dgm-btn-outline"
                         data-bind="visible: showDBIndexes()" title="Hide Indexes"></button>
             </div>
-            <span class="dbTableCaption" style="margin: 2px 0 0px 0; padding-top: 4px; grid-column: 2;">Indexes</span>
-            <button id="btnAddIndexId" class="toolbar-button button-add" data-toggle="tooltip"
-                    style="margin: 2px 0 4px 0; grid-column: 3;" data-bind="visible: showDBIndexes()"
+            <span class="dbTableCaption" style="margin: 2px 0 0 0; padding-top: 4px; grid-column: 2;">Indexes</span>
+            <button id="btnAddIndexId" class="toolbar-button button-add-tiny" data-toggle="tooltip"
+                    style="margin: 2px 0 4px 0; grid-column: 4;" data-bind="visible: showDBIndexes()"
                     title="Add New Index"></button>
-            <button id="btnRemoveIndexId" class="toolbar-button button-delete button-no-left"
+            <button id="btnRemoveIndexId" class="toolbar-button button-delete-tiny button-no-left"
                     data-toggle="tooltip" data-bind="visible: showDBIndexes()"
-                    style="margin: 2px 0 4px 0; grid-column: 4;"
+                    style="margin: 2px 0 4px 0; grid-column: 5;"
                     title="Remove Selected Index"></button>
         </div>
         <div id="dbTblIndexesId" style="display: block; margin: -6px 2px 0 0;"
-             data-bind="visible: showDBIndexes() && true">
+                data-bind="visible: showDBIndexes() && true">
             <table id="dbTblIndexColumnsId" style="width: 100%; table-layout: fixed; ">
                 <thead><tr style="height: 24px;">
-                    <th style="width: 50%;">&nbsp;Name</th>
-                    <th style="width: 35%;">&nbsp;Column</th>
-                    <th style="width: 15%;">&nbsp;Unique</th>
+                    <th style="width: 108px;">&nbsp;Name</th>
+                    <th style="width:  40px;" title="Options">&nbsp;Option</th>
+                    <th style="width:  40px;" title="Columns">&nbsp;Column</th>
+                    <th style="width:  60px;" title="Expressions, Double-click to edit">&nbsp;Expr</th>
+                    <th style="width:  40px;" title="Included Columns">&nbsp;Include</th>
+                    <th style="width:  60px;" title="Included Expressions, Double-click to edit">&nbsp;Incl Expr</th>
+                    <th style="width:  54px;" title="Properties">&nbsp;Propertie</th>
+                    <!--<th style="width:  60px;" title="Expressions, Double-click to edit">&nbsp;Expr</th>-->
+                    <!--<th style="width:  60px;" title="Included Expressions, Double-click to edit">&nbsp;Inc Expr</th>-->
                 </tr></thead>
                 <tbody data-bind="foreach: { data: dbTableIndexes, as: 'dbIndex' }">
                     <tr>
-                        <td><input type="text" class="cursor-pointer idxDbName"
-                                   data-bind="textInput: dbIndex.name">
+                        <td>
+                            <input type="text" class="cursor-pointer idxDbName" style="width: 108px;"
+                                   data-bind="textInput: dbIndex.name, attr: {title: dbIndex.name}">
                         </td>
-                        <td><select class="idxDBColumn cursor-pointer"
-                                    data-bind="options: dbIndex.columns,
-                                    optionsText: 'label',
-                                    optionsValue: 'id'">
-                            </select>
+                        <td>
+                            <button class="idxColButton btn-down-16"></button>
                         </td>
-                        <td><input type="checkbox"
-                                   data-bind="checked: dbIndex.unique"
-                                   style="text-align: center;">
+                        <td>
+                            <button class="idxColButton btn-down-16"></button>
+                        </td>
+                        <td>
+                            <input type="text" class="cursor-pointer idxDbName"  style="width: 60px;"
+                                   readonly placeholder="[Double-click to edit]"
+                                   data-bind="textInput: dbIndex.expr, attr: {title: dbIndex.expr}">
+                        </td>
+                        <td>
+                            <button class="idxColButton btn-down-16"></button>
+                        </td>
+                        <td>
+                            <input type="text" class="cursor-pointer idxDbName"  style="width: 60px;"
+                                   readonly placeholder="[Double-click to edit]"
+                                   data-bind="textInput: dbIndex.inclExpr, attr: {title: dbIndex.inclExpr}">
+                        </td>
+                        <td>
+                            <button class="idxColButton btn-down-16"></button>
                         </td>
                     </tr>
                 </tbody>
@@ -1369,21 +1541,21 @@
              data-bind="visible: isCPKNameInvalid()">
             <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
                     data-bind="visible: isCPKNameInvalid()" disabled></button>
-            <span class="invalid-message">Duplicate entry</span>
+            <span class="invalid-message" data-bind="visible: isCPKNameInvalid()">Duplicate entry</span>
         </div>
 
-        <div style="display: inline-flex; background: white; margin-left: 6px;"
-             data-bind="visible: isKeyInvalid()">
-            <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
-                    data-bind="visible: isKeyInvalid()" disabled></button>
-            <span class="invalid-message">Duplicate entry</span>
-        </div>
+        <!--<div style="display: inline-flex; background: white; margin-left: 6px;"-->
+             <!--data-bind="visible: isKeyInvalid()">-->
+            <!--<button class="icon-textInvalid invalidText" style="vertical-align: middle; "-->
+                    <!--data-bind="visible: isKeyInvalid()" disabled></button>-->
+            <!--<span class="invalid-message" data-bind="visible: isKeyInvalid()">Duplicate entry</span>-->
+        <!--</div>-->
 
-        <div style="display: inline-flex; background: white; margin-left: 6px;"
+        <div style="display: inline-flex; background: white; margin: 4px 0 0 6px;"
              data-bind="visible: isDuplicateType()">
             <button class="icon-textInvalid invalidText" style="vertical-align: middle; "
                     data-bind="visible: isDuplicateType" disabled></button>
-            <span class="invalid-message">Duplicate entry</span>
+            <span class="invalid-message" data-bind="visible: isDuplicateType">Duplicate entry</span>
         </div>
 
         <div style="margin-top: 6px;"></div>

@@ -16,29 +16,27 @@ body.waiting * {
 #screenId {
 	display: grid;
 	grid-template-columns: 4px auto;
-	grid-template-rows: 40px 40px auto;
+	grid-template-rows: 30px 2px auto;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	overflow-y: hidden;
 }
-#navbarId {
-	grid-row-start: 2;
-	grid-column: 2;
-	width: 100%;
-	height: 32px;
-	padding: 2px 6px 6px 6px;
 	
-	visibility: visible !important;
-	background-color: #ffffff;
-	display: inline-flex;
-	flex-flow: row wrap;
-	top: 0;
-	left: 0;
-	z-index: 5;
 	
-}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 .actions-toolbar {
 	display: flex;
 	flex: 0 0 auto;
@@ -72,12 +70,15 @@ body.waiting * {
 	z-index: 5;
 }
 #toolbarVId {
+	
 	display: block;
 	visibility: hidden;
+	margin: 10px 0 0 0;
+	grid-column: 1;
+	width: 24px;
 	
-	width: 100%;
-	height: 588px;
-	padding: 1px;
+	height: 552px;
+	padding: 1px 1px 1px 2px;
 	border: 1px solid blue;
 	background-color: white;
 	z-index: 5;
@@ -105,11 +106,14 @@ body.waiting * {
 #diagramNameId {
 	grid-row-start: 1;
 	grid-column: 1/span 2;
+	width: 100%;
+	background-color: #FFF;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-start;
 	align-items: center;
-	margin: 4px 0 4px 0;
+	margin: 0 0 0 0;
+	z-index: 5;
 }
 .emptyGalleryContent {
 	display: flex;
@@ -122,35 +126,36 @@ body.waiting * {
 }
 #topContainerId {
 	display: grid;
+	grid-template-columns: 42px auto 214px;
 	
-	grid-template-columns: fit-content(0) auto 214px;
 	grid-template-rows: auto auto 10px;
 	grid-row-start: 3;
 	grid-column: 2;
 	column-gap: 0;
 	
 	padding: 2px 0 0 4px;
-	height: 98%;
 	
+	height: inherit;
+	border: 1px solid white;
 }
 #containerId {
-	display: grid;
-	grid-template-columns: 8px auto 8px;
-	grid-template-rows: 2px auto 8px;
 	grid-column-start: 2;
 	grid-row-start: 1;
+	display: grid;
+	grid-template-columns: 2px auto;
+	grid-template-rows: 2px auto 8px;
 	align-self: start;
-	justify-content: center;
 	
 	width: 100%;
+	height: 92%;
 	
+	overflow-y: scroll;
+	overflow-x: auto;
 	
-	
-	overflow: auto;
-	overflow-x: hidden;
-	overscroll-behavior: contain;
 	margin: 4px 0 6px 0;
+	border: 1px solid #3a72c1;
 	
+	background-color: #f1f5f8;
 }
 .main-canvas {
 	border: none;
@@ -160,8 +165,7 @@ body.waiting * {
 	grid-column-start: 2;
 	grid-row-start: 2;
 	align-self: start;
-	margin:  0 4px 24px 4px;
-	padding:  0 0 74px 0;
+	
 }
 	
 	
@@ -173,39 +177,18 @@ body.waiting * {
 	
 	
 	
-	
-	
-	
-	
-	
-::-webkit-scrollbar:horizontal {
-	height: 12px;
-}
-::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	-webkit-border-radius: 1px;
-	border-radius: 1px;
-}
-::-webkit-scrollbar-thumb {
-	-webkit-border-radius: 10px;
-	border-radius: 1px;
-	background: rgba(255,0,0,0.8);
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
-::-webkit-scrollbar-thumb:window-inactive {
-	background: rgba(255,0,0,0.4);
-}
 .typeSelection {
 	display: grid;
 	grid-template-rows: 22px 22px;
 	align-self: start;
 }
-.typeButton {
+.dgmTypeButton {
 	border: none;
 	outline: none;
 	width: 150px;
 	height: 22px;
-	background-color: #E1F5FF;
+	
+	background-color: #f1f5f8;
 	font-family: Arial;
 	font-size: 10pt;
 	font-weight: bold;
@@ -269,8 +252,9 @@ body.waiting * {
 	-ms-transform: translate(-50%,-50%);
 }
 .group-box {
-	background-color: #E1F5FF;
-	border: 1px solid #3a72c1;
+	
+	background-color: #f1f5f8;
+	border: 2px solid #3a72c1;
 }
 .current-settings {
 	margin: 0 10px 0 10px;
@@ -355,21 +339,35 @@ body.waiting * {
 	border: 1px solid #3a72c1;
 	background-color: #72AAFA;
 	width: 188px;
-}.paletteMsg {
+}
+.paletteTipMsg {
 	position: relative;
-	 border: 1px solid #5F69C5;
-	 
-	 width: 184px;
-	 height: 60px;
-	 margin: 10px 10px 0 10px;
-	 padding: 4px 0 0 8px;
-	 
+	display: block;
+	border: 2px solid #5F69C5;
+	width: 184px;
+	height: 64px;
+	margin: 10px 10px 0 10px;
+	padding: 4px 0 0 8px;
  }
+.dbTipBtn {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	height: 10px;
+	background-color: transparent;
+	color: #5F69C5;
+	font-family: Arial;
+	font-size: 12pt;
+	font-style: italic;
+	font-weight: bold;
+	margin: -12px 0 0 -4px;
+}
 .showDBSelect {
 	border: 1px solid  #3a72c1;
+	
 	border-radius: 2px;
-	color: white;
-	background-color: #3a72c1;
+	color: #111;
+	background-color: #D4FA6F;
 	
 	width: 191px;
 	height: 30px;
@@ -523,15 +521,9 @@ label {
 	height: 16px;
 }
 .settings-controls {
-	background-color: #eaf0fa;
+	background-color: #d6ecfa;
 	margin: 4px 0 2px 0;
 	padding:  4px 0 4px 4px;
-}
-.settingsTypeColors {
-	background-color: #eaf0fa;
-	margin: 0px 0 0px 0;
-	padding:  4px 0 4px 4px;
-	display: flex;
 }
 .typeColorShape {
 	width: 28px;
@@ -549,14 +541,14 @@ label {
 }
 .typeColorsGrid {
 	display: grid;
-	background-color: #eaf0fa;
+	background-color: #d6ecfa;
 	justify-content: start;
 	grid-template-columns: 24px 84px 38px 46px 24px 68px 38px 46px 24px 68px 36px 34px;
 	row-gap: 8px;
 }
 .nodeColorSelect {
 	display: flex;
-	background-color: #eaf0fa;
+	background-color: #d6ecfa;
 	align-items: flex-start;
 	align-content: flex-start;
 }
@@ -565,21 +557,21 @@ label {
 }
 .typeIconsGrid {
 	display: grid;
-	background-color: #eaf0fa;
+	background-color: #d6ecfa;
 	justify-content: start;
 	grid-template-columns: 24px 136px 60px 100px;
 	padding: 4px;
 	row-gap: 8px;
 }
 .settings-footer-1 {
-	margin: 84px 0 0 0;
+	margin: 6px 0 0 0;
 }
 	
 .settings-footer-3 {
 	margin: 24px 0 0 0;
 }
 .settings-footer-4 {
-	margin: 221px 0 0 0;
+	margin: 222px 0 0 0;
 }
 .settings-footer-5 {
 	margin: 256px 0 0 0;
@@ -590,7 +582,7 @@ label {
 	margin: 40px 0 0 0;
 }
 .nodeProps-controls {
-	background-color: #eaf0fa;
+	background-color: #d6ecfa;
 	margin: 1px 0 2px 0;
 }
 .nameText {
@@ -604,6 +596,15 @@ label {
 	
 	border: 1px solid green;
 }
+.inlineExprText:focus {
+	outline: 2px solid blue;
+}
+.inlineExprText {
+	width: 400px;
+	height: 22px;
+	
+	border: 1px solid green;
+}
 .inlineInputContainer {
 	position: absolute;
 	outline: none;
@@ -611,6 +612,14 @@ label {
 	height: 26px;
 	visibility: hidden;
 	z-index: 20;
+}
+.inlineExprContainer {
+	position: absolute;
+	outline: none;
+	width: 400px;
+	height: 26px;
+	visibility: hidden;
+	z-index: 1000;
 }
 .inlineAreaContainer {
 	position: absolute;
@@ -665,71 +674,6 @@ table#dbTipsButtonsId td {
 	background-color: #c8edfa;
 	font-weight: bold;
 	padding: 4px;
-}
-.taskEditor {
-	position: absolute;
-	outline: none;
-	width: 252px;
-	height: 328px;
-	visibility: hidden;
-	z-index: 20;
-	border: 2px solid navy;
-	background-color: #f3f6fc;
-	font-family: Arial;
-	font-size: 12px;
-	font-weight: bold;
-}
-.taskNodeTitle {
-	font-family: Arial;
-	font-size: 12px;
-	margin: 4px 0 0 2px;
-	font-weight: bold;
-	border: none;
-	outline: none;
-	width: 244px;
-	height: 18px;
-	background-color: #f3f6fc;
-}
-.taskItem {
-	margin: 10px 2px 6px 10px;
-	background-color: #ddeafa;
-}
-.taskListMenu {
-	height: 14px;
-	
-	margin: 4px 0 4px 0;
-}
-.taskListSelection {
-	margin: 4px 0 2px 0;
-	
-}
-.taskSelectBtn {
-	border: none;
-	outline: none;
-	transition-duration: 0.2s;
-	cursor: pointer;
-	height: 24px;
-	width: 24px;
-	background-color: #ddeafa;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-.taskSelectBtn:hover {
-	background-color: #dddddd;
-}
-.taskSelectBtn:disabled {
-	background-color: #ffffff;
-	cursor: default;
-	opacity: 0.5;
-}
-.taskSelectBtn:active {
-	background-color: #bbbbbb;
-}
-.taskEditGrid {
-	display: grid;
-	justify-content: start;
-	grid-template-columns: 184px 26px 26px;
-	margin-top: 4px;
 }
 .prefsNodeDisplay {
 	display: grid;
@@ -1239,27 +1183,28 @@ table#dbTipsButtonsId td {
 	foreground-color: #195aee;
 }
 .titlePage {
-	position: absolute;
-	top: 0;
-	left: 0;
+	grid-column: 1/span 2;
 	width: 100%;
+	height: 100%;
 	visibility: hidden;
-	color: #08105d;
 	display: grid;
-	grid-template-columns: 8px 200px auto 80px;
-	
+	grid-template-columns: 8px 120px auto 80px;
 }
 .titlePageHeader {
-	margin: 0 20px 0 38px;
-	padding: 0 20px 0 0;
+	margin: 0 0 0 0;
+	padding: 10px 10px 0 0;
 	display: flex;
-	grid-column: 1/span 3;
-	
-	width: 96%;
+	grid-column: 1/span 4;
+	width: 100%;
 	height: 84px;
-	background-color: #fff9d8;
+	
+	background-color: #048fde;
+	
 	justify-self: left;
 	border: 1px solid #153bcc;
+}
+.titlePageBottom {
+	height: 700px;
 }
 .titleLogoBtn {
 	grid-column:  1;
@@ -1270,28 +1215,49 @@ table#dbTipsButtonsId td {
 	width: 100px;
 	background-image: url(../../images/splash/logo100.png);
 	background-repeat: no-repeat;
-	background-color: #fff9d8; // #ffe9a4;
+	background-color: #fff9e8;
+	
 	margin-left: 22px;
 }
 .titleERD-img {
 	height: 32px;
 	width: 32px;
+	background-color: #fff;
+	
 	background-image: url(../../images/dataflow/database32.png);
 	background-repeat: no-repeat;
 }
 .titleFlow-img {
 	height: 32px;
 	width: 32px;
+	background-color: #fff;
+	
 	background-image: url(../../images/dataflow/flowchart32.png);
 	background-repeat: no-repeat;
 }
-.titleJDE {
+.titleJDEbutton {
 	text-align: center;
+	justify-self: center;
 	font-family: Arial;
 	font-size: 24px;
 	font-weight: bold;
 	color: #1a1acc;
-	margin: 0 0 0 10px;
+	
+	margin: 0 0 0 20px;
+}
+.titleJDE {
+	margin: 0 0 0 20px;
+	display: inline-flex;
+}
+.titleJDEtext {
+	text-align: center;
+	justify-self: center;
+	font-family: Arial;
+	font-size: 28px;
+	font-weight: bold;
+	
+	color: #fff9e8;
+	margin: 20px 0 0 20px;
 }
 .titleTopText {
 	grid-column: 1/span 3;
@@ -1304,40 +1270,62 @@ table#dbTipsButtonsId td {
 }
 .titlePageHLine {
 	margin: 10px 0 10px 0;
-	grid-column: 2/span 3;
+	grid-column: 2/span 4;
 	
-	width: 96%;
+	width: 100%;
 	height: 1px;
 	border-top: 1px solid #1a1acc;
 }
 .titleModeBox {
 	display: flex;
 	margin: 20px 0 20px 0;
+	grid-row: 2/span 3;
 	
+	
+	z-index: 100;
 }
 .titleModeButton {
-	border: 1px solid #1a1acc;
+	border: 1px solid #153bcc;
 	
-	border-radius: 2px;
-	background-color: #fff;
 	width: 250px;
 	height: 70px;
 	padding: 10px 0 4px 10px;
 }
 .titleModeButton:hover {
 	
-	cursor: pointer;
-}
-.titleModeButton:disabled {
-	background-color: #ffffff;
-	cursor: default;
-	opacity: 0.5;
-}
-.titleModeButton:active {
+	background-color: #b5d5fe !important;
 	
 	cursor: pointer;
 }
+.titleModeButton:disabled {
+	background-color: #fff;
+	
+	cursor: default;
+	
+}
+.titleModeButton:active {
+	
+	
+	background-color: #7dbdfe !important;
+	cursor: pointer;
+}
 .titleDiagramText {
+	width: 220px;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1.5;
+	color: #0460ab;
+	
+}
+.titleDiagramTip {
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1.5;
+	color: #0460ab;
+}
+.titleDiagramMainTip {
 	font-family: Arial;
 	font-size: 16px;
 	font-weight: bold;
@@ -1350,12 +1338,6 @@ table#dbTipsButtonsId td {
 }
 .titleActions {
 	margin: 10px 0 10px 0;
-}
-.titleMsgSelect {
-	height: 70px;
-}
-.titleSelectText {
-	padding: 6px 0 0 40px;
 }
 .titleDBSelect {
 	display: none;
@@ -1399,14 +1381,21 @@ table#dbTipsButtonsId td {
 	opacity: 0.5;
 }
 .titleBottomText {
-	
+	grid-column: 2/span 2;
 	justify-self: left;
-	width: 96%;
-	
-	padding: 0 4px 20px 10px;
+	width: 80%;
+	padding: 0 4px 0 10px;
+}
+.titleDBSelected {
+	grid-column: 2/span 2;
+	justify-self: left;
+	width: 80%;
+	padding: 0 4px 0 10px;
 }
 .startPage {
-	position: absolute;
+	
+	grid-row-start: 1;
+	grid-column: 1/span 2;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -1678,7 +1667,7 @@ table#dbTipsButtonsId td {
 	outline: none;
 	transition-duration: 0.2s;
 	cursor: pointer;
-	height: 28px;
+	height: 26px;
 	width: 30px;
 	background-color: #fff;
 	background-repeat: no-repeat;
@@ -1884,6 +1873,12 @@ table#dbTipsButtonsId td {
 .button-add {
 	background-image: url(../../images/toolbar/add24.png);
 }
+.button-add-tiny {
+	background-image: url(../../images/toolbar/add24Tiny.png);
+}
+.button-addOption {
+	background-image: url(../../images/toolbar/addOpt24.png);
+}
 .button-addPK {
 	background-image: url(../../images/toolbar/addPK24.png);
 }
@@ -1907,6 +1902,15 @@ table#dbTipsButtonsId td {
 }
 .button-delete {
 	background-image: url(../../images/toolbar/delete18x24.png);
+}
+.button-delete-tiny {
+	background-image: url(../../images/toolbar/del18x24RedTiny.png);
+}
+.button-close-tiny {
+	background-image: url(../../images/toolbar/delete18x24Tiny.png);
+}
+.button-check {
+	background-image: url(../../images/toolbar/check24.png);
 }
 .button-close {
 	background-image: url(../../images/toolbar/delete18x24Blue.png);
@@ -1986,8 +1990,14 @@ table#dbTipsButtonsId td {
 .button-up {
 	background-image: url(../../images/toolbar/navigate_up24.png);
 }
+.button-up-tiny {
+	background-image: url(../../images/toolbar/nav_up_tiny24.png);
+}
 .button-down {
 	background-image: url(../../images/toolbar/navigate_down24.png);
+}
+.button-down-tiny {
+	background-image: url(../../images/toolbar/nav_down_tiny24.png);
 }
 .button-goRight {
 	background-image: url(../../images/toolbar/goRight24.png);
@@ -2060,9 +2070,9 @@ table#dbTipsButtonsId td {
 }
 .spinnerStyle {
 	width: 34px;
-	height: 20px;
+	height: 18px;
 	font-size: 16px;
-	margin: 2px 2px 2px 2px;
+	margin: 1px 2px 1px 0;
 }
 	
 	
@@ -2073,6 +2083,10 @@ table#dbTipsButtonsId td {
 .spinner-label-node {
 	vertical-align: baseline;
 	margin:4px 2px 0 2px;
+}
+.spinner-collapse {
+	margin: 2px 0 0 30px;
+	padding-top: 6px;
 }
 .contentText {
 	width: 200px;
@@ -2122,11 +2136,11 @@ table#dbTipsButtonsId td {
 	margin: -4px -5px 0 -5px !important;
 }
 .titleImportColor .ui-dialog-titlebar {
-	background: #95ffdd !important;
+	background: #bfe264 !important;
 	border: 1px solid #3a72c1;
 }
 .titleExportColor .ui-dialog-titlebar {
-	background: #95ffdd !important;
+	background: #bfe264 !important;
 	border: 1px solid #3a72c1;
 }
 .titleTextColor .ui-dialog-title {
@@ -2506,6 +2520,139 @@ table#dirsTableId td {
 	float: right;
 	border: 1px solid navy;
 }
+.dbPropsContainer {
+	position: absolute;
+	outline: none;
+	display: block;
+	width: 360px  !important;
+	height: 200px;
+	visibility: hidden;
+	border: 2px solid navy;
+	background-color: #f3f6fc;
+	z-index: 100;
+}
+.dbPropsTop {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 224px 26px 26px 26px 26px 26px;
+	margin-top: 6px;
+	cursor: pointer;
+}
+.dbPropsTitle {
+	font-family: Arial;
+	font-size: 14px;
+	margin: 2px 0 2px 2px;
+	font-weight: bold;
+	width: 200px;
+	height: 24px;
+	outline: none;
+	border: none;
+	padding-left: 6px;
+	color: #306cee;
+	background-color: #eee;
+	cursor: pointer;
+}
+.dbPropsWrapper {
+	display: block;
+	width: auto;
+	height: 158px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	outline: none;
+	border: 1px solid #306cee;
+	margin: 2px;
+}
+table#dbPropsTableId {
+	
+	width: 156px;
+	
+	border-collapse: collapse;
+	table-layout: auto;
+	cursor: pointer;
+	font-family: Arial;
+	font-size: 12px;
+	margin: 2px 0 2px 0;
+	font-weight: bold;
+	padding: 0 20px 0 0;
+}
+table#dbPropsTableId td {
+	
+	cursor: pointer;
+	padding: 1px;
+}
+.dbPropsName {
+	width: 140px;
+	height: 22px;
+	padding-right: 16px;
+}
+.dbPropsValue {
+	width: 180px;
+	height: 16px;
+}
+.dbOptionsContainer {
+	position: absolute;
+	outline: none;
+	display: block;
+	width: 260px  !important;
+	height: 200px;
+	visibility: hidden;
+	border: 2px solid navy;
+	background-color: #f3f6fc;
+	z-index: 100;
+}
+.dbOptionsTop {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 208px 26px 26px;
+	margin-top: 2px;
+}
+.dbOptionsTitle {
+	font-family: Arial;
+	font-size: 14px;
+	margin: 2px 0 2px 2px;
+	font-weight: bold;
+	width: 200px;
+	height: 24px;
+	outline: none;
+	border: none;
+	padding-left: 6px;
+	color: #0865ee;
+	background-color: #eee;
+}
+.dbOptionsWrapper {
+	display: block;
+	height: 162px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	outline: none;
+	border: 1px solid #306cee;
+	margin: 2px;
+}
+.dbOptionCheck {
+	text-align: center;
+	margin: 2px 0 0 6px;
+}
+table#dbOptionsTableId {
+	display: block;
+	width: 156px;
+	border-collapse: collapse;
+	table-layout: auto;
+	cursor: pointer;
+	font-family: Arial;
+	font-size: 12px;
+	margin-left: 0px;
+	font-weight: bold;
+	padding: 0 20px 0 0;
+}
+table#dbOptionsTableId td {
+	
+	cursor: pointer;
+	padding: 1px;
+}
+.dbOptionName {
+	width: 198px;
+	height: 16px;
+}
 .dbTableContainer {
 	position: absolute;
 	outline: none;
@@ -2528,7 +2675,7 @@ table#dirsTableId td {
 	width: 290px;
 	height: 24px;
 	color: white;
-	background-color: #72AAFA;
+	background-color: #1e74c1;
 }
 .dbTableTitle2 {
 	font-family: Arial;
@@ -2568,7 +2715,7 @@ table#dirsTableId td {
 .dbEditorTop {
 	display: grid;
 	justify-content: start;
-	grid-template-columns: 30px 368px 28px 28px;
+	grid-template-columns: 30px 340px 28px 28px 28px;
 	
 }
 .cursor-pointer {
@@ -2577,7 +2724,7 @@ table#dirsTableId td {
 table#dbTableColumnDefId th {
 	padding: 1px;
 	color: #ffffff;
-	background-color: #72AAFA !important;
+	background-color: #1e74c1 !important;
 }
 table#dbTableColumnDefId td {
 	text-align: center;
@@ -2597,16 +2744,24 @@ table#dbTblAdtlConstrId td {
 	background-color: #c9eeef;
 }
 table#dbTblIndexColumnsId {
+	
+	
 	cursor: pointer;
 	font-family: Arial;
 	font-size: 12px;
 	margin-left: 2px;
 	font-weight: bold;
 }
+table#dbTblIndexColumnsId tbody {
+	width: 100%;
+	padding: 1px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
 table#dbTblIndexColumnsId th {
 	padding: 1px;
 	color: #ffffff;
-	background-color: #72AAFA !important;
+	background-color: #1e74c1 !important;
 }
 table#dbTblIndexColumnsId tr {
 	
@@ -2616,8 +2771,55 @@ table#dbTblIndexColumnsId td {
 	cursor: pointer;
 	padding: 1px;
 }
+table#dbTblLOBColumnsId {
+	cursor: pointer;
+	font-family: Arial;
+	font-size: 12px;
+	margin-left: 2px;
+	font-weight: bold;
+	
+}
+table#dbTblLOBColumnsId th {
+	padding: 1px;
+	color: #ffffff;
+	background-color: #1e74c1 !important;
+}
+table#dbTblLOBColumnsId tr {
+	
+}
+table#dbTblLOBColumnsId td {
+	text-align: center;
+	cursor: pointer;
+	padding: 1px;
+}
+	
+	
+	
+	
+	
+	
+.dbLOBall {
+	max-height: 22px !important;
+	width: 100px;
+	color: navy;
+	background-color: white;
+	border: 1px solid #666;
+	padding: 3px 2px 2px 2px;
+	text-indent: 2px;
+}
+table#dbTblCPKsHeadersId {
+	margin: -6px 0 0 0;
+	position: relative;
+	bottom: -2px;
+}
+table#dbTblCPKsHeadersId th {
+	padding-left: 4px;
+	color: #ffffff;
+	background-color: #1e74c1 !important;
+}
 table#dbTblCPKsColumnsId {
 	cursor: pointer;
+	margin-top: -28px;
 }
 table#dbTblCPKsColumnsId th {
 	padding: 1px;
@@ -2630,17 +2832,18 @@ table#dbTblCPKsColumnsId tr {
 table#dbTblCPKsColumnsId td {
 	text-align: center;
 	cursor: pointer;
-	padding: 1px;
+	padding: 1px !important;
 }
 table#dbTblConstrHeadersId {
 	margin: -6px 0 0 0;
 	position: relative;
 	bottom: -2px;
+	
 }
 table#dbTblConstrHeadersId th {
 	padding-left: 4px;
 	color: #ffffff;
-	background-color: #72AAFA !important;
+	background-color: #1e74c1 !important;
 }
 table#dbTblConstrColumnsId {
 	cursor: pointer;
@@ -2666,25 +2869,6 @@ table#dbTblConstrColumnsId td {
 	color: #ffffff;
 	background-color: #72AAFA !important;
 }
-table#dbTblCPKsHeadersId {
-	margin: -6px 0 0 0;
-	position: relative;
-	bottom: -2px;
-}
-table#dbTblCPKsHeadersId th {
-	padding-left: 4px;
-	color: #ffffff;
-	background-color: #72AAFA !important;
-}
-table#dbTblCPKsColumnsId {
-	cursor: pointer;
-	margin-top: -23px;
-}
-table#dbTblCPKsColumnsId td {
-	text-align: center;
-	cursor: pointer;
-	padding: 1px  !important;
-}
 	
 	
 	
@@ -2705,6 +2889,9 @@ table#dbTableContentId td {
 }
 .dbTableListMenu {
 	height: 10px !important;
+	width: 100% !important;
+	padding: 0;
+	margin: 0;
 }
 .dbTable-button {
 	border: 1px solid #bbbbbb;
@@ -2774,10 +2961,6 @@ table#dbTableContentId td {
 	
 	width: 98px;
 }
-.cnstrDBDefStr {
-	width: 240px;
-	height: 15px;
-}
 .cnstrDBName {
 	width: 65px;
 	height: 15px;
@@ -2789,14 +2972,6 @@ table#dbTableContentId td {
 .cnstrDBColumn {
 	
 	width: 88px;
-}
-.cnstrAdtlDBType {
-	
-	width: 97px;
-}
-.cnstrAdtlDBName {
-	width: 65px;
-	height: 15px;
 }
 .cnstrDBall {
 	max-height: 22px !important;
@@ -2813,23 +2988,26 @@ table#dbTableContentId td {
 	color: black;
 	background-color: white;
 	border: 1px solid navy;
-	padding: 3px 37px 7px 4px;
+	padding: 3px 37px 7px 6px;
 }
 .inputFieldDB {
-	width: 207px;
-	height: 16px;
-	margin-left:-2px;
+	width: 98%;
+	height: 18px;
+	padding: 0 0 0 0;
+	margin: 0;
 }
 #inputTypeId+.ui-selectmenu-button.ui-button {
 	max-height: 10px !important;
 	color: black;
 	background-color: white;
 	border: 1px solid navy;
-	padding: 3px 128px 7px 4px;
+	padding: 3px 126px 7px 5px;
 }
 .inputLengthDB {
-	width: 46px;
-	height: 16px;
+	width: 92%;
+	height: 18px;
+	padding: 0;
+	margin: 0;
 }
 #autoIncrId+.ui-selectmenu-button.ui-button {
 	max-height: 10px !important;
@@ -2849,9 +3027,43 @@ table#dbTableContentId td {
 	width: 216px;
 	height: 16px;
 }
-.idxDBColumn {
+.idxDBDef {
 	max-height: 22px !important;
-	width: 158px;
+	
+	color: navy;
+	background-color: white;
+	border: 1px solid #666;
+	padding: 3px 2px 2px 2px;
+	text-indent: 2px;
+}
+.idxColButton {
+	border: none;
+	outline: none;
+	transition-duration: 0.2s;
+	cursor: pointer;
+	height: 16px;
+	width: 98%;
+	background-color: #ffe;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.idxColButton:hover {
+	background-color: #d0d0d0;
+}
+.idxColButton:active {
+	background-color: #72AAFA !important;
+}
+	
+	
+	
+	
+	
+	
+	
+.cpkDBall {
+	appearance: none;
+	
+	max-height: 22px !important;
 	color: navy;
 	background-color: white;
 	border: 1px solid #666;
@@ -2859,18 +3071,22 @@ table#dbTableContentId td {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	text-indent: 2px;
-	
 }
-.cpkDBColumn {
-	max-height: 22px !important;
-	
-	color: navy;
-	background-color: white;
-	border: 1px solid #666;
-	padding: 3px 2px 2px 2px;
-	font-family: Arial;
-	font-size: 12px;
-	
+.cpkTblType {
+	width: 100px;
+}
+.cpkTblDef {
+	width: 100px;
+}
+.cpkTblName {
+	width: 80px;
+	height: 17px !important;
+}
+.cpkTblCols {
+	width: 100px;
+}
+.cpkTblNfr {
+	width: 50px;
 }
 #inputKeyId {
 	-webkit-appearance: none;
@@ -2881,30 +3097,6 @@ table#dbTableContentId td {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	text-indent: 2px;
-}
-#inputAutoIncrId {
-	
-	border-radius: 0;
-	overflow: hidden;
-	white-space: nowrap;
-	
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	-ms-appearance: none;
-	
-	
-	
-	
-}
-#inputNotNullId {
-	
-	
-	overflow: hidden;
-	white-space: nowrap;
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	-ms-appearance: none;
 }
 #nodeTableContainer {
 	display: block;
