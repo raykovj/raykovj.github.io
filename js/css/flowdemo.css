@@ -2589,6 +2589,33 @@ table#dbPropsTableId td {
 	width: 180px;
 	height: 16px;
 }
+table#dbSqsTableId {
+	
+	width: 156px;
+	
+	border-collapse: collapse;
+	table-layout: auto;
+	cursor: pointer;
+	font-family: Arial;
+	font-size: 12px;
+	margin: 2px 0 2px 0;
+	font-weight: bold;
+	padding: 0 20px 0 0;
+}
+table#dbSqsTableId td {
+	
+	cursor: pointer;
+	padding: 1px;
+}
+.dbSQName {
+	width: 324px;
+	height: 18px;
+}
+.dbSqName {
+	width: 140px;
+	height: 22px;
+	padding-right: 16px;
+}
 .dbOptionsContainer {
 	position: absolute;
 	outline: none;
