@@ -1203,6 +1203,35 @@
         </div>
     </div>
 
+    <!-- DB SEQUENCES: use some PROPERTIES classes -->
+    <div id="dbSqsContainer" class="dbPropsContainer">
+        <div id="dbSqsTopId" class="dbPropsTop">
+            <input class="dbPropsTitle"  autofocus type="text" readonly style="grid-column: 1;"
+                   data-bind="textInput: dbSeqsTitleText()"/>
+            <button id="btnSqsAddId" class="dgm-button button-add-tiny"
+                    style="margin: 2px 2px 2px 4px; grid-column: 2;" title="Add New Sequence"></button>
+            <button id="btnSqsRemoveId" class="dgm-button button-delete-tiny"
+                    style="margin: 2px 2px 2px 4px; grid-column: 3;" title="Remove Selected Sequence"></button>
+            <button id="btnSqsConfirmId" class="dgm-button button-check"
+                    style="margin: 2px 2px 2px 4px; grid-column: 5;" title="Confirm Selections And Close"></button>
+            <button id="btnSqsCloseId" class="dgm-button button-close-tiny"
+                    style="margin: 2px 2px 2px 4px; grid-column: 6;" title="Close Without Confirmation"></button>
+        </div>
+        <div class="dbPropsWrapper">
+            <table id="dbSqsTableId" >
+                <tbody data-bind="foreach: { data: dbSeqProps, as: 'item' }">
+                <tr>
+                    <td style="width: 90%">
+                        <input type="text" class="cursor-pointer dbSQName"
+                               data-bind="textInput: item.sqName" >
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
     <div id="dbTableContainerId"  class="dbTableContainer" >
         <div style="display: flex">
             <div data-bind="visible: !showDBTableEditorOnLeft()">
