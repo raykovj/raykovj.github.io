@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/guide.css" type="text/css" />
+    <title>Layout</title>
+</head>
+<body>
+<div class="container contentText">
+
+    <p>The layout structure of the <b>canvas</b> is the same for the two supported diagram types.
+        The nodes are positioned on a rectangular <b>dynamic grid</b> that consists of
+        <b>layers</b> across the flow direction and
+        <b>lanes</b> along the flow direction.<br>
+        <br><b>Flowchart</b> diagrams are displayed either vertically or horizontaly. In vertical mode the leftmost
+        lane is accepting only <b>left/top</b> nodes, and the rightmost only <b>right/bottom</b> nodes.
+        Switching to horizontal mode, the leftmost lane shows at the top, and the rightmost lahe shows
+        at the bottom. These lanes are dedicated as <b>swim</b> lanes. They can be added or removed
+        from the <b>Settings->General</b> dialog.
+        The switching of the flow direction is from the large arrow button located in the top
+        right section above the component palette. This section can be expanded or collapsed.<br>
+        <br><b>Database ERDs</b> use always vertical flow direction and do not expose any swim lanes.
+        <br><br>Nodes are allocated in the cells at the
+        intersections. The connection links are traced along the <b>pipes</b> between the
+        layers and between the lanes. These areas are often highlighted when the mouse is moved over.
+        <br>
+        When a node icon is dragged from the palette to the canvas, or when a node is moved to a different
+        position, only the cells accepting the particular node type are highlighted. <br>
+    </p><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../images/gifs/layout.gif" width="753" height="492"></p>
+    </div><br>
+    <p>Nodes are assigned names at node creation time. Names have to be unique across the
+        diagram. They can be changed inline any time later.
+        Duplicate names are rejected. Nodes are created either by dragging a node icon from the palette,
+        or by selecting a node item from the context menu on the canvas.
+        The selection options are context sensitive:</p><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../images/gifs/addNodes.gif" width="846" height="478"></p>
+    </div><br>
+
+    <p>Layers and/or lanes can be added from the canvas context menu when the mouse is positioned on a pipe.
+        Empty layers or lanes can be removed from the context menu:</p><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../images/gifs/addRemove.gif" width="584" height="513"></p>
+    </div><br><br>
+
+</div>
+</body>
+</html>

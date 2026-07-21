@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/guide.css" type="text/css" />
+    <title>Selections</title>
+</head>
+<body>
+<div class="container contentText" >
+
+    <p>Single mouse click on a node or on a link displays it as selected.
+        Multiple selections can be made in two ways:
+    <li> select or toggle the selection by pressing <b>Ctrl</b> and clicking the mouse</li>
+    <li> draw a selection rectangle by pressing <b>Shift</b> and dragging the mouse </li><br>
+
+    The <b>Copy</b> and <b>Paste</b> actions require one or more selected nodes of the same <b>copy category</b>
+    (see below) and include only the links between them, if any.
+    <b>Paste</b> is activated after the <b>Copy</b> selection and needs a location point from a mouse click.
+    Any combination of the following works on selected nodes:
+    <li><b>Copy</b> and <b>Paste</b> buttons on the top toolbar</li>
+    <li><b>Copy</b> and <b>Paste</b> menu items from the top hamburger menu</li>
+    <li><b>Ctrl+C</b> and <b>Ctrl+V</b> from the keyboard</li>
+
+    The copy selections are kept in the clipboard until <b>Paste</b> or cleared by pressing <b>Escape</b>.<br>
+    <br>The <b>copy categories</b> comprise nodes that can be copied together.<br>
+    Flowcharts include five categories:
+    <li>All <b>central</b> nodes </li>
+    <li><b>Start</b> nodes </li>
+    <li><b>End</b> nodes </li>
+    <li><b>Left/Top</b> nodes </li>
+    <li><b>Right/Bottom</b> nodes </li>
+    Database ERD nodes are grouped in one category.<br>
+    Copying between different diagrams is not accepted.</p>
+
+    <br><p>You can delete all of the selected graph elements using any of:
+    <li><b>Remove Selections</b> button on the top toolbar</li>
+    <li><b>Remove...</b> menu item from the context menu of the graph element</li>
+    <li><b>Remove Selections</b> menu item from the top hamburger menu</li>
+    <li><b>Delete</b> key from the keyboard</li><br>
+    Mouse click outside any graph element cancels all selections, except if pointing to a paste location. </p><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../images/gifs/selections.gif" width="548" height="461"></p>
+    </div><br><br>
+
+</div>
+</body>
+</html>

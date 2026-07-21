@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/guide.css" type="text/css" />
+    <title>File Browser</title>
+</head>
+<body>
+    <div class="container contentText">
+
+        <p>The editor has a proprietary <b>file system browser</b> that is accessible when the editor
+            is connected to the server. It has full access to the file system to open, save
+            and delete files, as well as to display, create and delete folders. The created
+            diagrams, in JSON format, can be saved in existing folders or in newly created ones. Currently
+            the file browser works under <b>Windows</b>. The server connection uses <b>node.js</b>.</p>
+        <p><b>NOTE</b>: Due to some current limitations of <b>node.js</b> libraries, the file browser can
+            access only the file structures or the disk partition where the JDElite Data Modeler is installed
+            and launched from. Files and folders with names containing spaces are not accepted. </p>
+        <br>
+        <p>A view of the browser in <b>OPEN</b> mode:</p><br>
+        <div style="display:flex; justify-content: center; ">
+            <p><img src="../../images/guide/browser.png" width="453" height="443"></p><br>
+        </div><br>
+        <p>The actions prompted by the buttons on the top of the file browser are as follows:
+        <p><img src="../../images/toolbar/navigate_left24.png" width="24" height="24"> - Move one level up</p>
+        <p><img src="../../images/toolbar/navigate_right24.png" width="24" height="24"> - Move one level down</p>
+        <p><img src="../../images/toolbar/newFolder24.png" width="24" height="24"> - Create new folder
+            at the current location</p>
+        <p><img src="../../images/toolbar/delete18x24.png"> &nbsp;- Delete the selected file of folder</p><br>
+
+        <p>A view of the brouser in <b>SAVE</b> mode:</p><br>
+        <div style="display:flex; justify-content: center; ">
+            <p><img src="../../images/guide/browserSave.png" width="451" height="487"></p>
+        </div>
+        <br><br>
+
+    </div>
+</body>
+</html>
