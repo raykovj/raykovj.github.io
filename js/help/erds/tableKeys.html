@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/guide.css" type="text/css" />
+    <title>Table Keys</title>
+</head>
+<body>
+<div class="container contentText">
+
+    <p>The relationships of relational databases are determined by the <b>primary</b> and <b>foreign</b>
+        keys.
+        A <b>primary</b> key is a column (<b>PK</b>) or a group of columns (<b>CPK</b> - composite primary key)
+        that ensure unique row identification in the database table. The primary keys values
+        cannot be duplicate or null. If a primary key contains multiple columns, the combination of values
+        in each record should be unique for it to be valid. A table can have only one primary key.<br><br>
+
+        A <b>foreign</b> key is a column (<b>FK</b>) or a group of columns (<b>CFK</b>) that together with a
+        primary key of another table represent a reference between the two tables. In other words, the foreign
+        key in one table is said to have a reference to a primary key in another table. There could be multiple
+        foreign keys from different tables referencing the same primary key.
+
+        <br><br>As mentioned earlier, the rows in the diagram table node correspond to the database table
+        columns. The columns in the diagram node show the property values of each database column.
+
+        <br>In the picture below, the first record field in the <b>CUSTOMER</b> table, named <b>customer_id</b>,
+        is the <b>primary</b> key of this database
+        table. It is tagged with <b>PK</b> in the first column of the node.
+
+        <br><br>The first record field in the <b>CONTACT</b> table, named <b>contact_id</b>,
+        is the <b>primary</b> key of this database
+        table. It is tagged with <b>PK</b> in the first column of the node.
+        <br>The second record field in the <b>CONTACT</b> table, named <b>customer_id</b>, is
+        the <b>foreign</b> key of this database
+        table. It is tagged with <b>FK</b> in the first column of the node.
+
+        <br><br>The popup handles on the <b>PK</b> row of one node and on the <b>FK</b> row of another node offer the
+        choice to create a link between the two diagram nodes by dragging one of them to the other.
+        This link is an essential
+        feature of the relational databases. It establishes and ensures the <b>referential integrity</b> between the
+        table with referencing column and the table with referenced column.
+
+        <br><br>The small vertical bars at the both ends of the link below show the particular <b>cardinalities</b>.
+        They define the numerical relationship between connected entities. In the example below
+        each customer can have only one contact associated with him and each contact corresponds to only
+        one specific customer. This is <b>one-to-one</b> relationship.
+    </p><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/gifs2/cardinality.gif" width="502" height="268" style="border: 2px solid blue"></p>
+    </div><br>
+
+        <p>Adding cardinalities to diagrams has not any functional implications. The <b>crow's foot</b> symbols
+            are rotated correspondongly. All types of cardinalities
+            are listed in the dialog:</p><br>
+    <div >
+        <p><img src="../../../images/guide/cardinality.png" width="180" height="169" style="border: 2px solid blue"></p>
+    </div><br>
+
+
+</div>
+</body>
+</html>

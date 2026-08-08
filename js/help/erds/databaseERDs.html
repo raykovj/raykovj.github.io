@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/guide.css" type="text/css" />
+    <title>Database ERDs</title>
+</head>
+<body>
+<div class="container contentText">
+
+    <p> <b>JDElite Data Modeler</b> parses SQL schema files to graphical ERDs, creates new schema graphical models on the screen,
+        and generates SQL data to schema files.</p><br>
+    <p>The <b>Database ERDs</b> (entity-relationship diagrams) represent the databases physical structure.
+        An ER diagram contains two object types: <b>entities</b> and <b>relationships</b>.
+        The entities correspond to database tables and in the <b>ERDs</b> they are modeled as diagram nodes.
+        The nodes show the detailed table designs. The relationships between the
+        entities are modeled as links between the nodes.</p><br>
+    <p><b>JDElite Data Modeler</b> supports the relational databases <b>SQL Server</b>, <b>Oracle</b>, <b>MySQL</b>,
+        <b>MariaDB</b>, <b>PostgreSQL</b>, <b>DB2</b>, and <b>SQLite</b>.</p><br>
+    <p>The ERD internal model, created in <b>JDElite Data Modeler</b>, is in <b>JSON</b> format. The ER diagram
+        can be <b>exported</b> to a <b>SQL</b> script of the specific database schema.
+        Vice versa, a database <b>SQL</b> schema script can be <b>imported</b> to <b>JDElite Data Modeler</b>,
+        parsed to a <b>JSON</b> diagram model, visualized and modified as needed.</p><br>
+    <p>Database tables contain <b>records</b> (table <b>rows</b>) and <b>columns</b>. A table record is an instance of the
+        represented entity. For example, the records in
+        the <b>CUSTOMER</b> table below are instances of the <b>customer</b> entity and each record corresponds to a
+        particular customer.</p><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/guide/dbTableExample.png" width="428" height="105"></p>
+    </div><br>
+    <p> Database table columns, respectively the fields in a column,
+        have specific <b>properties</b>: name, data type, data length, etc,
+        specified in the SQL schema. In the above example,
+        the record fields in the <b>CUSTOMER</b> table are <b>customer_id</b>, <b>first_name</b>,  <b>middle_name</b>
+        and <b>last_name</b>. These are the database table column names.</p><br>
+    <p>Each ERD node in <b>JDElite Data Modeler</b> represents the structure of a database table in its
+        own table format. The <b>rows</b> in the diagram node table correspond to the database table <b>columns</b>,
+        and the <b>columns</b> in the diagram node table correspond to the database <b>column properties</b>,
+        in this case <b>key</b>, <b>name</b>, <b>data type</b>, <b>length</b>:</p><br>
+
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/gifs2/CUSTOMER.png" width="253" height="166"></p>
+    </div><br><br>
+
+</div>
+</body>
+</html>

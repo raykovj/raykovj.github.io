@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/guide.css" type="text/css" />
+    <title>Import/Export</title>
+</head>
+<body>
+<div class="container contentText">
+
+    <p><b>JDElite Data Modeler</b> imports an <b>SQL</b> schema file from disk by parsing it to an <b>ERD</b> graphical model
+        and displaying it on the screen. The model is stored in <b>JSON</b> format to disk and reopened for editing.
+        The graphical ERD can be exported from the screen to a schema by generating the <b>SQL</b> schema script from
+        the graphical model and storing it on disk.
+        </p>
+
+    <h3>Import from SQL schema</h3>
+    <ul>
+        <li>From the start page, select <b>Database ERD</b></li>
+        <li>Select the database for your project</li>
+        <li>Select <b>Import SQL Schema</b> from the list of options</li>
+        <li>In the <b>File Browser</b> that opens up, navigate to the <b>.sql</b> file,
+            select it and confirm the selection</li>
+    </ul>
+    The <b>ERD</b> of the schema will be generated and displayed in the editor as shown here:
+    <br><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/gifs2/importSQL.gif" width="724" height="482" style="border: 2px solid blue"></p>
+    </div><br>
+
+    <h3>Export to SQL schema</h3>
+    <ul>
+        <li>Open the <b>ERD</b> of an already existing database ERD</li>
+        <li>Click at <b>Export DB</b> button in the toolbar:
+            <img src="../../../images/toolbar/export24.png" width="24" height="24" style="vertical-align: middle">
+        </li>
+        <li>In the <b>Export to SQL Script</b> dialog, you optionally can specify the output database schema name
+        and whether you want it prepended to table names as prefix. Confirm any way</li>
+        <li>In the <b>File Browser</b> that opens up, navigate to the desired location, enter the file name for
+            the schema script, and confirm</li>
+    </ul>
+    The <b>.sql</b> script will be stored in the selected location:<br><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/gifs2/exportSQL.gif" width="772" height="482" style="border: 2px solid blue"></p>
+    </div>
+    <br>
+    <p><b>NOTE</b>: You can re-import the newly created schema script. You can expect to see again the same ERD that you
+        just did export.</p>
+    <br>
+
+</div>
+</body>
+</html>

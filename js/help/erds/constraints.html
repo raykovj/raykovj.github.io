@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/guide.css" type="text/css" />
+    <title>Constraints</title>
+</head>
+<body>
+<div class="container contentText">
+
+    <p><b>Database constraints</b> specify the rules for data in a table. They can be column-level,
+        referring to a given column, or
+        table-level, referring to multiple columns. Constraints are used to limit
+        the type of data that can be included in a table. This ensures the accuracy and reliability of
+        the data in the table. If there is any violation between a constraint and the action on the data,
+        the action is aborted. </p><p></p><br>
+    <p>Here are examples of some of the most common database SQL constraints:</p>
+    <ul>
+        <li><b>PRIMARY KEY</b>: Uniquely identifies each row in a table, requiring that the
+            values in this column be a combination of a NOT NULL and UNIQUE. It can be specified
+            either at <b>column</b> level or at <b>table</b> level.</li>
+        <li><b>FOREIGN KEY</b>: Connects data across multiple tables, based on a common column
+            or columns. It is a field (or collection of fields) in one table, referring to the PRIMARY KEY
+            in another table. In the <b>SQL schema</b> it is specified either at <b>column</b> level as
+            <b>REFERENCES</b>, or at <b>table</b> level.</li>
+        <li><b>UNIQUE</b>: Prevents duplicate values from being entered into a column, but
+            allows null values. It can be specified either at <b>column</b> level, or at
+            <b>table</b> level.</li>
+        <li><b>NOT NULL</b>: Ensures that a <b>column</b> should never contain an invalid value</li>
+        <li><b>CHECK</b>: Specifies a requirement that must be met by each row in a table,
+            and can refer to a single or multiple columns. It can be specified either at <b>column</b> level, or at
+            <b>table</b> level.</li>
+        <li><b>DEFAULT</b>: Allows to define a value to be placed into a <b>column</b> when a new row
+            in a database table is inserted.</li>
+    </ul>
+
+    <p><b>NOTE:</b> The <b>JDElite Data Modeler</b> uses unified graphical presentations for <b>PRIMARY KEY</b>,
+        <b>FOREIGN KEY</b>, <b>UNIQUE</b> and <b>CHECK</b>. They are all interpreted as <b>table</b> level constraints,
+        and in the <b>DB table editor</b> they are represented at <b>table</b> level to add, edit, or remove.</p>
+    <p>The <b>REFERENCES</b> constraint is represented as <b>FOREIGN KEY</b> and is assigned always at table level.
+    </p><br>
+
+    <p> Here is an example how to assign a <b>FOREIGN KEY</b> constraints for a database table column. You need to double-click
+        the title bar of the table node to assign this constraint by selecting in the editor this table <b>FK</b> field, as well as
+        the source <b>PK</b> table name and column name. When you comfirm this information, together with the
+        <b>FOREIGN KEY</b> constraints, a new graphical link will be created:</p><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/gifs2/addCPKbyEditor.gif" width="752" height="502" style="border: 2px solid blue"></p>
+    </div><br>
+
+    <p> There is a two-way synchronization between a created link and a
+        <b>FOREIGN KEY</b> constraint: creating a link by dragging the mouse will also automatically create the
+        corresponding <b>FOREIGN KEY</b> constraint.</p><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/gifs2/addCPKbyMouse.gif" width="752" height="502" style="border: 2px solid blue"></p>
+    </div><br><br>
+
+</div>
+</body>
+</html>

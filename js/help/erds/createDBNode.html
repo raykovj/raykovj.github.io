@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/guide.css" type="text/css" />
+    <title>Create DB Node</title>
+</head>
+<body>
+<div class="container contentText">
+
+    <p>A <b>DB diagram node</b> in ERDs represents a table from the <b>SQL schema</b>. It shows the
+        table structure and the rules as defined in the particular database schema documentation.
+    </p>
+    <p>A <b>new DB diagram node</b> is created either by dragging an item from the palette on the right
+        to an accepting cell on the canvas, or by selecting an item from the canvas context menu
+        displayed on an empty cell. In both cases there are two node choices:
+        <b>DB Table</b> and <b>DB Sequence</b>:</p><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/guide/addDBNode.png" width="502" height="290"></p>
+    </div><br>
+
+    <p>Once you have the basic DB node visual instance, the next steps are to define its structure. This is done
+        by using the <b>DB table editor</b> dialog. To open it, you double-click
+        on either the title bar or a particular row of the node. </p>
+        <p>Each row represents a column from the database table
+        and you can enter the corresponding properties.</p><br>
+
+    <p>The fields in a DB node row are
+        common for all supported databases: <b>Key</b>, <b>Column Name</b>, <b>Data Type</b> and
+        <b>Length</b>. The keys are either <b>primary</b>, <b>foreign</b>, or no key. The column names
+        correspond to the database columns. The drop-down list of datatypes is database specific.
+        The length applies to database columns that hold text datatypes.
+    </p>
+
+    <p>You can add, edit or remove a row, as well as rearrange the order of
+        the rows, using the buttons at the top right. These buttons are enabled or disabled
+        depending on the row selection. You can also
+        define database table column constraints, LOB storage, and indexes. The editor actions are
+        demonstrated below.</p><br>
+    <!--<div style="display:flex; justify-content: center; ">-->
+        <!--<p><img src="../../images/gifs2/dbNodeEditor.gif" width="612" height="338" style="border: 2px solid blue"></p>-->
+    <!--</div><br>-->
+
+    <p>The four standard node row fields are:</p>
+    <p> <b>Key</b> - designates the database column as either primary(<b>PK</b> or <b>CPK</b>) or
+        foreign (<b>FK</b> or <b>CFK</b>) keys, or none</p>
+    <p> <b>Column Name</b> - the database column name</p>
+    <p> <b>Data Type</b> - data type of the content in this column</p>
+    <p> <b>Length</b> - the length of the data in this column</p>
+    <br>The buttons on the toolbar of the DB table editor are as follow:
+    <p><img src="../../../images/toolbar/add24.png" width="24" height="24"> - Add a new empty row</p>
+    <p><img src="../../../images/toolbar/addPK24.png" width="24" height="24"> - Add an additional row
+        for the primary key</p>
+    <p><img src="../../../images/toolbar/delete18x24.png" width="20" height="24">  -  Delete the selected row
+        if there is no reference to it</p>
+    <p><img src="../../../images/toolbar/navigate_up24.png" width="24" height="24">  - Move the selected row
+        one step up if the row has no primary key assigned</p>
+    <p><img src="../../../images/toolbar/navigate_down24.png" width="24" height="24"> - Move the selected row
+        one step down if the row has no primary key assigned</p>
+    <p>You can edit the node name inline at any time.</p>
+    <br>
+    <p> Here is an example how to create a database table node:</p>
+    <br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/gifs/dbNewTable.gif" width="718" height="396" style="border: 2px solid blue"></p>
+    </div><br>
+
+    <p> And here is an example how to rearrange some rows in a database table node:</p><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/gifs/dbRearrange.gif" width="654" height="352" style="border: 2px solid blue"></p>
+    </div><br><br>
+
+    <p>Below the fields in the <b>DB table editor</b> are the three main categories of DB table properties:</p>
+    <ul>
+        <li><b>Table Constraints / Keys</b> or <b>Column Constraints / Properties</b>, upon your choosing
+            the title bar or a row</li>
+        <li><b>Table LOB Storage</b> or <b>Column LOB Storage</b>, again upon your choosing the title bar or a row</li>
+        <li><b>Indexes</b> - they are both at table level and at row level (database table column)</li>
+    </ul>
+
+    <br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/gifs2/dbNodeEditor.gif" width="612" height="338" style="border: 2px solid blue"></p>
+    </div><br>
+
+</div>
+</body>
+</html>

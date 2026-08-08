@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/guide.css" type="text/css" />
+    <title>Cardinality</title>
+</head>
+<body>
+<div class="container contentText">
+
+    <p>Within database modelling, <b>cardinality</b> defines the number of occurrences of a primary
+        entity associated with the number of occurrences of a foreign entity. The cardinality is
+        represented graphically by the
+        <b>crow's foot</b> symbols at the ends of the connection. There are six commonly accepted
+        relationships symbols:</p>
+    <div >
+        <p><img src="../../images/guide/cardinality.png" width="180" height="169" style="border: 2px solid blue"></p>
+    </div><br>
+    <p>Below are examples of three main types of cardinality relationships: <b>one-to-one</b>, <b>one-to-many</b>
+        (<b>many-to-one)</b> and <b>many-to-many</b>.
+    </p><br>
+    <p><b>One-to-one cardinality</b></p>
+    <p>One example was the <b>CUSTOMER</b> to <b>CONTACT</b> relation shown before under the
+        <b>Primary and Foreign Keys</b> title. Another example would be the <b>car</b> to <b>service ticket</b> relation in a car repair shop:
+    </p><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../images/guide/car2ticket.png" width="462" height="176" style="border: 2px solid blue"></p>
+    </div><br>
+    <p><b>One-to-many cardinality</b></p>
+    <p>An example would be when we keep an authors catalog and we need to show
+        the relation between an <b>author</b> and her/his <b>books</b>:
+    </p><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../images/guide/author2book.png" width="491" height="152" style="border: 2px solid blue"></p>
+    </div><br>
+    <p><b>Many-to-many cardinality</b></p>
+    <p>In a different scenario, in  a library, we need to establish the relations between the plurality
+        of authors and the plurality of books. In this case we can use an additional
+        <b>join</b> table with two one-to-many relations as follows:</p><br>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../images/guide/authors2books.png" width="573" height="146" style="border: 2px solid blue"></p>
+    </div><br>
+    <p>The <b>AUTHORS_BOOKS</b> table contains two foreign keys pointing respectively to the <b>AUTHORS</b> and
+        <b>BOOKS</b> tables. These two foreign keys together act as a <b>composite primary key</b> for the
+        <b>AUTHORS_BOOKS</b> table.</p>
+    <br><br>
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/guide.css" type="text/css" />
+    <title>Indexes</title>
+</head>
+<body>
+<div class="container contentText">
+
+    <p><b>Database index</b> is an optional structure, associated with a column or group of columns on a table,
+        that can speed up the access to the data. Indexes are data structures that hold copies of specific table
+        columns sorted for rapid lookups. Internally these structures are implemented most often as either
+        <b>B-Trees</b>, <b>Hash Indexes</b>, or <b>Bitmaps</b>.</p>
+    <p>Most often indexes are defines in <b>SQL</b> explicitly by <b>CREATE INDEX</b> statements, however some
+        constraints, like <b>PRIMARY KEY</b> and <b>UNIQUE</b>, implicitly create internal index structures.</p>
+    <p>Since this is a complex topic, you can look up for some brief information at:</p>
+    <p>https://www.thedataschool.co.uk/aronas-zilys/untitled-202/</p>
+    <p>or at any of the multiple internet sources, before digging into database documentation.
+    </p><br>
+    <p>The implementation of indexes varies in different databases. However, <b>JDElite Data Modeler</b> has a
+        standardized representation for indexes in the <b>DB Table Editor</b> subtable <b>Indexes</b>, which
+        is enabled at table level. You can specify one or more indexes per table, entering your data in
+        all or some of the fields: </p>
+    <ul>
+        <li><b>Name</b>: Index names have to be unique. <b>Oracle</b>, <b>PostgreSQL</b> and <b>DB2</b> require
+            uniqueness within the schema, <b>SQL Server</b>, <b>MySQL</b> and <b>MariaDB</b> - within only the table,
+            but in <b>SQLite</b> indexes names must be unique across the entire database file.
+
+        </li>
+        <li><b>Options</b>: Depending on the particular database, indexes can be <b>unique</b>, <b>clustered</b>,
+            <b>nonclustered</b>, <b>composite</b>, or other specialized options.
+        </li>
+        <li><b>Columns</b>: one or more columns in the table, unless columns are specified in the expressions.</li>
+        <li><b>Expressions</b>: instead of explicit one or more columns, they can be wrapped as
+        parameters of database functions of computational expressions.</li>
+        <li><b>Included Columns</b>: include additional payload column(s) for higher optimization</li>
+        <li><b>Included Expressions</b> the included columns are wrapped in functions or expressions</li>
+        <li><b>Properties</b>: Advanced index properties and configurations, and depending on the particular database
+            they control how the index is built, stored, and filtered.
+        </li>
+    </ul>
+    <p>Here are a few examples:</p><br>
+    <p><b>Oracle</b>:</p>
+        <div style="display:flex; justify-content: center; ">
+            <p><img src="../../../images/gifs2/indexOracle.gif" width="598" height="416" style="border: 2px solid blue"></p>
+        </div><br>
+
+
+    <p><b>PostgreSQL</b>:</p>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/gifs2/indexPG.gif" width="600" height="346" style="border: 2px solid blue"></p>
+    </div><br>
+
+
+    <p><b>SQL Server</b>:</p>
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/gifs2/indexTSQL.gif" width="546" height="358" style="border: 2px solid blue"></p>
+    </div><br>
+
+
+</div>
+</body>
+</html>

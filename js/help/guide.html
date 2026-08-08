@@ -9,10 +9,8 @@
 </head>
 
 <body>
-<!--<div class="master">-->
     <div id="masterId" class="container">
         <div class="topBar">
-            <!--<img class="logo">-->
             <div class="contentTitle">
                 <span>JDElite Data Modeler User Guide</span>
             </div>
@@ -27,7 +25,6 @@
                             <li><button id="actionsBtnId" class="textBtn second" onclick="selectText(event)">Diagram Actions</button></li>
                             <li><button id="settingsBtnId" class="textBtn second" onclick="selectText(event)">Settings Dialog</button></li>
                             <li><button id="browserBtnId" class="textBtn second" onclick="selectText(event)">File System Browser</button></li>
-                            <!--<li><button id="paletteBtnId" class="textBtn second" onclick="selectText(event)">Nodes Palette</button></li>-->
                             <li><button id="layoutBtnId" class="textBtn second" onclick="selectText(event)">Canvas Layout</button></li>
                             <li><button id="selectionsBtnId" class="textBtn second" onclick="selectText(event)">Selections</button></li>
                             <li><button id="navigateBtnId" class="textBtn second" onclick="selectText(event)">Diagram Navigating</button></li>
@@ -36,14 +33,14 @@
 
                      <li><button id="databaseBtnId" class="caret textBtn first" onclick="selectText(event)">Database ERDs</button>
                         <ul class="nested">
-                            <li><button id="dbKeysBtnId" class="textBtn second" onclick="selectText(event)">Primary and Foreign Keys</button></li>
-                            <li><button id="dbCreateBtnId" class="textBtn second" onclick="selectText(event)">Create a Table Node</button></li>
-                            <li><button id="dbCardinalBtnId" class="textBtn second" onclick="selectText(event)">Notations and Cardinality</button></li>
-                            <li><button id="dbCompositeBtnId" class="textBtn second" onclick="selectText(event)">Composite Keys</button></li>
-                            <li><button id="dbConstraintsBtnId" class="textBtn second" onclick="selectText(event)">Constraints</button></li>
-                            <li><button id="dbIndexesBtnId" class="textBtn second" onclick="selectText(event)">Indexes and Keys</button></li>
+                            <li><button id="dbKeysBtnId" class="textBtn second" onclick="selectText(event)">Referential Integrity</button></li>
                             <li><button id="dbImpExpBtnId"  class="textBtn second"
-                                        onclick="selectText(event)">Import / Export DB Scripts</button></li>
+                                        onclick="selectText(event)">Import / Export Scripts</button></li>
+                            <li><button id="dbCreateBtnId" class="textBtn second" onclick="selectText(event)">Table Node and Editor</button></li>
+                            <li><button id="dbSequenceBtnId" class="textBtn second" onclick="selectText(event)">Sequence Node</button></li>
+                            <li><button id="dbConstraintsBtnId" class="textBtn second" onclick="selectText(event)">Constraints</button></li>
+                            <li><button id="dbLOBsBtnId" class="textBtn second" onclick="selectText(event)">LOB Storage</button></li>
+                            <li><button id="dbIndexesBtnId" class="textBtn second" onclick="selectText(event)">Indexes</button></li>
                         </ul>
                     </li>
 
@@ -68,856 +65,305 @@
 
             <div id="rightId">
                 <div style="margin-top: 40px; "></div>
-                <div id="prefaceTextId" class="contentText">
-                    <p><b>JDElite Data Modeler</b> offers design and modeling solutions for a wide variety of use cases.
-                        <!--The sections in this guide demonstrate the features of JDElite Data Modeler through-->
-                        <!--screenshots and  short video clips. The <b>EXPLORE mode</b> has all of the built-in features.-->
-                        <!--The only difference from the <b>Full Functionality mode</b> is that there is no access to the-->
-                        <!--proprietary built-in <b>file browser</b> and respectively to the file system. You can-->
-                        <!--create your diagrams but in order to save/reopen them you'll need the additional-->
-                        <!--server module. There are built-in sample <b>templates</b> for each diagram type. In the-->
-                        <!--<b>EXPLORE mode</b> they can be edited but not saved. In the <b>Full Functionality mode</b>-->
-                        <!--they can be replicated as diagram files, edited and saved.-->
-                    </p>
-                    <p>The start page shows the paths to the two supported diagram types.
-                        You can switch to <b>Flowcharts</b> or <b>Database ERDs</b> at any time by clicking the
-                        <b>Start Here</b> button on the top of the toolbar.
-                    </p><br>
-                    <!--<p><img src="../../images/splash/whereToStart.png" width="185" height="119"></p>-->
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs2/startEditor.gif" width="898" height="610"></p><br>
-                    </div>
-                    <br><br>
+                <div id="prefaceTextId" class="div-container">
+                    <iframe src="preface.html"></iframe>
                 </div>
 
                 <div id="basicsTextId" class="div-container">
-                    <iframe src="basics_text.html"></iframe>
+                    <iframe src="common/basics_text.html"></iframe>
                 </div>
 
                 <div id="actionsTextId" class="div-container">
-                    <iframe src="basic_actions.html"></iframe>
+                    <iframe src="common/basic_actions.html"></iframe>
                 </div>
 
                 <div id="settingsTextId" class="div-container">
-                    <iframe src="settings.html"></iframe>
+                    <iframe src="common/settings.html"></iframe>
                 </div>
 
                 <div id="browserTextId" class="div-container">
-                    <iframe src="fileBrowser.html"></iframe>
+                    <iframe src="common/fileBrowser.html"></iframe>
                 </div>
 
                 <div id="layoutTextId" class="div-container">
-                    <iframe src="layout.html"></iframe>
+                    <iframe src="common/layout.html"></iframe>
                 </div>
 
                 <div id="selectionsTextId" class="div-container">
-                    <iframe src="selections.html"></iframe>
+                    <iframe src="common/selections.html"></iframe>
                 </div>
 
-                <div id="navigateTextId" class="contentText">
-                    <p>When a diagram is larger than the browser viewable area, the <b>Thumbnail View</b> dialog, invokable
-                        from the top right of the screen, helps to navigate the entire diagram:
-                    <img src="../../images/toolbar/thumbnail24.png" width="24" height="24"></p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/thumbnail.gif" width="612" height="490"></p>
-                    </div><br><br>
-
-
-                    <p>To search for a particular node or nodes in large diagrams, use the <b>Search</b> dialog accessed from the
-                        top toolbar:
-                        <img src="../../images/toolbar/find24.png" width="24" height="24"><br>
-                        It allows to find a single or multiple nodes by using a
-                        full or partial name, or by matching the appropriate text or pattern in the node content text.</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/search.gif" width="596" height="474"></p>
-                    </div><br><br>
+                <div id="navigateTextId" class="div-container">
+                    <iframe src="common/navigate.html"></iframe>
                 </div>
 
-<!--***********-->
+                <!--***********-->
+
+                <!-- Database ERDs -->
+
+                <div id="databaseTextId" class="div-container">
+                    <iframe src="erds/databaseERDs.html"></iframe>
+                </div>
+
+                <div id="dbKeysTextId" class="div-container">
+                    <iframe src="erds/tableKeys.html"></iframe>
+                </div>
+
+                <div id="dbImpExpTextId" class="div-container">
+                    <iframe src="erds/importExport.html"></iframe>
+                </div>
+
+                <div id="dbCreateTextId" class="div-container">
+                    <iframe src="erds/createDBNode.html"></iframe>
+                </div>
+
+                <div id="dbSequenceTextId" class="div-container">
+                    <iframe src="erds/createSequence.html"></iframe>
+                </div>
+
+                <div id="dbConstraintsTextId" class="div-container">
+                    <iframe src="erds/constraints.html"></iframe>
+                </div>
+
+                <div id="dbLOBStorageTextId"  class="div-container">
+                    <iframe src="erds/lobStorage.html"></iframe>
+                </div>
+
+                <div id="dbIndexesTextId" class="div-container">
+                    <iframe src="erds/indexes.html"></iframe>
+                </div>
+
+                <!--***********-->
 
                 <!-- FLOWCHART -->
 
-                <div id="createNodesTextId" class="contentText">
-                    <p>A <b>new node</b> is created either by dragging an item from the palette on the right of the screen
-                        to an accepting cell on the canvas, or by positioning the mouse on an empty cell and selecting
-                        a node type from the context menu. The menu shows only nodes that are accepted at this location:</p><br>
-                    <p><img src="../../images/guide/addNode.png" width="410" height="310"></p><br>
-                    <p>The start and end layers, as well as the left and right swim lanes, are optional. They all accept
-                        their specific node types from the palette or from the mouse context menus.</p><br>
-                    <p>The flowchart <b>frame size</b> can be modified from the context menus at any time by inserting
-                        new layers or lanes, and/or removing the unused ones:</p><br>
-                    <p><img src="../../images/guide/removeLayer.png" width="208" height="220"></p><br>
-                </div>
+            <div id="bankFlowTextId" class="div-container">
+                <iframe src="flow/bankFlow.html"></iframe>
+            </div>
 
-                <div id="flowStartTextId" class="contentText">
-                    <p>Build a diagram by simply drag-and-drop nodes from the palette
-                        and by dragging links between the nodes, connecting the popup handles with the mouse.<br>
-                        Note that when selecting(clicking) a popup handle, the handles that potentially can accept
-                        a connection between certain nodes will become lightly highlighted. The connection is accepted
-                        when the connection line dragged by the mouse reaches one of these handles and the highlight color
-                        changes to a darker blue.
-                    </p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/startNewFlow.gif" width="606" height="474"></p>
-                    </div><br><br>
-                </div>
+            <div id="createNodesTextId" class="div-container">
+                <iframe src="flow/createNode.html"></iframe>
+            </div>
 
-                <div id="flowchartTextId" class="contentText">
-                    <p><b>Flowcharts</b> represent the steps of algorithms, processes or workflows, vizualising the
-                        structure of the problems or tasks.<br>The template shown below represents
-                        a bank transaction process.
-                    </p>
-                    <br>
-                    <p><img src="../../images/guide/openFlowTemplate.png" width="360" height="150"></p>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/bankTemplate.png" width="502" height="516"></p>
-                    </div><br><br>
-                </div>
+            <div id="flowStartTextId" class="div-container">
+                <iframe src="flow/startFlow.html"></iframe>
+            </div>
 
-                <div id="nodeEditTextId" class="contentText">
-                    <p>When moving the mouse over the node, two editable areas are visualized under the cursor: the node
-                        name field and the node text content field. When double-clicking on any of them, the corresponding
-                        text field opens, accepting the keyboard input for editing.<br>There are certain spelling rules
-                        regarding the node name. In case of spelling mistakes, an error message comes up below the field.
-                        Edits to these two fields are accepted by pressing the <b>Enter</b> key.
-                        If the text content size is too large, use the context menu on the node
-                        in order to compress the text to only two lines, or, if desired, to expand it back in full:
-                    </p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/nodeEdit1crop.gif" width="606" height="428"></p>
-                    </div><br>
+            <div id="nodeEditTextId" class="div-container">
+                <iframe src="flow/nodeEdit.html"></iframe>
+            </div>
 
-                    <p>The editing of these fields can also be done within the <b>Properties</b> dialog invoked from
-                        the context menu on the node. Additional text can be attached to the node above
-                        and/or below its shape:</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/nodeEdit2crop.gif" width="624" height="430"></p>
-                    </div><br>
+            <div id="flowDirTextId" class="div-container">
+                <iframe src="flow/flowDirection.html"></iframe>
+            </div>
 
-                    <p>The <b>Properties</b> dialog also allows changes to the node colors, adding or removing an icon,
-                        as well as hiding or unhiding the node name:</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/nodeEdit3crop.gif" width="785" height="517"></p>
-                    </div><br>
+            <div id="addingNodesTextId" class="div-container">
+                <iframe src="flow/moreNodes.html"></iframe>
+            </div>
 
-                    <p>Resizing the nodes horizontally and vertically is easily achieved by mouse dragging one of the
-                        sides or one of the corners. The larger sizes can be reset either individually from the node
-                        context menu or globally from the canvas context menu: </p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/nodeEdit4crop.gif" width="626" height="442"></p>
-                    </div><br><br>
+            <div id="linkPropsTextId" class="div-container">
+                <iframe src="flow/linkEdit.html"></iframe>
+            </div>
 
-                    <br>
-                </div>
+            <div id="chartEditTextId" class="div-container">
+                <iframe src="flow/flowEdit.html"></iframe>
+            </div>
 
-                <div id="flowDirTextId" class="contentText">
-                    <p>The <b>data flow direction</b> in flowcharts is either top to bottom or left
-                        to right, and can be changed or switched back and forth at any time by double clicking
-                        the flipping arrow button in the box on the right of the screen above the palette.
-                        The flow direction can be changed from the <b>Settings</b> dialog as well.</p><br>
-                    <p><img src="../../images/toolbar/arrow_down24.png" width="24" height="24"> - <b>Vertical</b></p><br>
-                    <div style="display:flex; justify-content: center; ">
-                    <p><img src="../../images/guide/vertical.png" width="464" height="272"></p><br>
-                    </div>
-                    <p><img src="../../images/toolbar/arrow_right24.png" width="24" height="24"> - <b>Horizontal</b></p><br>
-                    <div style="display:flex; justify-content: center; ">
-                    <p><img src="../../images/guide/horizontal.png" width="464" height="272"></p><br>
-                        </div><br>
+            <div id="decisionTextId" class="div-container">
+                <iframe src="flow/decisionEdit.html"></iframe>
+            </div><br>
 
-                    <p> The flowchart will be rotated and flipped. This does not otherwise affect its content.
-                        The flipping preserves the correlation between the flowchart internal directions and
-                        the canvas coordinate system:</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dirChange2.gif" width="837" height="481"></p>
-                    </div><br><br>
-                </div>
-
-                <div id="addingNodesTextId" class="contentText">
-                    <p> The <b>Settings</b> dialog offers the option to choose whether to use the start & end lanes or not,
-                        as well as whether to use the side swim lanes or not.<br><br>
-                        In the case of a vertical flow direction, the side swim lanes appear at the top and at the bottom
-                        of the diagram,
-                        while in the case of a horizontal direction they appear on the left and on the right.
-                        <br>There are specific start, end, left/top and right/bottom nodes.
-                        <br>The central layers and/or lanes can be added or removed (only when empty)
-                        from the context menus on the canvas.</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/moreNodes.gif" width="630" height="486"></p>
-                    </div>
-                    <br><br>
-                </div>
-
-                <div id="linkPropsTextId" class="contentText">
-                    <p>The link <b>Properties</b> dialog can be invoked from the link context menu or by double clicking
-                        the link itself. This dialog allows to attach labels to the link or to change its color.
-                    </p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/linkEdit.gif" width="672" height="468"></p>
-                    </div>
-                    <br><br>
-                </div>
-
-                <div id="chartEditTextId" class="contentText">
-                    <p>The nodes can be moved, as well as copied and pasted, to different grid cells.
-                        <br>To reassign the link ports,
-                        you can move them to different nodes by mouse-dragging to the appropriate connection
-                        ports.
-                        <br>By enabling the <b>Show association links</b>> option in the <b>Settings->General</b> dialog, you can
-                        assign weak relations between certain nodes.</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/flowEdit.gif" width="594" height="468"></p>
-                    </div>
-                    <br><br>
-                </div>
-
-                <div id="decisionTextId" class="contentText">
-                    <p>The <b>Decision</b> nodes have two outputs: <b>YES</b> and <b>NO</b>, and can accept multiple inputs.
-                        The input(s) location is fixed at the top of the shape in a vertical layout or on the left
-                        of the shape in a horizontal layout.
-                        <br>The positions of the outputs can be chosen by double-clicking the node. The popup box
-                        offers six different options for the YES/NO outputs selectable by the arrow buttons in clockwise or
-                        anti-clockwise direction:  </p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/decision.gif" width="534" height="288"></p>
-                    </div>
-                </div><br>
-
-                <!-- DB -->
-
-                <div id="databaseTextId" class="contentText" style="margin-top: -20px;">
-                    <p><b>IMPORTANT</b>: <b>JDElite Data Modeler</b> is self-contained and does not require any database server.
-                        It processes data from files and stores the results in files.</p><br>
-                    <p>The <b>Database ERDs</b> (entity-relationship diagrams) represent the databases physical structure.
-                        In essence, an ER diagram contains two object types: <b>entities</b> and <b>relationships</b>.
-                        The entities correspond to database tables and in the <b>ERDs</b> they are modeled as diagram nodes.
-                        The nodes show the detailed table designs. The relationships between the
-                        entities are modeled as links between the nodes.</p><br>
-                    <p>The current relational databases on the market use as a common language the <b>SQL</b>, however they
-                        all have certain implementation differences. In order to reconcile them for a unified
-                        ERD design, <b>JDElite Data Modeler</b> provides a <b>common UI</b> and handles the differences
-                        internally. Here we introduce the basic concepts of relational databases. For the full understanding
-                        of all details, you should consult the corresponding database documentation. Otherwise
-                        <b>JDElite Data Modeler</b> covers all intricacies of <b>SQL Server</b>, <b>Oracle</b>, <b>MySQL</b>, <b>PostgreSQL</b>,
-                        <b>DB2</b>, and <b>SQLite</b>  databases.</p><br>
-                    <p>An ERD created in <b>JDElite Data Modeler</b> is saved as a file in <b>JSON</b> format. The diagram
-                        can be exported to a specific <b>SQL</b> script ready to be used to create the corresponding database schema.
-                        Vice versa, a database <b>SQL</b> schema script can be imported to <b>JDElite Data Modeler</b>,
-                        translated to a <b>JSON</b> diagram file, visualized and modified as needed.</p><br>
-                    <p>Database tables contain <b>records</b> (table <b>rows</b>) and <b>columns</b>. A table record is an instance of the
-                        represented entity. All records in a table have identical structure. For example, the records in
-                        the <b>CUSTOMER</b> table below are instances of the <b>customer</b> entity and each record corresponds to a
-                        particular customer.</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/dbTableExample.png" width="428" height="105"></p>
-                    </div><br>
-                    <p> All record fields in
-                        vertical direction constitute the table <b>columns</b>. Columns, respectively the fields in a column,
-                        depending on the particular content, represent specific <b>properties</b>: name,
-                        data type, data length, etc. In the above example,
-                        the record fields in the <b>CUSTOMER</b> table are <b>customer_id</b>, <b>first_name</b>,  <b>middle_name</b>
-                        and <b>last_name</b>. These are the database table column names.</p><br>
-                    <p>Each ERD node in <b>JDElite Data Modeler</b> represents the structure of a database table in its
-                        own table form. The rows in the diagram node table correspond to the database table columns,
-                        and the columns in the diagram node table correspond to the database column properties.</p><br>
-
-                    </p><br>
-                    <p><img src="../../images/guide/openDBTemplate.png" width="360" height="152"></p>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/dbTemplate.png" width="827" height="495"></p>
-                    </div><br><br>
-                </div>
-
-                <div id="dbKeysTextId" class="contentText" style="margin-top: -20px;">
-                    <p>The structures of relational databases are determined by the <b>primary</b> and <b>foreign</b> keys.
-                        A <b>primary</b> key is a column or a group of columns (composite primary key) that ensure unique
-                        row identification in the database table. The values of the primary keys for the different records
-                        cannot be duplicate or null. If a primary key contains multiple columns, the combination of values
-                        in each record should be unique for it to be valid. A table can have only one primary key.<br><br>
-
-                        A <b>foreign</b> key is a column or a group of columns that together with a primary key of another
-                        table represent a reference between the two tables. In other words, the foreign key in one table
-                        is said to have a reference to a primary key in another table. There could be multiple
-                        foreign keys from different tables referencing the same primary key.
-
-                        <br><br>As mentioned earlier, the rows in the diagram table node correspond to the database table
-                        columns. The columns in the diagram node show the property values of each database column.
-
-                        <br>In the picture below, the first record field in the <b>CUSTOMER</b> table, named <b>customer_id</b>, is
-                        the first row of the <b>CUSTOMER</b> diagram node. This is the <b>primary</b> key of this database
-                        table. It is tagged with <b>PK</b> in the first column of the node.
-
-                        <br><br>The first record field in the <b>CONTACT</b> table, named <b>contact_id</b>, is
-                        the first row of the <b>CONTACT</b> diagram node. This is the <b>primary</b> key of this database
-                        table. It is tagged with <b>PK</b> in the first column of the node.
-                        <br>The second record field in the <b>CONTACT</b> table, named <b>customer_id</b>, is
-                        the second row of the <b>CONTACT</b> diagram node. This is the <b>foreign</b> key of this database
-                        table. It is tagged with <b>FK</b> in the first column of the node.
-
-                        <br><br>The popup handles on the <b>PK</b> row of one node and on the <b>FK</b> row of another node offer the
-                        choice to create a link between the two diagram nodes. This link is an essential
-                        feature of the relational databases. It establishes and ensures the <b>referential integrity</b> between the
-                        referencing column and the referenced column.
-
-                        <br><br>The small vertical bars at the both ends of the link below show the particular <b>cardinalities</b>.
-                        They define the possible number of occurrences of the primary entity <b>customer</b> associated
-                        with the possible number of occurrences of the foreign entity <b>contact</b>. In the example below
-                        each customer can have only one contact associated with him and each contact corresponds to only
-                        one specific customer. This is called <b>one-to-one</b> relationship. Other types of cardinalities
-                        are illustrated later.
-                    </p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbKeys.gif" width="590" height="250" style="border: 2px solid blue"></p>
-                    </div><br><br>
-                </div>
-
-                <div id="dbCreateTextId" class="contentText" style="margin-top: -20px;">
-                    <p>A <b>new DB table node</b> is created either by dragging an item from the palette on the right
-                    to an accepting cell on the canvas, or by selecting an item from the canvas context menu displayed on an
-                    empty cell. In both cases there are three node choices, which differ only by the initial number of
-                        columns. The most convenient number of columns can be chosen later in the table node editor.
-                    The minimal number of columns cannot be less than two.</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/addDBNode.png" width="411" height="269"></p>
-                    </div><br>
-                    <p>The node name can be edited by double-clicking the name field.</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/editTableName.gif" width="500" height="200" style="border: 2px solid blue"></p>
-                    </div><br>
-
-                    <p>The <b>DB table node editor</b> is invoked by double-clicking either the table title bar or
-                        a chosen table row. You can add, edit or remove a row, as well as rearrange the order of
-                        the rows, using the buttons at the top right. These buttons are enabled or disabled
-                        depending on which table row is selected. You can also
-                        define database table indexes and database column constraints. The editor actions are
-                        demonstrated below.</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/dbNodeEditor.png" width="713" height="280" style="border: 2px solid blue"></p>
-                    </div><br>
-
-                    <p>The node columns <b>Key</b> and <b>Column Name</b> are preselected to show the minimal size of the table
-                        node and cannot be unchecked. The remaining two columns can be displayed as needed. These selections
-                        do not affect the actual content of the node table row. The four designated node columns are common for
-                        all existing relational databases. They are as follows:</p><br>
-                    <p> <b>Key</b> - designates the database column as either primary or foreign key, or none</p>
-                    <p> <b>Column Name</b> - the database column name</p>
-                    <p> <b>Data Type</b> - data type of the content of all fields in this column</p>
-                    <p> <b>Length</b> - the length of the data of all fields in this column</p>
-                    <!--<p> <b>Auto Increment</b> - allows a unique number to be generated automatically when a new record is inserted-->
-                        <!--into the database table.</p>-->
-                    <!--<p> <b>Not Null</b> - ensures that the given column of the database table is never assigned the null value.</p>-->
-                        <br>The buttons on the toolbar of the DB table editor are as follow:
-                    <p><img src="../../images/toolbar/add24.png" width="24" height="24"> - Add a new empty row</p>
-                    <p><img src="../../images/toolbar/addPK24.png" width="24" height="24"> - Add an additional row for primary key</p>
-                    <!--<p><img src="../../images/toolbar/addFK24.png" width="24" height="24"> - Add an additional row for foreign key-->
-                        <!--(for a composite foreign key).</p>-->
-                    <p><img src="../../images/toolbar/delete18x24.png" width="20" height="24">  -  Delete the row if there is
-                        no reference to it</p>
-                    <p><img src="../../images/toolbar/navigate_up24.png" width="24" height="24">  - Move the row one step up
-                        if the row has no primary key assigned</p>
-                    <p><img src="../../images/toolbar/navigate_down24.png" width="24" height="24"> - Move the row one step
-                        down if the row has no primary key assigned</p>
-                    <br>
-                    <p> Here is an example how to create a database table node:</p>
-                    <br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbNewTable.gif" width="676" height="412" style="border: 2px solid blue"></p>
-                    </div><br>
-                    <p> And here is an example how to rearrange some rows in a database table node:</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbRearrange.gif" width="654" height="352" style="border: 2px solid blue"></p>
-                    </div><br><br>
-                </div>
-
-                <div id="dbCardinalTextId" class="contentText" style="margin-top: -20px;">
-                    <p>Within database modelling, <b>cardinality</b> is the numerical relationship between rows in one database
-                        table and rows in another. It defines the number of occurrences of a primary entity associated
-                        with the number of occurrences of a foreign entity. The cardinality is represented graphically by the
-                        so called <b>crow's foot</b> symbols at the ends of the connection. There are six commonly accepted
-                        relationships symbols:</p>
-                    <div >
-                        <p><img src="../../images/guide/cardinality.png" width="180" height="169" style="border: 2px solid blue"></p>
-                    </div><br>
-                    <p>There are three main types of cardinality relationships: <b>one-to-one</b>, <b>one-to-many</b>
-                        (<b>many-to-one)</b> and <b>many-to-many</b>.
-                    </p><br>
-                    <p><b>One-to-one cardinality</b></p>
-                    <p>One example was the <b>CUSTOMER</b> to <b>CONTACT</b> relation shown before under the <b>Primary and Foreign Keys</b>
-                        title. This is the case when one entity is split in two in order to present the information in a more
-                        comprehensible way. Another example would be the <b>car</b> to <b>service ticket</b> relation in a car repair shop:
-                    </p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/car2ticket.png" width="462" height="176" style="border: 2px solid blue"></p>
-                    </div><br>
-                    <p><b>One-to-many cardinality</b></p>
-                    <p>This is when one instance of the first entity may be related to more than one instances of the other entity.
-                        An example would be when we keep an authors catalog and we need to show
-                        the relation between an <b>author</b> and her/his <b>books</b>:
-                    </p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/author2book.png" width="491" height="152" style="border: 2px solid blue"></p>
-                    </div><br>
-                    <p><b>Many-to-many cardinality</b></p>
-                    <p>In a different scenario, in  a library, we need to establish the relations between the plurality
-                        of authors and the plurality of books. In this case we can preferably use an additional
-                        <b>join</b> table with two one-to-many relations as follows:</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/guide/authors2books.png" width="573" height="146" style="border: 2px solid blue"></p>
-                    </div><br>
-                    <p>The <b>AUTHORS_BOOKS</b> table contains two foreign keys pointing respectively to the <b>AUTHORS</b> and
-                        <b>BOOKS</b> tables. These two foreign keys together act as a composite primary key for the
-                        <b>AUTHORS_BOOKS</b> table. See more details about composite keys in the next topic.</p>
-                    <br><br>
-                </div>
-
-                <div id="dbCompositeTextId" class="contentText" style="margin-top: -20px;">
-                    <p>As it was pointed out in the <b>Notations and Cardinality</b> topic, some foreign keys may be grouped
-                        together and act as a <b>composite</b> primary key. In the scenario of the handling the plurality
-                        of authors and the plurality of books in a library, simply relating an author to a book
-                        turns out to be not sufficient. Most of the authors have more than one book, and some book titles
-                        are repeatedly used by different authors. In this case the pair <b>author-book</b> is an entity
-                        by itself. In order to identify it uniquely we need to introduce the <b>AUTHORS_BOOKS</b> table.
-                        This table has two foreign keys: <b>author_name</b> and <b>book_title</b>. They will represent
-                        a <b>composite primary key</b>, meaning that together they identify uniquely any <b>author-book</b>
-                        entity.</p><br>
-                    <p>Here is an example how to assign a composite primary key. You need to double-click the table node
-                        title bar to open the <b>DB table node editor</b>, then to click the <b>Composite primary Key</b> button.
-                        The preselected type is <b>PRIMARY KEY</b>. The dropdowns of the fields <b>Column1</b>,
-                        <b>Column2</b>, <b>Column3</b> contain the list of all foreign keys present in this table node. You
-                        have to select two or more different foreign keys. Optionally you can specify a name for this
-                        composite key.</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/authors2books.gif" width="844" height="353" style="border: 2px solid blue"></p>
-                    </div><br><br>
-                </div>
-
-                <div id="dbConstraintsTextId" class="contentText" style="margin-top: -20px;">
-                    <p><b>Database constraints</b> are used to specify rules for data in a table.  They can be column-level or
-                        table-level, and can refer to a single column or multiple columns. Constraints are used to limit
-                        the type of data that can be included in a table. This ensures the accuracy and reliability of the data
-                        in the table. If there is any violation between a constraint and the action on the data, the action
-                        is aborted. </p><p></p><br>
-                    <p>Here are examples of the most common database constraints:</p>
-                    <ul>
-                        <li><b>PRIMARY KEY</b> constraint: Uniquely identifies each row in a table, requiring that the
-                            values in this column be a combination of a NOT NULL and UNIQUE</li>
-                        <li><b>FOREIGN KEY</b> constraint: Connects data across multiple tables, based on a common column
-                            or columns. It is a field (or collection of fields) in one table, refering to the PRIMARY KEY
-                            in another table</li>
-                        <li><b>UNIQUE</b> constraint: Prevents duplicate values from being entered into a column, but
-                            allows null values</li>
-                        <li><b>NOT NULL</b> constraint: Ensures that a column will never contain an invalid value</li>
-                        <li><b>CHECK</b> constraint: Specifies a requirement that must be met by each row in a table,
-                            and can refer to a single or multiple columns</li>
-                        <li><b>DEFAULT</b> constraint: Allows to define a value to be placed into a column when a new row
-                            is inserted</li>
-                    </ul>
-                    <p>There are some additional clauses that complement some of the constraints:</p>
-                    <ul>
-                        <li><b>REFERENCES</b>: Complements the FOREIGN KEY constraint</li>
-                        <li><b>AUTO_INCREMENT</b>: A unique number will be generated automatically when a new record is
-                            inserted into a table</li>
-                    </ul>
-
-                    <p> Here is an example how to assign some constraints for a database table column. You need to double-click
-                        the table node row that corresponds to the database column:</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbConstraints1.gif" width="751" height="580" style="border: 2px solid blue"></p>
-                    </div><br>
-
-                    <p> And here is an example how to assign a <b>REFERENCES</b> constraint. You need to double-click a table
-                        node row representing a <b>FOREIGN KEY</b>. Using the dropdowns, select an existing table and the column name from
-                        that table representing the <b>PRIMARY KEY</b> of that table. By confirming this assignment, a
-                        graphical link will be created in the diagram. </p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbConstraints2.gif" width="752" height="626" style="border: 2px solid blue"></p>
-                    </div><br>
-
-                    <p> There is a two-way synchronization between a created link and the
-                        <b>REFERENCES</b> constraint: creating a link will also automatically assign a <b>REFERENCES</b>
-                        constraint.</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                                <p><img src="../../images/gifs/dbConstraints3.gif" width="688" height="435" style="border: 2px solid blue"></p>
-                    </div><br><br>
-                </div>
-
-                <div id="dbIndexesTextId" class="contentText" style="margin-top: -20px;">
-                    <p><b>Database index</b> is an optional structure, associated with a column or columns on a table,
-                        that can speed up the access to the data. Indexes are structures stored in the database that users
-                        manage using SQL statements. They are used to support database performance.
-                        <br><b>Database key</b> is a column or set of columns that uniquely identify rows in a table. They
-                        are used to maintain data integrity. A key declaration is a constraint.
-                        Examples of keys are the primary keys, the foreign keys and the composite primary keys, all that
-                        were explained above.
-                        <br><br>The documentation for keys and indexes is specific for each database implementation.
-                        The corresponding database manuals provide the interpretations and detailed information for the usage.
-                        It is recommended that you consult the database documentation.
-                        Here we show how to specify the creation of these structures using <b>JDElite Flowchart Editor</b>.
-
-                        <br><br>In a <b>SQLite</b> database, in order to create an index, you need to double-click the
-                        table node title bar. You can define an index to be <b>UNIQUE</b> by selecting the appropriate checkbox.<br>
-                        Here is an example showing how to create an index for <b>SQLite</b> database:</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbIndexes.gif" width="554" height="394" style="border: 2px solid blue"></p>
-                    </div><br><br>
-                        In a <b>MySQL</b> database, <b>JDElite Flowchart Editor</b> provides an uniform way to assign
-                        indexes and keys. They are all defined at table level. Key is normally a synonym for index.
-                        There are several key flavors, like:
-                    <li><b>UNIQUE</b>: all values in the index must be distinct</li>
-                    <li><b>FULLTEXT</b>:  used for full-text searches</li>
-                    <li><b>SPATIAL</b>: applied on spatial data types</li><br>
-                        The <b>PRIMARY</b> key can be defined either on table level or on a column level.<br>
-                        The <b>FOREIGN</b> key is defined at column level.<br>
-                    <p>Here is an example showing how to create an index for <b>MySQL</b> database:</p><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/dbCreateKey.gif" width="620" height="358" style="border: 2px solid blue"></p>
-                    </div><br>
-
-                    <br><br>
-                </div>
-
-                <div id="dbImpExpTextId" class="contentText" style="margin-top: -20px;">
-                    <p>
-                        JDElite Data Modeler supports the import of database schema scripts in <b>SQL</b> format
-                        of several databases: <b>SQL Server</b>, <b>Oracle</b>, <b>MySQL</b>, <b>PostgreSQL</b>, <b>DB2</b>, <b>SQLite</b>.
-                        The <b>ERDs</b> of these databases can be exported to schema scripts in <b>SQL</b> format as well.<br>
-                        There are built-in ERD test templates for these databases. You can make changes to a template,
-                        then export it to your hard disk.
-                            <br>
-                    </p>
-                    <h3>Import from SQL schema</h3>
-
-                    <li>From the editor start page, select <b>Database ERD</b>, then <b>Import DB script</b> to open the
-                        <b>Import Database Script</b> dialog</li>
-                    <li>In the popup dialog, select the database type and confirm it</li>
-                    <li>In the <b>File Browser</b> that comes up, navigate to the <b>.sql</b> file,
-                        select it and confirm the selection</li>
-                    The <b>ERD</b> of the schema will be generated and displayed in the editor canvas as shown here:
-                    <br><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/importERD_DB.gif" width="682" height="530" style="border: 2px solid blue"></p>
-                    </div>
-                    <br>
-                    <h3>Export to SQL schema</h3>
-                    <li>Open the <b>ERD</b> of an already existing database diagram</li>
-                    <li>Click at <b>Export DB</b> button in the top toolbar</li>
-                    <li>Navigate in the <b>File Browser</b> to the desired location, enter the file name for
-                        the script to be exported and saved and confirm it</li>
-                    The <b>.sql</b> script will be stored in the selected location:<br><br>
-                    <div style="display:flex; justify-content: center; ">
-                        <p><img src="../../images/gifs/exportERD_DB.gif" width="682" height="530" style="border: 2px solid blue"></p>
-                    </div>
-                    <br>
-                    <br>
-
-                </div>
-
-
-                <!-- LOG -->
-
-                <!--<div id="logicalTextId" class="contentText" style="margin-top: -20px;">-->
-                    <!--<p><b>Logical ERDs</b> (entity-relationship diagrams) are the conceptual or logical models of business-->
-                        <!--objects as components of systems. They are a convenient tool for business analysts or database-->
-                        <!--designers, and are useful at preliminary design stages for physical databases, presumably-->
-                        <!--following a whiteboard design.-->
-                        <!--A conceptual or logical model identifies the business objects as building blocks. It defines-->
-                        <!--the entities and their attributes, as well as the relationships between them.-->
-                        <!--</p><br>-->
-                    <!--<p><img src="../../images/guide/openLOGTemplate.png" width="360" height="150"></p>-->
-                    <!--<div style="display:flex; justify-content: center; ">-->
-                        <!--<p><img src="../../images/guide/logTemplate.png" width="600" height="480"></p>-->
-                    <!--</div><br><br>-->
-                <!--</div>-->
-
-                <!--<div id="logNotationTextId" class="contentText" style="margin-top: -20px;">-->
-                    <!--<p>The graphical nodes representing the logical symbols, adopted here, consist of three basic types: <b>entity</b>,-->
-                        <!--<b>relationship</b> and <b>attribute</b>. There are some additional derived types as follows:-->
-                    <!--</p><br>-->
-                    <!--<p><img src="../../images/dataflow/entityStr24.png"> - <b>Entity</b> (also <b>Strong Entity</b>) - -->
-                        <!--generic object. It is considered to be a prototype of a database table and is further defined by its attributes.</p>-->
-                    <!--<p><img src="../../images/dataflow/entityWeak24.png"> - <b>Weak Entity</b> - entity that depends on a strong entity</p>-->
-                    <!--<p><img src="../../images/dataflow/attrStrong24.png"> - <b>Attribute</b> - defines a property of an entity</p>-->
-                    <!--<p><img src="../../images/dataflow/attrDerived24.png"> - <b>Derived Attribute</b> - defines an attribute based on-->
-                        <!--another attribute</p>-->
-                    <!--<p><img src="../../images/dataflow/attrMulti24.png"> - <b>Multivalued Attribute</b> - defines an attribute with-->
-                        <!--multiple values</p>-->
-                    <!--<p><img src="../../images/dataflow/relStrong24.png"> - <b>Relationship</b> - defines the type of relation-->
-                        <!--between two entities. Usually it corresponds to a primary-foreign key reference.</p>-->
-                    <!--<p><img src="../../images/dataflow/relWeak24.png"> - <b>Weak Relationship</b> (also <b>Non-Identifying-->
-                        <!--Relationship</b>) - a reference that does not correspond to a primary-foreign key reference</p>-->
-
-                    <!--<br>-->
-                    <!--<p>Similar to the database modelling, the <b>cardinality</b>  defines the number of occurrences of one entity-->
-                        <!--associated with the number of occurrences of another entity. The cardinality is represented-->
-                        <!--graphically by <b>crow's foot</b> symbols at the ends of the connections between entities.<br><br>-->
-                        <!--Here are the six <b>cardinality</b> symbols:</p>-->
-                    <!--<div >-->
-                        <!--<p><img src="../../images/guide/cardinality.png" width="180" height="169"></p>-->
-                    <!--</div><br>-->
-                    <!--<p>As in Database ERDs, there are three cardinality relationships: <b>one-to-one</b>, <b>one-to-many</b>-->
-                        <!--and <b>many-to-many</b>.-->
-                    <!--</p><br>-->
-                    <!--<div style="display:flex; justify-content: center; margin-right: 100px;">-->
-                        <!--<p><img src="../../images/gifs/logAdmin4.gif" width="609" height="338" style="border: 2px solid blue"></p>-->
-                    <!--</div><br><br>-->
-                <!--</div>-->
-
-                <!--<div id="logCreateTextId" class="contentText" style="margin-top: -20px;">-->
-                    <!--<p>The <b>Logical ERDs</b> represent logical structures of objects, consisting of-->
-                        <!--<b>entity-attributes</b> groups, and show the relations between them. Here are step-by-step-->
-                        <!--examples how to create a logical ERD.<br>-->
-                    <!--</p><br>-->
-                    <!--<p>Create a <b>new logical ERD node</b> either by dragging an item from the palette-->
-                        <!--to an accepting cell on the canvas, or by selecting an item from the canvas context menu displayed in an-->
-                        <!--empty cell:</p><br>-->
-                        <!--<div style="display:flex; justify-content: center; ">-->
-                            <!--<p><img src="../../images/guide/addLogNode.png" width="409" height="268"></p>-->
-                        <!--</div><br>-->
-                    <!--<p>In order to show the relation between two entities, place a <b>relation</b> node between them:</p><br>-->
-                    <!--<div style="display:flex; justify-content: center; ">-->
-                        <!--<p><img src="../../images/gifs/logAdmin1.gif" width="748" height="416" style="border: 2px solid blue"></p>-->
-                    <!--</div><br><br>-->
-                    <!--<p>Continue adding attributes to the entities.-->
-                        <!--Note that the cardinality relationship between one or more employees and their manager is-->
-                        <!--<b>many-to-one</b>. </p>-->
-                    <!--<div style="display:flex; justify-content: center; ">-->
-                        <!--<p><img src="../../images/gifs/logAdmin3.gif" width="625" height="447" style="border: 2px solid blue"></p>-->
-                    <!--</div><br><br>-->
-                <!--</div>-->
-
-                <!--<div id="logRelationTextId" class="contentText" style="margin-top: -20px;">-->
-                    <!--<p>The <b>Relationship</b> node has two modes - YES/NO decision mode and 1-to-3 ways mode. When double-clicking-->
-                        <!--the node, a popup box allows to choose which mode is more appropriate for the particular case.<br>-->
-                        <!--The YES/NO decision mode is similar to the decision mode in Flowcharts.<br>-->
-                        <!--The 1-to-3 ways mode has one input that can be positioned at any of the four directions, and 3 outputs-->
-                        <!--positioned at the remaining 3 corners:</p><br>-->
-                    <!--<div style="display:flex; justify-content: center; margin-right: 100px;">-->
-                        <!--<p><img src="../../images/gifs/logRelation.gif" width="348" height="210" style="border: 2px solid blue"></p>-->
-                    <!--</div><br><br>-->
-                    <!--<p> When you want to modify the layout of the diagram, it is convenient to change the positions of-->
-                        <!--the ends of the <b>Relationship</b> node:</p><br>-->
-                    <!--<div style="display:flex; justify-content: center; margin-right: 100px;">-->
-                        <!--<p><img src="../../images/gifs/logAdmin2.gif" width="471" height="320" style="border: 2px solid blue"></p>-->
-                    <!--</div><br><br>-->
-                <!--</div>-->
              </div>
         </div>
     </div>
 
     <div class="mainFooter"></div>
 
-<script>
+    <script>
 
-    function selectText(event) {
-        unselectAllLeft();
-        hideAllTexts();
-        var id = event.srcElement.id;
-        document.getElementById(id).classList.add("boldText");
-        if (id === "prefaceBtnId") {
-            document.getElementById("prefaceTextId").style.display = "block";
+        function selectText(event) {
+            unselectAllLeft();
+            hideAllTexts();
+            var id = event.srcElement.id;
+            document.getElementById(id).classList.add("boldText");
+            if (id === "prefaceBtnId") {
+                document.getElementById("prefaceTextId").style.display = "block";
 
-        } else if (id === "basicsBtnId") {
-            document.getElementById("basicsTextId").style.display = "block";
-        } else if (id === "actionsBtnId") {
-            document.getElementById("actionsTextId").style.display = "block";
-        } else if (id === "settingsBtnId") {
-            document.getElementById("settingsTextId").style.display = "block";
-        } else if (id === "browserBtnId") {
-            document.getElementById("browserTextId").style.display = "block";
-//        } else if (id === "paletteBtnId") {
-//            document.getElementById("paletteTextId").style.display = "block";
-        } else if (id === "layoutBtnId") {
-            document.getElementById("layoutTextId").style.display = "block";
-        } else if (id === "selectionsBtnId") {
-            document.getElementById("selectionsTextId").style.display = "block";
-        } else if (id === "navigateBtnId") {
-            document.getElementById("navigateTextId").style.display = "block";
+            } else if (id === "basicsBtnId") {
+                document.getElementById("basicsTextId").style.display = "block";
+            } else if (id === "actionsBtnId") {
+                document.getElementById("actionsTextId").style.display = "block";
+            } else if (id === "settingsBtnId") {
+                document.getElementById("settingsTextId").style.display = "block";
+            } else if (id === "browserBtnId") {
+                document.getElementById("browserTextId").style.display = "block";
+            } else if (id === "layoutBtnId") {
+                document.getElementById("layoutTextId").style.display = "block";
+            } else if (id === "selectionsBtnId") {
+                document.getElementById("selectionsTextId").style.display = "block";
+            } else if (id === "navigateBtnId") {
+                document.getElementById("navigateTextId").style.display = "block";
 
+            } else if (id === "flowchartBtnId") {
+                document.getElementById("bankFlowTextId").style.display = "block";
+            } else if (id === "createNodesBtnId") {
+                document.getElementById("createNodesTextId").style.display = "block";
+            } else if (id === "flowStartBtnId") {
+                document.getElementById("flowStartTextId").style.display = "block";
+            } else if (id === "nodeEditBtnId") {
+                document.getElementById("nodeEditTextId").style.display = "block";
+            } else if (id === "flowDirBtnId") {
+                document.getElementById("flowDirTextId").style.display = "block";
+            } else if (id === "addingNodesBtnId") {
+                document.getElementById("addingNodesTextId").style.display = "block";
+            } else if (id === "linkPropsBtnId") {
+                document.getElementById("linkPropsTextId").style.display = "block";
+            } else if (id === "chartEditBtnId") {
+                document.getElementById("chartEditTextId").style.display = "block";
+            } else if (id === "decisionBtnId") {
+                document.getElementById("decisionTextId").style.display = "block";
 
-        } else if (id === "flowchartBtnId") {
-            document.getElementById("flowchartTextId").style.display = "block";
-        } else if (id === "createNodesBtnId") {
-            document.getElementById("createNodesTextId").style.display = "block";
-        } else if (id === "flowStartBtnId") {
-            document.getElementById("flowStartTextId").style.display = "block";
-        } else if (id === "nodeEditBtnId") {
-            document.getElementById("nodeEditTextId").style.display = "block";
-        } else if (id === "flowDirBtnId") {
-            document.getElementById("flowDirTextId").style.display = "block";
-        } else if (id === "addingNodesBtnId") {
-            document.getElementById("addingNodesTextId").style.display = "block";
-        } else if (id === "linkPropsBtnId") {
-            document.getElementById("linkPropsTextId").style.display = "block";
-        } else if (id === "chartEditBtnId") {
-            document.getElementById("chartEditTextId").style.display = "block";
-        } else if (id === "decisionBtnId") {
-            document.getElementById("decisionTextId").style.display = "block";
-//        } else if (id === "containersBtnId") {
-//            document.getElementById("containersTextId").style.display = "block";
-
-
-        } else if (id === "databaseBtnId") {
-            document.getElementById("databaseTextId").style.display = "block";
-        } else if (id === "dbImpExpBtnId") {
-            document.getElementById("dbImpExpTextId").style.display = "block";
-        } else if (id === "dbKeysBtnId") {
-            document.getElementById("dbKeysTextId").style.display = "block";
-        } else if (id === "dbCreateBtnId") {
-            document.getElementById("dbCreateTextId").style.display = "block";
-        } else if (id === "dbCardinalBtnId") {
-            document.getElementById("dbCardinalTextId").style.display = "block";
-        } else if (id === "dbCompositeBtnId") {
-            document.getElementById("dbCompositeTextId").style.display = "block";
-        } else if (id === "dbConstraintsBtnId") {
-            document.getElementById("dbConstraintsTextId").style.display = "block";
-        } else if (id === "dbIndexesBtnId") {
-            document.getElementById("dbIndexesTextId").style.display = "block";
-
-//        } else if (id === "logicalBtnId") {
-//            document.getElementById("logicalTextId").style.display = "block";
-//        } else if (id === "logNotationBtnId") {
-//            document.getElementById("logNotationTextId").style.display = "block";
-//        } else if (id === "logCreateBtnId") {
-//            document.getElementById("logCreateTextId").style.display = "block";
-//        } else if (id === "logRelationBtnId") {
-//            document.getElementById("logRelationTextId").style.display = "block";
-        }
-    }
-
-    function unselectAllLeft() {
-        document.getElementById("prefaceBtnId").classList.remove("boldText");
-
-        document.getElementById("basicsBtnId").classList.remove("boldText");
-        document.getElementById("actionsBtnId").classList.remove("boldText");
-        document.getElementById("settingsBtnId").classList.remove("boldText");
-        document.getElementById("browserBtnId").classList.remove("boldText");
-//        document.getElementById("paletteBtnId").classList.remove("boldText");
-        document.getElementById("layoutBtnId").classList.remove("boldText");
-        document.getElementById("selectionsBtnId").classList.remove("boldText");
-        document.getElementById("navigateBtnId").classList.remove("boldText");
-
-        document.getElementById("flowchartBtnId").classList.remove("boldText");
-        document.getElementById("createNodesBtnId").classList.remove("boldText");
-        document.getElementById("flowStartBtnId").classList.remove("boldText");
-        document.getElementById("nodeEditBtnId").classList.remove("boldText");
-        document.getElementById("flowDirBtnId").classList.remove("boldText");
-        document.getElementById("addingNodesBtnId").classList.remove("boldText");
-        document.getElementById("linkPropsBtnId").classList.remove("boldText");
-        document.getElementById("chartEditBtnId").classList.remove("boldText");
-        document.getElementById("decisionBtnId").classList.remove("boldText");
-//        document.getElementById("containersBtnId").classList.remove("boldText");
-
-        document.getElementById("databaseBtnId").classList.remove("boldText");
-        document.getElementById("dbImpExpBtnId").classList.remove("boldText");
-        document.getElementById("dbKeysBtnId").classList.remove("boldText");
-        document.getElementById("dbCreateBtnId").classList.remove("boldText");
-        document.getElementById("dbCardinalBtnId").classList.remove("boldText");
-        document.getElementById("dbCompositeBtnId").classList.remove("boldText");
-        document.getElementById("dbConstraintsBtnId").classList.remove("boldText");
-        document.getElementById("dbIndexesBtnId").classList.remove("boldText");
-
-//        document.getElementById("logicalBtnId").classList.remove("boldText");
-//        document.getElementById("logNotationBtnId").classList.remove("boldText");
-//        document.getElementById("logCreateBtnId").classList.remove("boldText");
-//        document.getElementById("logRelationBtnId").classList.remove("boldText");
-
-    }
-
-    function initTexts() {
-        unselectAllLeft();
-        hideAllTexts();
-        document.getElementById("prefaceBtnId").classList.add("boldText");
-        document.getElementById("prefaceTextId").style.display = "block";
-    }
-
-    function hideAllTexts() {
-        document.getElementById("prefaceTextId").style.display = "none";
-
-        document.getElementById("basicsTextId").style.display = "none";
-        document.getElementById("actionsTextId").style.display = "none";
-        document.getElementById("settingsTextId").style.display = "none";
-        document.getElementById("browserTextId").style.display = "none";
-//        document.getElementById("paletteTextId").style.display = "none";
-        document.getElementById("layoutTextId").style.display = "none";
-        document.getElementById("selectionsTextId").style.display = "none";
-        document.getElementById("navigateTextId").style.display = "none";
-
-        document.getElementById("flowchartTextId").style.display = "none";
-        document.getElementById("createNodesTextId").style.display = "none";
-        document.getElementById("flowStartTextId").style.display = "none";
-        document.getElementById("nodeEditTextId").style.display = "none";
-        document.getElementById("flowDirTextId").style.display = "none";
-        document.getElementById("addingNodesTextId").style.display = "none";
-        document.getElementById("linkPropsTextId").style.display = "none";
-        document.getElementById("chartEditTextId").style.display = "none";
-        document.getElementById("decisionTextId").style.display = "none";
-
-        document.getElementById("databaseTextId").style.display = "none";
-        document.getElementById("dbImpExpTextId").style.display = "none";
-        document.getElementById("dbKeysTextId").style.display = "none";
-        document.getElementById("dbCreateTextId").style.display = "none";
-        document.getElementById("dbCardinalTextId").style.display = "none";
-        document.getElementById("dbCompositeTextId").style.display = "none";
-        document.getElementById("dbConstraintsTextId").style.display = "none";
-        document.getElementById("dbIndexesTextId").style.display = "none";
-
-//        document.getElementById("logicalTextId").style.display = "none";
-//        document.getElementById("logNotationTextId").style.display = "none";
-//        document.getElementById("logCreateTextId").style.display = "none";
-//        document.getElementById("logRelationTextId").style.display = "none";
-
-    }
-
-    initTexts();
-
-    function dragElement(element) {
-        var   mouseDown; // remember mouse down info
-        const left  = document.getElementById("leftId");
-        const right = document.getElementById("rightId");
-
-        element.onmousedown = onMouseDown;
-
-        function onMouseDown(e) {
-            //console.log("mouse down: " + e.clientX);
-            mouseDown = {e,
-                offsetLeft:  element.offsetLeft,
-                offsetTop:   element.offsetTop,
-                leftWidth:  left.offsetWidth,
-                rightWidth: right.offsetWidth
-            };
-
-            document.onmousemove = onMouseMove;
-            document.onmouseup = function(e) {
-                //console.log("mouse up");
-                document.onmousemove = document.onmouseup = null;
+            } else if (id === "databaseBtnId") {
+                document.getElementById("databaseTextId").style.display = "block";
+            } else if (id === "dbImpExpBtnId") {
+                document.getElementById("dbImpExpTextId").style.display = "block";
+            } else if (id === "dbKeysBtnId") {
+                document.getElementById("dbKeysTextId").style.display = "block";
+            } else if (id === "dbCreateBtnId") {
+                document.getElementById("dbCreateTextId").style.display = "block";
+            } else if (id === "dbSequenceBtnId") {
+                document.getElementById("dbSequenceTextId").style.display = "block";
+            } else if (id === "dbConstraintsBtnId") {
+                document.getElementById("dbConstraintsTextId").style.display = "block";
+            } else if (id === "dbLOBsBtnId") {
+                document.getElementById("dbLOBStorageTextId").style.display = "block";
+            } else if (id === "dbIndexesBtnId") {
+                document.getElementById("dbIndexesTextId").style.display = "block";
             }
         }
 
-        function onMouseMove(e) {
-            //console.log("mouse move: " + e.clientX);
-            var delta = {
-                x: e.clientX - mouseDown.e.clientX,
-                y: e.clientY - mouseDown.e.clientY
-            };
-            // Prevent negative-sized elements
-            delta.x = Math.min(Math.max(delta.x, -mouseDown.leftWidth), mouseDown.rightWidth);
+        function unselectAllLeft() {
+            document.getElementById("prefaceBtnId").classList.remove("boldText");
 
-            element.style.left = mouseDown.offsetLeft + delta.x + "px";
-            left.style.width = (mouseDown.leftWidth + delta.x) + "px";
-            right.style.width = (mouseDown.rightWidth - delta.x) + "px";
+            document.getElementById("basicsBtnId").classList.remove("boldText");
+            document.getElementById("actionsBtnId").classList.remove("boldText");
+            document.getElementById("settingsBtnId").classList.remove("boldText");
+            document.getElementById("browserBtnId").classList.remove("boldText");
+            document.getElementById("layoutBtnId").classList.remove("boldText");
+            document.getElementById("selectionsBtnId").classList.remove("boldText");
+            document.getElementById("navigateBtnId").classList.remove("boldText");
+
+            document.getElementById("flowchartBtnId").classList.remove("boldText");
+            document.getElementById("createNodesBtnId").classList.remove("boldText");
+            document.getElementById("flowStartBtnId").classList.remove("boldText");
+            document.getElementById("nodeEditBtnId").classList.remove("boldText");
+            document.getElementById("flowDirBtnId").classList.remove("boldText");
+            document.getElementById("addingNodesBtnId").classList.remove("boldText");
+            document.getElementById("linkPropsBtnId").classList.remove("boldText");
+            document.getElementById("chartEditBtnId").classList.remove("boldText");
+            document.getElementById("decisionBtnId").classList.remove("boldText");
+
+            document.getElementById("databaseBtnId").classList.remove("boldText");
+            document.getElementById("dbImpExpBtnId").classList.remove("boldText");
+            document.getElementById("dbKeysBtnId").classList.remove("boldText");
+            document.getElementById("dbCreateBtnId").classList.remove("boldText");
+            document.getElementById("dbSequenceBtnId").classList.remove("boldText");
+            document.getElementById("dbConstraintsBtnId").classList.remove("boldText");
+            document.getElementById("dbLOBsBtnId").classList.remove("boldText");
+            document.getElementById("dbIndexesBtnId").classList.remove("boldText");
+
         }
-    }
 
-    dragElement(document.getElementById("separator"));
+        function initTexts() {
+            unselectAllLeft();
+            hideAllTexts();
+            document.getElementById("prefaceBtnId").classList.add("boldText");
+            document.getElementById("prefaceTextId").style.display = "block";
+        }
 
-    var toggler = document.getElementsByClassName("caret");
-    for (var i = 0; i < toggler.length; i++) {
-        toggler[i].addEventListener("click", function() {
-            this.parentElement.querySelector(".nested").classList.toggle("active");
-            this.classList.toggle("caret-down");
-        });
-    }
+        function hideAllTexts() {
+            document.getElementById("prefaceTextId").style.display = "none";
 
-</script>
+            document.getElementById("basicsTextId").style.display = "none";
+            document.getElementById("actionsTextId").style.display = "none";
+            document.getElementById("settingsTextId").style.display = "none";
+            document.getElementById("browserTextId").style.display = "none";
+            document.getElementById("layoutTextId").style.display = "none";
+            document.getElementById("selectionsTextId").style.display = "none";
+            document.getElementById("navigateTextId").style.display = "none";
+
+            document.getElementById("bankFlowTextId").style.display = "none";
+            document.getElementById("createNodesTextId").style.display = "none";
+            document.getElementById("flowStartTextId").style.display = "none";
+            document.getElementById("nodeEditTextId").style.display = "none";
+            document.getElementById("flowDirTextId").style.display = "none";
+            document.getElementById("addingNodesTextId").style.display = "none";
+            document.getElementById("linkPropsTextId").style.display = "none";
+            document.getElementById("chartEditTextId").style.display = "none";
+            document.getElementById("decisionTextId").style.display = "none";
+
+            document.getElementById("databaseTextId").style.display = "none";
+            document.getElementById("dbImpExpTextId").style.display = "none";
+            document.getElementById("dbKeysTextId").style.display = "none";
+            document.getElementById("dbCreateTextId").style.display = "none";
+            document.getElementById("dbSequenceTextId").style.display = "none";
+            document.getElementById("dbConstraintsTextId").style.display = "none";
+            document.getElementById("dbLOBStorageTextId").style.display = "none";
+            document.getElementById("dbIndexesTextId").style.display = "none";
+
+        }
+
+        initTexts();
+
+        function dragElement(element) {
+            var   mouseDown; // remember mouse down info
+            const left  = document.getElementById("leftId");
+            const right = document.getElementById("rightId");
+
+            element.onmousedown = onMouseDown;
+
+            function onMouseDown(e) {
+                //console.log("mouse down: " + e.clientX);
+                mouseDown = {e,
+                    offsetLeft:  element.offsetLeft,
+                    offsetTop:   element.offsetTop,
+                    leftWidth:  left.offsetWidth,
+                    rightWidth: right.offsetWidth
+                };
+
+                document.onmousemove = onMouseMove;
+                document.onmouseup = function(e) {
+                    //console.log("mouse up");
+                    document.onmousemove = document.onmouseup = null;
+                }
+            }
+
+            function onMouseMove(e) {
+                //console.log("mouse move: " + e.clientX);
+                var delta = {
+                    x: e.clientX - mouseDown.e.clientX,
+                    y: e.clientY - mouseDown.e.clientY
+                };
+                // Prevent negative-sized elements
+                delta.x = Math.min(Math.max(delta.x, -mouseDown.leftWidth), mouseDown.rightWidth);
+
+                element.style.left = mouseDown.offsetLeft + delta.x + "px";
+                left.style.width = (mouseDown.leftWidth + delta.x) + "px";
+                right.style.width = (mouseDown.rightWidth - delta.x) + "px";
+            }
+        }
+
+        dragElement(document.getElementById("separator"));
+
+        var toggler = document.getElementsByClassName("caret");
+        for (var i = 0; i < toggler.length; i++) {
+            toggler[i].addEventListener("click", function() {
+                this.parentElement.querySelector(".nested").classList.toggle("active");
+                this.classList.toggle("caret-down");
+            });
+        }
+
+    </script>
 
 </body>
 </html>

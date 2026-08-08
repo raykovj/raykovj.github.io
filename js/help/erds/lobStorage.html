@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/guide.css" type="text/css" />
+    <title>LOB Storage</title>
+</head>
+<body>
+<div class="container contentText">
+
+    <p>SQL schema <b>Large Object (LOB) storage</b> manages unstructured data types like VARCHAR(MAX),
+        BLOB, CLOB, and XML. <b>JDElite Data Modeler</b> supports the two levels of LOB storage:
+        column level and table level. Databases that handle explicitly LOB storage are:
+        <b>PostgreSQL</b>, <b>Oracle</b>, <b>MySQL</b>, <b>MariaDB</b>, <b>SQL Server</b>, and <b>DB2</b>.
+        They use various syntax and specific data types. <b>JDElite Data Modeler</b> represent the
+        database specific types using a consolidated graphical support.</p><br>
+
+    <p>Here is an example for <b>Oracle</b> column of data type <b>CLOB</b> (Character Large Object),
+        a built-in data type used to store large amounts of character-based text data. It is designed to handle
+        strings that exceed the 4,000-byte restriction of the standard VARCHAR2 data type, holding up to
+        4 gigabytes or more depending on the database block size.</p><br>
+
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/gifs2/lobColumn.gif" width="592" height="492" style="border: 2px solid blue"></p>
+    </div><br>
+
+    <p>Next is an example for <b>Oracle</b> table level LOB storage that covers a group of columns with data types
+        <b>CLOB</b>, <b>BLOB</b> - for unstructured raw binary data,
+        <b>NCLOB</b> - a specific type of CLOB. and
+        <b>XMLTYPE</b> - object data type to store, validate, and query XML data:</p><br>
+
+    <div style="display:flex; justify-content: center; ">
+        <p><img src="../../../images/gifs2/lobTable.gif" width="640" height="414" style="border: 2px solid blue"></p>
+    </div><br><br>
+
+</div>
+</body>
+</html>

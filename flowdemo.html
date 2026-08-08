@@ -169,6 +169,10 @@
             <div class="showDBSelect" data-bind="visible: showDBName() && selectedDBName().length > 0" >
                 <span class="showDBText" data-bind="text: 'Database: '+selectedDBName()">/</span>
             </div>
+            <div class="showDBSelect showCollapsed"
+                 data-bind="visible: showDBName() && selectedDBName().length > 0 && showCollapsed()" >
+                <span class="showDBText" data-bind="text: 'Display state: collapsed'">/</span>
+            </div>
             <div class="group-box current-settings">
                 <div style="margin-top: 2px;"></div>
                 <div class="accordSelect" style="display: block;">
@@ -298,9 +302,12 @@
                 </div>
             </div>
 
+            <div class="paletteHelpMsg" data-bind="visible: hasDiagram()">
+                <button id="dbHelpButtonId" class="dbHelpBtn">HELP TOPICS</button>
+            </div>
             <div id="paletteMsgId" class="paletteTipMsg" data-bind="visible: dbPaletteVisible()">
                 <span data-bind="html: dbTipText()"></span>
-                <button id="dbTipButtonId" class="dbTipBtn">context help</button>
+                <button id="dbTipButtonId" class="dbTipBtn">quick help</button>
             </div>
 
         </div>
@@ -1076,6 +1083,10 @@
 
     <!-- DB NODE TIP -->
     <div id="dbTipContainerId" class="dbTipContainer">
+        <div class="dbTipBar">
+            <button id="btnDBTipCloseId" class="dgm-button button-close-wht"
+                    style="margin: 2px 2px 2px 4px; grid-column: 2;" title="Close Tips"></button>
+        </div>
         <table id="dbTipsTableId">
             <thead>
                 <tr>
@@ -1098,6 +1109,22 @@
                         <img role="presentation" data-bind="attr: {src: url}" />
                     </td>
                     <td class="dbTipWidth" data-bind="text: descr"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- HELP TOPICS -->
+    <div id="helpTopicsContainerId" class="helpTopicsContainer">
+        <div class="helpTopicsBar">
+            <button id="helpTopicsCloseId" class="dgm-button button-close-wht"
+                    style="margin: 2px 2px 2px 4px; grid-column: 2;" title="Close Topics"></button>
+        </div>
+        <table id="helpTopicsTableId">
+            <caption class="helpTopicsCaption" data-bind="text: helpTopicsTitle()"></caption>
+            <tbody data-bind="foreach: helpTopics">
+                <tr>
+                    <td><div data-bind="html: item"></div></td>
                 </tr>
             </tbody>
         </table>
@@ -1302,7 +1329,7 @@
         </div>
 
         <div style="margin-top: 6px;"></div>
-        <!-- COLUMN CONSTRAINTS -->
+        <!-- TABLE/COLUMN CONSTRAINTS -->
         <div class="dbEditorTop" data-bind="visible: columnConstraintsVisible()">
             <div style="margin: 2px 0 0 0; grid-column: 1;">
                 <button id="btnShowCnstrId" class="dgm-button btn-down-16 dgm-btn-outline"
@@ -1321,7 +1348,7 @@
         </div>
         <div id="dbTblConstraintsId" style="display: block; "
                 data-bind="visible: columnConstraintsVisible() && showDBConstraints()">
-            <table id="dbTblConstrHeadersId" style="width: 100%; table-layout: fixed; ">
+            <table id="dbTblConstrHeadersId" style="width: 100%; table-layout: fixed;">
                 <thead><tr style="height: 24px; "></tr></thead>
             </table>
             <table id="dbTblConstrColumnsId" style="width: 100%; table-layout: fixed; ">

@@ -22,6 +22,7 @@ body.waiting * {
 	left: 0;
 	width: 100%;
 	overflow-y: hidden;
+	
 }
 	
 	
@@ -137,6 +138,7 @@ body.waiting * {
 	
 	height: inherit;
 	border: 1px solid white;
+	
 }
 #containerId {
 	grid-column-start: 2;
@@ -165,6 +167,7 @@ body.waiting * {
 	grid-column-start: 2;
 	grid-row-start: 2;
 	align-self: start;
+	
 	
 }
 	
@@ -345,7 +348,7 @@ body.waiting * {
 	display: block;
 	border: 2px solid #5F69C5;
 	width: 184px;
-	height: 64px;
+	height: 42px;
 	margin: 10px 10px 0 10px;
 	padding: 4px 0 0 8px;
  }
@@ -362,24 +365,51 @@ body.waiting * {
 	font-weight: bold;
 	margin: -12px 0 0 -4px;
 }
+.paletteHelpMsg {
+	position: relative;
+	display: block;
+	border: 2px solid #5F69C5;
+	width: 184px;
+	height: 24px;
+	margin: 10px 10px 0 10px;
+	padding: 4px 0 0 8px;
+}
+.dbHelpBtn {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: transparent;
+	color: #5F69C5;
+	font-family: Arial;
+	font-size: 11pt;
+	font-weight: bold;
+	
+	
+	
+	padding: 2px 0 0 30px;
+}
 .showDBSelect {
 	border: 1px solid  #3a72c1;
-	
 	border-radius: 2px;
 	color: #111;
 	background-color: #D4FA6F;
-	
 	width: 191px;
-	height: 30px;
+	height: 28px;
 	display: block;
+	
+	
 	margin: 0 0 2px 10px;
+}
+.showCollapsed {
+	
+	background-color: #f1ff74;
 }
 .showDBText {
 	font-family: Arial;
 	font-size: 10pt;
 	font-weight: bold;
 	vertical-align: sub;
-	margin: 0px 0 0 18px;
+	margin: 6px 0 0 18px;
 	padding: 0px 0 0 0;
 }
 .accordSelect {
@@ -450,6 +480,13 @@ table#accPROCTableId td {
 	background-color: #408DEE;
 	padding: 2px 0 4px 0;
 	margin: 0;
+}
+.hrefStyle16 {
+	color: #4C7FEE;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 18px;
 }
 .tipPopup {
 	width: 160px;
@@ -628,6 +665,59 @@ label {
 	height: 64px;
 	visibility: hidden;
 	z-index: 20;
+}
+.helpTopicsBar {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 192px 26px;
+	height: 26px;
+	background-color: #0478c5;
+	
+	cursor: pointer;
+}
+.helpTopicsCaption {
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	color: #043e7b;
+	padding: 6px 0 2px 8px;
+	text-align: center;
+	width: 96%;
+	height: 24px;
+	border-bottom: 1px solid blue;
+	background-color: #d0e7fa;
+}
+.helpTopicsContainer {
+	position: absolute;
+	outline: none;
+	width: 220px;
+	
+	border: 2px solid blue;
+	visibility: hidden;
+	z-index: 20;
+}
+table#helpTopicsTableId {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-top: 2px solid blue;
+}
+table#helpTopicsTableId td {
+	background-color: #fff;
+	padding: 4px;
+	height: 16px;
+}
+.dbTipBar {
+	display: grid;
+	justify-content: start;
+	grid-template-columns: 292px 26px;
+	height: 26px;
+	margin-top: 6px;
+	cursor: pointer;
+	background-color: #0478c5;
+	border-left: 2px solid darkgray;
+	border-right: 2px solid darkgray;
+	border-top: 2px solid darkgray;
 }
 .dbTipContainer {
 	position: absolute;
@@ -1153,7 +1243,7 @@ table#dbTipsButtonsId td {
 }
 .about-font {
 	font-family: Arial;
-	font-size: 12px;
+	font-size: 13px;
 	color: #080f77;
 }
 .welcome-dlg {
@@ -1915,6 +2005,9 @@ table#dbTipsButtonsId td {
 .button-close {
 	background-image: url(../../images/toolbar/delete18x24Blue.png);
 }
+.button-close-wht {
+	background-image: url(../../images/toolbar/delete18x24Wht.png);
+}
 .button-copy {
 	background-image: url(../../images/toolbar/copy24.png);
 }
@@ -2529,7 +2622,7 @@ table#dirsTableId td {
 	visibility: hidden;
 	border: 2px solid navy;
 	background-color: #f3f6fc;
-	z-index: 100;
+	z-index: 1000;
 }
 .dbPropsTop {
 	display: grid;
@@ -2625,7 +2718,7 @@ table#dbSqsTableId td {
 	visibility: hidden;
 	border: 2px solid navy;
 	background-color: #f3f6fc;
-	z-index: 100;
+	z-index: 1000;
 }
 .dbOptionsTop {
 	display: grid;
