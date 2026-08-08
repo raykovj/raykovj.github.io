@@ -412,6 +412,22 @@ body.waiting * {
 	margin: 6px 0 0 18px;
 	padding: 0px 0 0 0;
 }
+.dbCollapsedBtn {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	height: 10px;
+	background-color: transparent;
+	color: #5F69C5;
+	font-family: Arial;
+	font-size: 12pt;
+	font-style: italic;
+	font-weight: bold;
+	
+	vertical-align: sub;
+	margin: 0px 0 0 -4px;
+	
+}
 .accordSelect {
 	font-family: Arial;
 	font-size: 9pt;

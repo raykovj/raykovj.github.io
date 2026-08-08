@@ -27,7 +27,7 @@
         </div>
         <button id="shutdownId" class="toolbar-button shutdown-button" data-toggle="tooltip"
                 title="Shutdown Server and Exit"></button>
-        <div class="diagram-title" style="margin: 0 0 0 0;">
+        <div class="diagram-title">
             <span class="selectionFont">Diagram:</span>
         </div>
         <div >
@@ -171,7 +171,8 @@
             </div>
             <div class="showDBSelect showCollapsed"
                  data-bind="visible: showDBName() && selectedDBName().length > 0 && showCollapsed()" >
-                <span class="showDBText" data-bind="text: 'Display state: collapsed'">/</span>
+                <span class="showDBText" data-bind="text: 'Display state: '">/</span>
+                <button id="dbCollapsedBtnId" class="dbCollapsedBtn">collapsed</button>
             </div>
             <div class="group-box current-settings">
                 <div style="margin-top: 2px;"></div>
