@@ -5,6 +5,6 @@ JDElite Data Modeler is a Web multi-faceted, graphical editor designed for datab
 
 For visual modeling, JDElite Data Modeler uses the proprietary orthogonal connections layout: patent No. US 10,424,096 - JDElite Consulting: Jordan Raykov, Sep. 24, 2019: Technique for Orthogonal Edge Routing of Directed Graph Diagrams with Edge Crossings Reduction.
 
-It provides a free no-installation playground mode, and currently also a free full functionality access mode with the installation of the proprietary file browser on Windows.
+JDElite Data Modeler provides a free no-installation playground mode, and currently also a free full functionality access mode with the installation of the proprietary file browser on Windows.
 
 To install, use the link: https://raykovj.github.io/jde/jdelite.exe.
