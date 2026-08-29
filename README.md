@@ -1,2 +1,7 @@
 
-JDElite Diagram Builder is a Web flowchart editor for creating complex graph diagrams, based on JavaScript, HTML 5 and node.js. Its on-screen help and outstanding editing capabilities allow you to create quickly and easily flowcharts of any size. JDElite Diagram Builder's unique feature is that it offers unmatched readability to the most complex diagrams. This is achieved by the proprietary algorithms for orthogonal edge routing of directed graph diagrams with highly efficient edge crossings reduction (patent No. US 10,424,096). Visit http://www.jdelite.com to open the free editor or to learn more about it. You can watch the video clips that illustrate how to create and edit a diagram. You can open some of the built-in sample diagrams or you can create your own new diagrams (saving is disabled) and explore the powerful editing features.
+JDElite Data Modeler is a Web multi-faceted, graphical editor designed for database architects, software engineers and business analysts. Built using HTML, CSS and Javascript, it offers:
+-	relational database schema design, visualization and reverse engineering, with support for SQL Server, Oracle, MySQL, MariaDB, PostgreSQL, IBM DB2, and SQLite
+-	design of complex flowcharts
+For visual modeling, JDElite Data Modeler uses the proprietary orthogonal connections layout: patent No. US 10,424,096 - JDElite Consulting: Jordan Raykov, Sep. 24, 2019: Technique for Orthogonal Edge Routing of Directed Graph Diagrams with Edge Crossings Reduction.
+It provides a free no-installation playground mode, and currently also a free full functionality access mode with the installation of the proprietary file browser on Windows.
+To install, use the link: https://raykovj.github.io/jde/jdelite.exe.
